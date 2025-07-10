@@ -1,0 +1,11 @@
+@use 'colors.module.scss';
+
+$extraLargeFontSize: 1.125rem;
+$largeFontSize: 1rem;
+$biggerFontSize: 0.875rem;
+$normalFontSize: 0.75rem;
+$smallFontSize: 0.625rem;
+
+.bold {
+  font-weight: bold;
+}

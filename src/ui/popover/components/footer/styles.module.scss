@@ -1,0 +1,10 @@
+.container {
+  display: flex;
+  justify-content: flex-end;
+  gap: 2rem;
+  width: 100%;
+  padding: 1rem;
+  gap: 1rem;
+  border-top: 1px solid colors.$greyBackground;
+  min-height: 4rem;
+}

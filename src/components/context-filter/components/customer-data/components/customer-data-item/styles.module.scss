@@ -1,0 +1,33 @@
+.CustomerDataItemContainer {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.CustomerDataItemIcon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 1.75rem;
+  height: 1.75rem;
+  border-radius: 0.3125rem;
+
+  svg {
+    width: 1.25rem;
+    color: colors.$whiteMain;
+  }
+}
+.CustomerDataItemContent {
+  display: flex;
+  flex-direction: column;
+}
+
+.CustomerDataItemLabel {
+  font-size: commonStyles.$normalFontSize;
+  margin-top: 0.25rem;
+  line-height: 0.5rem;
+}
+
+.CustomerDataItemValue {
+  font-size: commonStyles.$biggerFontSize;
+  font-weight: bold;
+}

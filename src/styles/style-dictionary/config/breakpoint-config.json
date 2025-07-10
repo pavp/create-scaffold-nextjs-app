@@ -1,0 +1,25 @@
+{
+  "source": ["src/styles/style-dictionary/tokens/breakpoints.json"],
+  "platforms": {
+    "scss": {
+      "transformGroup": "scss",
+      "buildPath": "src/styles/",
+      "files": [
+        {
+          "format": "custom-css-format-breakpoints",
+          "destination": "breakpoints.module.scss"
+        }
+      ]
+    },
+    "js": {
+      "transformGroup": "js",
+      "buildPath": "src/styles/",
+      "files": [
+        {
+          "format": "custom-js-format-breakpoints",
+          "destination": "breakpoints.ts"
+        }
+      ]
+    }
+  }
+}

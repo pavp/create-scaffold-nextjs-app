@@ -1,0 +1,62 @@
+.container {
+  width: auto;
+  height: fit-content;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+
+  .dateCalendar {
+    height: 100%;
+    width: 100%;
+
+    background-color: colors.$whiteMain;
+    :global(.MuiPickersCalendarHeader-label) {
+      font-size: 18px;
+      font-weight: bold;
+      color: colors.$primaryBlue;
+    }
+
+    :global(.MuiDayCalendar-weekDayLabel) {
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    :global(.MuiPickersDay-root) {
+      font-size: 16px;
+    }
+
+    :global(.MuiDayCalendar-header) {
+      border-bottom: 0.5px solid colors.$greyLightBorder;
+    }
+
+    :global(.MuiPickersArrowSwitcher-previousIconButton) {
+      margin-right: 0.5rem;
+    }
+
+    :global(.MuiPickersArrowSwitcher-nextIconButton) {
+      margin-left: 0.5rem;
+    }
+
+    :global(.MuiPickersArrowSwitcher-spacer) {
+      display: none;
+    }
+
+    :global(.Mui-disabled) {
+      opacity: 0.5;
+    }
+
+    .iconButtonContainer {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-inline: 0.2rem;
+    }
+  }
+
+  .smallDateCalendar {
+    :global(.MuiPickersCalendarHeader-root) {
+      margin-top: 0.5rem;
+    }
+  }
+}

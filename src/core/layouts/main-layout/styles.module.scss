@@ -1,0 +1,21 @@
+.MainLayoutContainer {
+  display: flex;
+  height: 100vh;
+  background-color: colors.$greyBackground;
+}
+
+.MainLayoutRightContent {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  margin: 1rem 1.5rem;
+}
+
+.MainLayoutHeaderContainer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.MainLayoutChildrenContainer {
+  flex-grow: 1;
+}

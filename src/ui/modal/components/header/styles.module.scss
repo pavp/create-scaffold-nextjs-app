@@ -1,0 +1,20 @@
+.container {
+  display: flex;
+  background-color: colors.$greyLight;
+  height: 64px;
+  padding: 0rem 1rem 0 1rem;
+  align-items: center;
+
+  .titleText {
+    flex-grow: 1;
+    padding-right: 1rem;
+    font-weight: bold;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+  .iconButton {
+    width: 30px;
+    height: 30px;
+  }
+}

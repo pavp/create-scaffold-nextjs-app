@@ -1,0 +1,10 @@
+.selectContainer {
+  display: inline-flex;
+
+  .divider {
+    margin-left: -0.75rem;
+    border-color: colors.$dividerGrey;
+    margin-top: 0.75rem;
+    margin-bottom: 0.75rem;
+  }
+}

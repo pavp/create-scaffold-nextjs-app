@@ -1,0 +1,89 @@
+.container {
+  display: flex;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+  background-color: colors.$productFamily;
+  flex-direction: column;
+  padding: 1rem;
+  gap: 1rem;
+
+  .card {
+    background-color: colors.$whiteMain;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: 64rem;
+
+    //Mobile
+    @media (min-width: breakpoints.$breakpoint-mobile-min) and (max-width: breakpoints.$breakpoint-mobile-max) {
+      padding: 1rem;
+    }
+    //Tablet
+    @media (min-width: breakpoints.$breakpoint-tablet-min) and (max-width: breakpoints.$breakpoint-tablet-max) {
+      padding: 2rem;
+    }
+    //Desktop
+    @media (min-width: breakpoints.$breakpoint-desktop-min) {
+      padding: 4rem;
+    }
+
+    .codeTextError {
+      font-weight: 900;
+
+      //Vertical
+      @media (orientation: portrait) {
+        font-size: clamp(2rem, 10vw, 10.5rem);
+      }
+
+      //Horizontal
+      @media (orientation: landscape) {
+        font-size: clamp(2rem, 10vh, 10.5rem);
+      }
+    }
+    .messageText {
+      text-align: center;
+      font-weight: 400;
+
+      //Vertical
+      @media (orientation: portrait) {
+        font-size: clamp(1rem, 2vw, 1.5rem);
+      }
+
+      //Horizontal
+      @media (orientation: landscape) {
+        font-size: clamp(1rem, 2vh, 1.5rem);
+      }
+    }
+
+    .subtitleText {
+      font-weight: 500;
+      text-align: center;
+
+      //Vertical
+      @media (orientation: portrait) {
+        font-size: clamp(1.5rem, 5vw, 5rem);
+      }
+
+      //Horizontal
+      @media (orientation: landscape) {
+        font-size: clamp(1.5rem, 5vh, 5rem);
+      }
+    }
+
+    .divider {
+      width: 100%;
+      border-top: 1px solid colors.$greyBackground;
+      margin-top: 1rem;
+      margin-bottom: 1rem;
+    }
+  }
+
+  .icon {
+    color: colors.$whiteMain;
+    height: clamp(3rem, 20vh, 13.5rem);
+    width: 10rem;
+  }
+}

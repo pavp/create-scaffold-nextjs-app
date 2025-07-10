@@ -1,0 +1,23 @@
+.container {
+  display: flex;
+  justify-content: flex-end;
+  gap: 2rem;
+  width: 100%;
+  padding: 1rem;
+  gap: 1rem;
+  border-top: 1px solid colors.$greyBackground;
+  min-height: 4rem;
+
+  //Mobile
+  @media (min-width: breakpoints.$breakpoint-mobile-min) and (max-width: breakpoints.$breakpoint-mobile-max) {
+    justify-content: center;
+    border-top: none;
+  }
+}
+
+@media (min-width: breakpoints.$breakpoint-mobile-min) and (max-width: breakpoints.$breakpoint-mobile-max) {
+  .container {
+    justify-content: center;
+    border-top: none;
+  }
+}

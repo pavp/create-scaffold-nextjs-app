@@ -1,0 +1,14 @@
+.noResultLabel {
+  color: colors.$greyNoResults;
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: start;
+}
+
+.noResultContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 100%;
+}

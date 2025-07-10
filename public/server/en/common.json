@@ -1,0 +1,37 @@
+{
+  "windowTitle": "SWAT",
+  "datePickerPlaceHolder": "Select a date",
+  "noResultsFilter": "No results found",
+  "notFound": "Not found",
+  "notFoundMessage": "The requested resource was not found",
+  "globalError": "An error occurred",
+  "globalErrorMessage": "An error occurred while processing your request. Please try again later.",
+  "appointmentLabel": "Appointment",
+  "customer": "Customer",
+  "company": "Company",
+  "dialog": {
+    "accept": "Confirm",
+    "cancel": "Cancel",
+    "title": "OK"
+  },
+  "api": {
+    "invalidArgumentsWithParams": "The provided arguments do not match the expected arguments: {url}: {errors}",
+    "invalidExpectedDataWithParams": "Invalid expected data for endpoint {url}: {errors}",
+    "invalidArgumentsWith": "The provided arguments do not match the expected arguments",
+    "invalidExpectedDataWith": "Invalid expected data for endpoint"
+  },
+  "textField": {
+    "noOptionsText": "No options",
+    "validate": {
+      "required": "This field is required",
+      "email": "Invalid email",
+      "phone": "Invalid phone number",
+      "number": "Invalid number",
+      "minLength": "The value is too short",
+      "maxLength": "The value is too long",
+      "min": "The value is too low",
+      "max": "The value is too high",
+      "pattern": "Invalid format"
+    }
+  }
+}

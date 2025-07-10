@@ -1,0 +1,11 @@
+.container {
+  display: flex;
+  flex: 1;
+  margin-top: 1rem;
+  justify-content: flex-end;
+  align-self: flex-end;
+
+  ul {
+    align-items: flex-end;
+  }
+}

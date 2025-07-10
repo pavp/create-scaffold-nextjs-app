@@ -1,0 +1,23 @@
+{
+  "source": ["src/styles/style-dictionary/tokens/colors.json"],
+  "platforms": {
+    "scss": {
+      "buildPath": "src/styles/",
+      "files": [
+        {
+          "format": "custom-css-format-colors",
+          "destination": "colors.module.scss"
+        }
+      ]
+    },
+    "js": {
+      "buildPath": "src/styles/",
+      "files": [
+        {
+          "format": "custom-js-format-colors",
+          "destination": "colors.ts"
+        }
+      ]
+    }
+  }
+}

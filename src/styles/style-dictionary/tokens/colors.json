@@ -1,0 +1,244 @@
+{
+  "color": {
+    "primary": {
+      "value": "#2a165b",
+      "name": "primary",
+      "type": "color"
+    },
+    "buttonPrimary": {
+      "value": "#2a165b",
+      "name": "buttonPrimary",
+      "type": "color"
+    },
+    "primaryHover": {
+      "value": "#532bb5",
+      "name": "primaryHover",
+      "type": "color"
+    },
+    "primaryDisable": {
+      "value": "#d4d2d5",
+      "name": "primaryDisable",
+      "type": "color"
+    },
+    "primaryDisableOpacity50": {
+      "value": "#d4d2d580",
+      "name": "primaryDisableOpacity50",
+      "type": "color"
+    },
+    "primaryDetail": {
+      "value": "#6f3af2",
+      "name": "primaryDetail",
+      "type": "color"
+    },
+    "productFamily": {
+      "value": "#ffc469",
+      "name": "productFamily",
+      "type": "color"
+    },
+    "textColor": {
+      "value": "#222222",
+      "name": "textColor",
+      "type": "color"
+    },
+    "headerColor": {
+      "value": "#222222",
+      "name": "headerColor",
+      "type": "color"
+    },
+    "whiteMain": {
+      "value": "#ffffff",
+      "name": "whiteMain",
+      "type": "color"
+    },
+    "blackMain": {
+      "value": "#000000",
+      "name": "blackMain",
+      "type": "color"
+    },
+    "primaryBlue": {
+      "value": "#2a165b",
+      "name": "primaryBlue",
+      "type": "color"
+    },
+    "info": {
+      "value": "#17a2b8",
+      "name": "info",
+      "type": "color"
+    },
+    "success": {
+      "value": "#28a745",
+      "name": "success",
+      "type": "color"
+    },
+    "warning": {
+      "value": "#ffc107",
+      "name": "warning",
+      "type": "color"
+    },
+    "danger": {
+      "value": "#c82333",
+      "name": "danger",
+      "type": "color"
+    },
+    "dangerHover": {
+      "value": "#b00020",
+      "name": "dangerHover",
+      "type": "color"
+    },
+    "greyMainLight": {
+      "value": "#929292",
+      "name": "greyMainLight",
+      "type": "color"
+    },
+    "greyBackground": {
+      "value": "#f2f2f2",
+      "name": "greyBackground",
+      "type": "color"
+    },
+    "greyNoResults": {
+      "value": "#5a6268",
+      "name": "greyNoResults",
+      "type": "color"
+    },
+    "lightGreyBackground": {
+      "value": "#fafbfc",
+      "name": "lightGreyBackground",
+      "type": "color"
+    },
+    "dividerGrey": {
+      "value": "#b7adcd",
+      "name": "dividerGrey",
+      "type": "color"
+    },
+    "greyLightBorder": {
+      "value": "#ebebeb",
+      "name": "greyLightBorder",
+      "type": "color"
+    },
+    "greyMainTint": {
+      "value": "#e2e2e2",
+      "name": "greyMainTint",
+      "type": "color"
+    },
+    "lightWhite": {
+      "value": "#dddddd",
+      "name": "lightWhite",
+      "type": "color"
+    },
+    "greyLight": {
+      "value": "#edebf3",
+      "name": "greyLight",
+      "type": "color"
+    },
+    "darkGrey": {
+      "value": "#474747",
+      "name": "darkGrey",
+      "type": "color"
+    },
+    "primaryLight": {
+      "value": "#b7adcd",
+      "name": "primaryLight",
+      "type": "color"
+    },
+    "veryLightGrey": {
+      "value": "#fafbfc",
+      "name": "veryLightGrey",
+      "type": "color"
+    },
+    "charcoalGrey": {
+      "value": "#444444",
+      "name": "charcoalGrey",
+      "type": "color"
+    },
+    "orangeDark": {
+      "value": "#ff8c00",
+      "name": "orangeDark",
+      "type": "color"
+    },
+    "mandatoryColor": {
+      "value": "#ffa500",
+      "name": "mandatoryColor",
+      "type": "color"
+    },
+    "customerDataBlue": {
+      "value": "#5cc7e8",
+      "name": "customerDataBlue",
+      "type": "color"
+    },
+    "customerDataPink": {
+      "value": "#f266fa",
+      "name": "customerDataPink",
+      "type": "color"
+    },
+    "statusDms": {
+      "value": "#5cc7e8",
+      "name": "statusDms",
+      "type": "color"
+    },
+    "statusError": {
+      "value": "#c82333",
+      "name": "statusError",
+      "type": "color"
+    },
+    "statusMedium": {
+      "value": "#aba7af",
+      "name": "statusMedium",
+      "type": "color"
+    },
+    "statusSuccessMedium": {
+      "value": "#28a745",
+      "name": "statusSuccessMedium",
+      "type": "color"
+    },
+    "statusWarning": {
+      "value": "#ffa543",
+      "name": "statusWarning",
+      "type": "color"
+    },
+    "statusSuccess": {
+      "value": "#31ca54",
+      "name": "statusSuccess",
+      "type": "color"
+    },
+    "statusDos": {
+      "value": "#f266fa",
+      "name": "statusDos",
+      "type": "color"
+    },
+    "statusDanger": {
+      "value": "#ff3c4f",
+      "name": "statusDanger",
+      "type": "color"
+    },
+    "statusInformation": {
+      "value": "#138496",
+      "name": "statusInformation",
+      "type": "color"
+    },
+    "greyLightApryse": {
+      "value": "#f1f3f5",
+      "name": "greyLightApryse",
+      "type": "color"
+    },
+    "divider": {
+      "value": "#d9d1e0",
+      "name": "divider",
+      "type": "color"
+    },
+    "dialogWarning": {
+      "value": "#ef7d00",
+      "name": "dialogWarning",
+      "type": "color"
+    },
+    "dialogError": {
+      "value": "#c82333",
+      "name": "dialogError",
+      "type": "color"
+    },
+    "opacityBlack": {
+      "value": "#00000099",
+      "name": "opacityBlack",
+      "type": "color"
+    }
+  }
+}

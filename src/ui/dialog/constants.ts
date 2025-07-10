@@ -1,0 +1,1 @@
+export const DIALOG_RESET_STATE_DURATION = 200;

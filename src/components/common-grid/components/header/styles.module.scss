@@ -1,0 +1,38 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  border-bottom: 1px solid colors.$greyBackground;
+  padding-bottom: 1rem;
+
+  &.noChildrenContainer {
+    border-bottom: 0;
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+
+  .headerTopContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .headerBottomContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 0.5rem;
+
+    .iconsContainer {
+      margin-left: auto;
+
+      button.active {
+        background-color: rgba(0, 0, 0, 0.2);
+      }
+    }
+  }
+  .goBackButton {
+    border: none;
+    background-color: transparent;
+  }
+}
