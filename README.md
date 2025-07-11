@@ -23,12 +23,10 @@ $ npx github:nxl-engineering/shared-create-nextlane-app
 🚀 Create Nextlane App
 Bootstrap a modern frontend application with Nextlane's template
 
-🔧 Running in GitHub mode
-
 Project name (kebab-case): my-awesome-project
 Package name (default: my-awesome-project):
 Project description: My awesome Nextlane application
-Target directory (default: ./my-awesome-project):
+Target directory (default: ./my-awesome-project, use "." for current): 
 
 📋 Configuration Summary:
 Project Name: my-awesome-project
@@ -37,17 +35,22 @@ Description: My awesome Nextlane application
 Target Directory: ./my-awesome-project
 
 🔄 Creating project...
-📁 Downloading template from GitHub...
-📄 Copying template files...
-🔄 Configuring project...
 🔧 Initializing git repository...
 ✅ Git repository initialized
+📡 Downloading template from GitHub...
+📦 Extracting template...
+📋 Copying .gitignore from template...
+✅ .gitignore copied successfully
+📄 Copying template files...
+✅ Package.json copied from template
+✅ Package.json placeholders replaced
+🔄 Configuring project...
 
 🎉 Project created successfully!
 
 Next steps:
 1. cd ./my-awesome-project
-2. Copy .env.template to .env.local and configure your environment variables
+2. Configure your environment variables in .env.local (already created from template)
 3. Install dependencies (choose your preferred package manager):
    npm install | yarn install | pnpm install
 4. Start development server:
@@ -123,32 +126,23 @@ my-awesome-project/
 
 ## 🚀 Release Management
 
-### Process for creating new versions:
+This project uses **semantic release** for automated versioning based on conventional commits. No manual version management is required.
 
-1. **Create release branch:**
+### How it works:
 
-   ```bash
-   # For bug fixes (patch)
-   git checkout -b release/patch/fix-eslint-errors
+1. **Make changes** using conventional commit format
+2. **Create PR** to `main` branch
+3. **Merge PR** - Semantic release automatically:
+   - 🏷️ Creates git tag with new version
+   - 📋 Generates CHANGELOG.md
+   - 🎉 Publishes GitHub release
+   - 📦 Users get latest version with `npx github:`
 
-   # For new features (minor)
-   git checkout -b release/minor/add-typescript-support
+### Automatic Version Bumps:
 
-   # For breaking changes (major)
-   git checkout -b release/major/refactor-cli-api
-   ```
-
-2. **Make changes and commit**
-
-3. **Create Pull Request** from `release/type/description` to `main`
-
-4. **Merge PR** - Users will automatically get the latest version with `npx github:`
-
-### Release Types:
-
-- `release/patch/*` - Bug fixes
-- `release/minor/*` - New features
-- `release/major/*` - Breaking changes
+- `feat:` → **MINOR** version (1.0.0 → 1.1.0)
+- `fix:`, `perf:` → **PATCH** version (1.0.0 → 1.0.1)  
+- `feat!:`, `BREAKING CHANGE:` → **MAJOR** version (1.0.0 → 2.0.0)
 
 ## 🤝 Contributing
 
