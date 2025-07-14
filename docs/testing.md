@@ -1,47 +1,182 @@
-# Unit Testing with Jest in a React Project
+# Testing Guide
 
-## Introduction
+This project uses **Jest** with **V8 coverage** and **React Testing Library** for comprehensive testing.
 
-In our project, we use [Jest](https://jestjs.io/) and [Jest for React](https://jestjs.io/docs/tutorial-react) to conduct unit tests. Jest is a popular JavaScript testing framework developed by Facebook, designed to ensure the correctness of any JavaScript codebase. It works well with React, making it a great choice for testing React components.
+## Quick Start
 
-## Why Jest?
+### Running Tests
 
-- **Easy to Set Up**: Jest is easy to install and configure, offering a simple setup process.
-- **Rich API**: It provides a rich API for assertions, mocks, and more.
-- **Snapshot Testing**: Jest supports snapshot testing, which is particularly useful for React components.
-- **Fast and Safe**: Jest runs tests in parallel to maximize performance and generates unique global state for each test file.
+```bash
+# Run all tests
+npm test
+# or
+yarn test
 
-# Running Unit Tests with Jest
+# Run tests with coverage
+npm test -- --coverage
 
-## Steps to Run Unit Tests
+# Run tests in watch mode
+npm test -- --watch
 
-1. **Write Test Files**:
-   Create test files alongside your components, hooks or helpers. Test files should have a `.test.ts` or `.test.tsx` extension.
+# Run specific test file
+npm test src/components/button/button.test.tsx
+```
 
-   Example test file for a React component:
+### Writing Tests
 
-   ```javascript
-   // src/components/Hello.test.tsx
-   import React from 'react';
+Create test files alongside your components with `.test.ts` or `.test.tsx` extension:
 
-   import { render, screen } from '@testing-library/react';
+```typescript
+// src/components/Hello.test.tsx
+import React from 'react';
+import { render, screen } from '@testing-library/react';
+import Hello from './Hello';
 
-   import Hello from './Hello';
+it('should render Hello component', () => {
+  // 1. Arrange - Setup
+  const expectedText = 'Hello, World!';
 
-   it('should renders Hello component', () => {
-     render(<Hello />);
+  // 2. Act - Render
+  render(<Hello />);
 
-     expect(screen.getByText('Hello, World!')).toBeInTheDocument();
-   });
-   ```
+  // 3. Assert - Verify
+  expect(screen.getByText(expectedText)).toBeInTheDocument();
+});
+```
 
-2. **Run tests**:
+## Configuration
 
-   ```bash
-   npm run test
-   ```
+The project uses Jest with V8 coverage provider for better performance:
 
-# Jest Utilities
+```typescript
+// jest.config.ts
+const config: Config = {
+  coverageProvider: 'v8',
+  testEnvironment: 'jsdom',
+  coverageThreshold: {
+    global: {
+      branches: 85,
+      functions: 85,
+      lines: 85,
+      statements: 85,
+    },
+  },
+};
+```
+
+## Test Structure Best Practices
+
+Follow the **Arrange-Act-Assert** (AAA) pattern:
+
+```typescript
+describe('ComponentName', () => {
+  it('should handle user interaction', () => {
+    // 1. Arrange - Variables and constants
+    const mockHandler = jest.fn();
+    const buttonText = 'Click me';
+
+    // 2. Act - Render and interact
+    render(<Button onClick={mockHandler}>{buttonText}</Button>);
+    const button = screen.getByRole('button', { name: buttonText });
+    fireEvent.click(button);
+
+    // 3. Assert - Verify behavior
+    expect(mockHandler).toHaveBeenCalledTimes(1);
+  });
+});
+```
+
+## Coverage Reports
+
+### HTML Report
+
+- **Location**: `coverage/lcov-report/index.html`
+- **Access**: Open the file in your browser to see interactive coverage details
+
+### Console Output
+
+The console shows a summary with coverage percentages for statements, branches, functions, and lines.
+
+## Coverage Ignore Patterns
+
+### In Code Comments
+
+Use `c8` comments to ignore specific lines or blocks:
+
+```javascript
+// Ignore next line
+/* c8 ignore next */
+const unreachableCode = () => {};
+
+// Ignore block
+/* c8 ignore start */
+function debugOnly() {
+  console.log('Debug mode');
+}
+/* c8 ignore stop */
+```
+
+### In Configuration
+
+Ignore entire files or directories from coverage:
+
+```typescript
+// jest.config.ts
+const config: Config = {
+  coveragePathIgnorePatterns: [
+    '/node_modules/',
+    '/test/',
+    '/src/types/', // Ignore type definition files
+    '*.d.ts', // Ignore TypeScript declaration files
+    '/src/constants/', // Ignore constants files
+  ],
+};
+```
+
+## Advanced Configuration
+
+### Module Name Mapping
+
+Configure path aliases for testing:
+
+```typescript
+moduleNameMapper: {
+  '^@/(.*)': '<rootDir>/src/$1',
+  '^@/components/(.*)$': '<rootDir>/components/$1',
+  '@next/font/(.*)': '<rootDir>/test/__mocks__/nextFontMock.js',
+  'server-only': '<rootDir>/test/__mocks__/empty.js',
+},
+```
+
+## Troubleshooting
+
+### Common Issues
+
+1. **"Coverage threshold not met"**
+   - Add more tests to reach the required coverage
+   - Use `/* c8 ignore */` for legitimate uncoverable code
+   - Review `coverageThreshold` settings
+
+2. **Slow test execution**
+   - V8 coverage is faster than Babel
+   - Consider using `--maxWorkers=50%` for parallel execution
+   - Use `--testPathIgnorePatterns` to exclude unnecessary files
+
+3. **Module resolution errors**
+   - Check `moduleNameMapper` in jest.config.ts
+   - Ensure all aliases are properly configured
+   - Verify mock files exist in `test/__mocks__/`
+
+### Performance Tips
+
+- Use `--coverage=false` during development
+- Run specific test suites with `--testPathPattern`
+- Utilize `--changedSince` for testing only modified files
+- Consider `--watchAll=false` in automated environments
+
+This ensures consistent test execution while maintaining high code quality standards.
+
+# Testing Utilities
 
 The purpose of this utility file is to streamline and enhance the testing process in a React project that uses Redux for state management, MUI (Material-UI) for theming and styling, and a custom `LocalizationProvider` for internationalization. It provides a convenient way to render components and hooks with all necessary providers, ensuring that tests run in an environment that closely mimics the actual application setup.
 
@@ -62,7 +197,6 @@ This ensures that any component rendered in the tests has access to the Redux st
 This function is used to render React hooks in a testing environment with all the necessary providers:
 
 - **Parameters**:
-
   - `render`: The hook rendering function.
   - `preloadedState`: Initial state for the Redux store (optional).
   - `store`: A Redux store instance (optional, will be created if not provided).
@@ -77,7 +211,6 @@ By using this function, hooks can be tested within the context of the Redux stor
 This function is used to render React components in a testing environment with all the necessary providers:
 
 - **Parameters**:
-
   - `ui`: The React component to be rendered.
   - `preloadedState`: Initial state for the Redux store (optional).
   - `store`: A Redux store instance (optional, will be created if not provided).

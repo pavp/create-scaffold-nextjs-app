@@ -4,6 +4,9 @@ import 'whatwg-fetch';
 jest.mock('@mui/x-license', () => ({
   useLicenseVerifier: () => 'Valid',
   Watermark: () => null,
+  LicenseInfo: {
+    setLicenseKey: jest.fn(),
+  },
 }));
 
 jest.mock('@/store/hooks', () => ({

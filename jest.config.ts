@@ -13,7 +13,7 @@ const createJestConfig = nextJest({
 
 // Add any custom config to be passed to Jest
 const config: Config = {
-  coverageProvider: 'babel',
+  coverageProvider: 'v8',
   testEnvironment: 'jsdom',
   clearMocks: true,
   testMatch: ['**/*.test.js', '**/*.test.ts', '**/*.test.jsx', '**/*.test.tsx'],
@@ -63,6 +63,8 @@ const config: Config = {
   },
   // Add more setup options before each test is run
   setupFilesAfterEnv: ['<rootDir>/test/jest.setup.tsx'],
+  // Fix for Jest 30+ with babel coverage
+  coveragePathIgnorePatterns: ['/node_modules/', '/test/'],
   testPathIgnorePatterns: ['<rootDir>/node_modules/', '<rootDir>/.next/', '/test/', '/public/'],
   transform: {
     // Use babel-jest to transpile tests with the next/babel preset

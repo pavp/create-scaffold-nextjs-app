@@ -17,7 +17,9 @@ export default getRequestConfig(async ({ requestLocale }) => {
   return {
     locale,
     messages: {
-      common: await fetch(`${config.apiUrl}${Endpoint.Translation}/${locale}/common`, { next: { revalidate } })
+      common: await fetch(`${config.apiUrl}${Endpoint.Translation}/${locale}/common`, {
+        next: { revalidate },
+      } as RequestInit)
         .then((res) => res.json())
         .catch(() => ({})),
     },
