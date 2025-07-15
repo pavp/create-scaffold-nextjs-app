@@ -2,8 +2,7 @@
 
 import { ChangeEvent, memo, useCallback, useEffect, useState } from 'react';
 import { Controller, FieldValues } from 'react-hook-form';
-import { FormGroup, Switch as SwitchMui } from '@mui/material';
-import Grid from '@mui/material/Grid2';
+import { FormGroup, Grid, Switch as SwitchMui } from '@mui/material';
 
 import { SwitchProps, SwitchRenderProps } from './types';
 

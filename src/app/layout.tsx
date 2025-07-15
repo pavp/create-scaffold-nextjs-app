@@ -1,5 +1,5 @@
 import { ReactNode } from 'react';
-import { AppRouterCacheProvider } from '@mui/material-nextjs/v14-appRouter';
+import { AppRouterCacheProvider } from '@mui/material-nextjs/v15-appRouter';
 import { useLocale, useMessages, useTranslations } from 'next-intl';
 
 import {

@@ -91,7 +91,6 @@ npm warn peer react@">=16.8.0" from @emotion/react@11.14.0
 - ✅ Do not affect functionality
 - ✅ Are caused by package engine specifications and React version differences
 - ✅ Can be safely ignored during development
-- ✅ Are resolved using package overrides in package.json
 
 ### Package Resolution Warnings
 
@@ -104,10 +103,6 @@ Some dependency conflicts are resolved using package resolutions in package.json
     "@types/react-dom": "19.0.4",
     "glob": "^10.0.0",
     "rimraf": "^5.0.0"
-  },
-  "overrides": {
-    "react": "19.0.0",
-    "react-dom": "19.0.0"
   }
 }
 ```

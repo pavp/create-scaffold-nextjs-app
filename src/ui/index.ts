@@ -1,5 +1,5 @@
 import CssBaseline from '@mui/material/CssBaseline';
-import Grid from '@mui/material/Grid2';
+import Grid from '@mui/material/Grid';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import Link from 'next/link';
 
