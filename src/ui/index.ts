@@ -16,7 +16,6 @@ export { LoadingModal } from './loading-modal/loading-modal';
 export { ModalHOC as Modal } from './modal/modal';
 export { NumberPicker } from './number-picker/number-picker';
 export { Pagination } from './pagination/pagination';
-export { PhoneNumberField } from './phone-number-field/phone-number-field';
 export { Selector } from './selector/selector';
 export { Switch } from './switch/switch';
 export { TextArea } from './text-area/text-area';
