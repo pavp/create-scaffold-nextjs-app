@@ -253,6 +253,10 @@ Some dependency conflicts are resolved using package resolutions in package.json
     "@types/react-dom": "19.0.4",
     "glob": "^10.0.0",
     "rimraf": "^5.0.0"
+  },
+  "overrides": {
+    "react": "19.0.0",
+    "react-dom": "19.0.0"
   }
 }
 ```

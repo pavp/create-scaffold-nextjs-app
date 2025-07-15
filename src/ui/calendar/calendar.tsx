@@ -20,7 +20,7 @@ export interface CalendarProps {
   minDate?: Dayjs;
   disabled?: boolean;
   loading?: boolean;
-  onChangeDay: (newValue: Dayjs) => void;
+  onChangeDay: (newValue: Dayjs | null) => void;
   onChangeMonthAndYear?: (date: Dayjs) => void;
 }
 

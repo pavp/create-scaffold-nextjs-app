@@ -3,7 +3,7 @@
 
 import { useState } from 'react';
 import SearchIcon from '@mui/icons-material/Search';
-import dayjs from 'dayjs';
+import dayjs, { Dayjs } from 'dayjs';
 import { useTranslations } from 'next-intl';
 
 import { CommonGrid, NoSearchResults } from '@/components';
@@ -47,6 +47,7 @@ export const HomeView = () => {
   const [checked, setChecked] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
   const [isRadioButton, setIsRadioButton] = useState(false);
+  const [date, setDate] = useState<Dayjs | null>(dayjs());
   const { onChangePage, page } = usePagination();
 
   return (
@@ -147,8 +148,11 @@ export const HomeView = () => {
                   }}
                 >
                   <Calendar
-                    selectedDate={dayjs()}
-                    onChangeDay={(value) => console.log(value)}
+                    selectedDate={date}
+                    onChangeDay={(date) => {
+                      console.log({ date });
+                      setDate(date);
+                    }}
                     onChangeMonthAndYear={(value) => console.log(value)}
                   />
                 </Box>
