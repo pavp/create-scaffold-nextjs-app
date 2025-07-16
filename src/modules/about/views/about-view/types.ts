@@ -12,7 +12,7 @@ export const FormPersonalInfoInputSchema = z.object({
   email: z
     .string()
     .min(1, { message: 'common.textField.validate.required' })
-    .email({ message: 'common.textField.validate.email' }),
+    .and(z.email({ message: 'common.textField.validate.email' })),
 });
 
 export type FormPersonalInfoInput = z.infer<typeof FormPersonalInfoInputSchema>;

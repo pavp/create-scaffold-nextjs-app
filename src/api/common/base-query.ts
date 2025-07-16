@@ -5,7 +5,7 @@ import {
   FetchBaseQueryError,
   FetchBaseQueryMeta,
 } from '@reduxjs/toolkit/query/react';
-import { ZodError, ZodSchema } from 'zod';
+import { z, ZodError } from 'zod';
 
 import { config } from '@/config';
 import { RootState } from '@/store';
@@ -29,7 +29,7 @@ export const baseQuery: BaseQueryFn<
   string | FetchArgs,
   unknown,
   FetchBaseQueryError,
-  { argumentSchema?: ZodSchema; dataSchema?: ZodSchema },
+  { argumentSchema?: z.ZodType; dataSchema?: z.ZodType },
   FetchBaseQueryMeta
 > = async (args, api, extraOptions = {}) => {
   if (extraOptions.argumentSchema) {

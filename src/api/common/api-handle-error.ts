@@ -35,7 +35,7 @@ export const handleOtherErrors = (error: FetchBaseQueryError, api: BaseQueryApi)
 
 export const handleZodError = (error: ZodError, args: string | FetchArgs, message: string) => {
   const url = typeof args === 'string' ? args : args.url;
-  const errors = error.errors.map((e) => `${e.path.join('.')} - ${e.message}`).join(', ');
+  const errors = error.issues.map((e) => `${e.path.join('.')} - ${e.message}`).join(', ');
 
   const errorResponse = createErrorResponse({
     message,
