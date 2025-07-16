@@ -1958,6 +1958,11 @@
   resolved "https://registry.yarnpkg.com/@rushstack/eslint-patch/-/eslint-patch-1.12.0.tgz#326a7b46f6d4cfa54ae25bb888551697873069b4"
   integrity sha512-5EwMtOqvJMMa3HbmxLlF74e+3/HhwBTMcvt3nqVJgGCozO6hzIPOBlwm8mGVNR9SN2IJpxSnlxczyDjcn7qIyw==
 
+"@schummar/icu-type-parser@1.21.5":
+  version "1.21.5"
+  resolved "https://registry.yarnpkg.com/@schummar/icu-type-parser/-/icu-type-parser-1.21.5.tgz#75989085bbbf80ee325874a0137437bde77e9baf"
+  integrity sha512-bXHSaW5jRTmke9Vd0h5P7BtWZG9Znqb8gSDxZnxaGSJnGwPLDPfS+3g0BKzeWqzgZPsIVZkM7m2tbo18cm5HBw==
+
 "@screeb/sdk-browser@^0.1.16":
   version "0.1.18"
   resolved "https://registry.yarnpkg.com/@screeb/sdk-browser/-/sdk-browser-0.1.18.tgz#83bb84794a2495f08407e4bd7f202be9daa1378d"
@@ -7107,14 +7112,14 @@ nerf-dart@^1.0.0:
   resolved "https://registry.yarnpkg.com/nerf-dart/-/nerf-dart-1.0.0.tgz#e6dab7febf5ad816ea81cf5c629c5a0ebde72c1a"
   integrity sha512-EZSPZB70jiVsivaBLYDCyntd5eH8NTSMOn3rB+HxwdmKThGELLdYv8qVIMWvZEFy9w8ZZpW9h9OB32l1rGtj7g==
 
-next-intl@^3.26.5:
-  version "3.26.5"
-  resolved "https://registry.yarnpkg.com/next-intl/-/next-intl-3.26.5.tgz#5f4fc987df05ba80c7cb380f4bcff789ffde74b7"
-  integrity sha512-EQlCIfY0jOhRldiFxwSXG+ImwkQtDEfQeSOEQp6ieAGSLWGlgjdb/Ck/O7wMfC430ZHGeUKVKax8KGusTPKCgg==
+next-intl@4.3.4:
+  version "4.3.4"
+  resolved "https://registry.yarnpkg.com/next-intl/-/next-intl-4.3.4.tgz#247ae789f1490b6518e8b18fe13d44cce703098b"
+  integrity sha512-VWLIDlGbnL/o4LnveJTJD1NOYN8lh3ZAGTWw2krhfgg53as3VsS4jzUVnArJdqvwtlpU/2BIDbWTZ7V4o1jFEw==
   dependencies:
     "@formatjs/intl-localematcher" "^0.5.4"
     negotiator "^1.0.0"
-    use-intl "^3.26.5"
+    use-intl "^4.3.4"
 
 next@15.4.1:
   version "15.4.1"
@@ -9628,12 +9633,13 @@ url@^0.11.3:
     punycode "^1.4.1"
     qs "^6.12.3"
 
-use-intl@^3.26.5:
-  version "3.26.5"
-  resolved "https://registry.yarnpkg.com/use-intl/-/use-intl-3.26.5.tgz#25ceda122ba1e4cee6d55d674a20a71cc0ab2559"
-  integrity sha512-OdsJnC/znPvHCHLQH/duvQNXnP1w0hPfS+tkSi3mAbfjYBGh4JnyfdwkQBfIVf7t8gs9eSX/CntxUMvtKdG2MQ==
+use-intl@^4.3.4:
+  version "4.3.4"
+  resolved "https://registry.yarnpkg.com/use-intl/-/use-intl-4.3.4.tgz#42bb2141480032623ffe412799c62cbdf306ed0f"
+  integrity sha512-sHfiU0QeJ1rirNWRxvCyvlSh9+NczcOzRnPyMeo2rtHXhVnBsvMRjE+UG4eh3lRhCxrvcqei/I0lBxsc59on1w==
   dependencies:
     "@formatjs/fast-memoize" "^2.2.0"
+    "@schummar/icu-type-parser" "1.21.5"
     intl-messageformat "^10.5.14"
 
 use-sync-external-store@^1.4.0:
