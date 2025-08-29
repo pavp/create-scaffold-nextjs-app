@@ -14,7 +14,7 @@ export interface ApiError {
   details?: unknown;
 }
 
-// Backend Error format (migrado desde RTK Query)
+// Backend Error format
 export interface BackendError {
   message: string;
   translate?: boolean;

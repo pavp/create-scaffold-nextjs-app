@@ -664,9 +664,11 @@ async function main() {
         prettier: deps.prettier?.replace('^', '') || 'latest',
         jest: deps.jest?.replace('^', '') || 'latest',
         testingLibrary: deps['@testing-library/react']?.replace('^', '') || 'latest',
-        redux: deps['@reduxjs/toolkit']?.replace('^', '') || 'latest',
+        reactQuery: deps['@tanstack/react-query']?.replace('^', '') || 'latest',
+        zustand: deps.zustand?.replace('^', '') || 'latest',
         sass: deps.sass?.replace('^', '') || 'latest',
         styleDictionary: deps['style-dictionary']?.replace('^', '') || 'latest',
+        stylelint: deps.stylelint?.replace('^', '') || 'latest',
         husky: deps.husky?.replace('^', '') || 'latest',
         lintStaged: deps['lint-staged']?.replace('^', '') || 'latest',
       };
@@ -721,9 +723,11 @@ async function main() {
     console.log(`${colors.green}🔧${colors.reset} TypeScript ${versions.typescript} configured`);
     console.log(`${colors.green}📱${colors.reset} Responsive design`);
     console.log(`${colors.green}🌍${colors.reset} Internationalization (next-intl ${versions.nextIntl})`);
-    console.log(`${colors.green}🎯${colors.reset} ESLint ${versions.eslint} + Prettier ${versions.prettier}`);
+    console.log(
+      `${colors.green}🎯${colors.reset} ESLint ${versions.eslint} + Prettier ${versions.prettier} + Stylelint`,
+    );
     console.log(`${colors.green}🧪${colors.reset} Jest ${versions.jest} + Testing Library ${versions.testingLibrary}`);
-    console.log(`${colors.green}📊${colors.reset} Redux Toolkit ${versions.redux} + RTK Query`);
+    console.log(`${colors.green}📊${colors.reset} React Query ${versions.reactQuery} + Zustand ${versions.zustand}`);
     console.log(
       `${colors.green}🎨${colors.reset} SCSS ${versions.sass} Modules + Style Dictionary ${versions.styleDictionary}`,
     );

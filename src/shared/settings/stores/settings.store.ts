@@ -19,7 +19,7 @@ export const useSettingsStore = createStoreWithMiddleware<SettingsStoreState>(
     actions: {
       persistSettings: (settingsResponse: SettingsResponse) =>
         set((draft: Draft<SettingsStoreState>) => {
-          // Prioritize config variables, if empty, use server config (same logic as Redux)
+          // Prioritize config variables, if empty, use server config
           draft.mixpanelApiKey = config.mixpanelToken || settingsResponse.mixPanelKey;
           draft.screebWebsiteId = config.screebWebsiteId || settingsResponse.screeb_website_id;
           draft.muiApiKey = config.muiLicense || settingsResponse.muiKey;

@@ -62,9 +62,9 @@ Next steps:
 🔧 TypeScript x.x.x configured
 📱 Responsive design
 🌍 Internationalization (next-intl x.x.x)
-🎯 ESLint x.x.x + Prettier x.x.x
+🎯 ESLint x.x.x + Prettier x.x.x + Stylelint
 🧪 Jest x.x.x + Testing Library x.x.x
-📊 Redux Toolkit x.x.x + RTK Query
+📊 React Query + Zustand
 🎨 SCSS x.x.x Modules + Style Dictionary x.x.x
 🔒 Husky x.x.x + lint-staged x.x.x
 
@@ -118,9 +118,9 @@ my-awesome-project/
 - 🔧 TypeScript configured
 - 📱 Responsive design
 - 🌍 Internationalization (next-intl)
-- 🎯 ESLint + Prettier
+- 🎯 ESLint + Prettier + Stylelint
 - 🧪 Jest + Testing Library
-- 📊 Redux Toolkit + RTK Query
+- 📊 React Query + Zustand
 - 🎨 SCSS Modules
 - 🔒 Husky + lint-staged
 
@@ -298,7 +298,8 @@ Here you have some documentation about the generated project. Please, read it be
 
 - [MUI](https://mui.com/) - React UI framework.
 - [Next-Intl](https://next-intl-docs.vercel.app/) - Library for internationalization (i18n) in Next.js applications.
-- [Redux Toolkit](https://redux-toolkit.js.org/) - Official, opinionated, batteries-included toolset for efficient Redux development.
+- [React Query](https://tanstack.com/query) - Powerful data synchronization for React applications.
+- [Zustand](https://zustand-demo.pmnd.rs/) - Small, fast and scalable bearbones state-management solution.
 - [React-Hook-Form](https://react-hook-form.com/) - Library for handling form validation and management in React applications.
 - [Jest](https://jestjs.io/docs/tutorial-react) - JavaScript testing framework.
 - [MixPanel](https://github.com/mixpanel/mixpanel-js) - Analytics platform.

@@ -250,7 +250,7 @@ describe('Settings Store', () => {
   });
 
   describe('Config priority logic', () => {
-    it('should implement same logic as Redux (config || server)', () => {
+    it('should implement config priority logic (config || server)', () => {
       const testCases = [
         {
           config: { mixpanelToken: 'config_value', screebWebsiteId: '', muiLicense: 'config_mui' },

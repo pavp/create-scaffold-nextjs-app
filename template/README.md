@@ -66,9 +66,9 @@ yarn lint:fix
 - 🔧 TypeScript configured
 - 📱 Responsive design
 - 🌍 Internationalization (next-intl)
-- 🎯 ESLint + Prettier
+- 🎯 ESLint + Prettier + Stylelint
 - 🧪 Jest + Testing Library with V8 Coverage
-- 📊 Redux Toolkit + RTK Query
+- 📊 React Query + Zustand
 - 🎨 SCSS Modules
 - 🔒 Husky + lint-staged
 
@@ -145,7 +145,8 @@ Here you have some documentation about this project. Please, read it before star
 
 - [MUI](https://mui.com/) - React UI framework.
 - [Next-Intl](https://next-intl-docs.vercel.app/) - Library for internationalization (i18n) in Next.js applications.
-- [Redux Toolkit](https://redux-toolkit.js.org/) - Official, opinionated, batteries-included toolset for efficient Redux development.
+- [React Query](https://tanstack.com/query) - Powerful data synchronization for React applications.
+- [Zustand](https://zustand-demo.pmnd.rs/) - Small, fast and scalable bearbones state-management solution.
 - [React-Hook-Form](https://react-hook-form.com/) - Library for handling form validation and management in React applications.
 - [Jest](https://jestjs.io/docs/tutorial-react) - JavaScript testing framework.
 - [MixPanel](https://github.com/mixpanel/mixpanel-js) - Analytics platform.
