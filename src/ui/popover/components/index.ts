@@ -1,3 +1,3 @@
-export { Content } from './content/content';
-export { Footer } from './footer/footer';
-export { Header } from './header/header';
+export { Content } from './content/content.component';
+export { Footer } from './footer/footer.component';
+export { Header } from './header/header.component';

@@ -11,28 +11,18 @@
   }
 
   &:not(.selectedItem) {
-    color: rgba(colors.$whiteMain, 0.4);
     margin-left: 0.3125rem;
+    color: rgba(colors.$whiteMain, 0.4);
   }
 
   .listOptions {
-    padding: 0rem;
-    margin: 0.25rem 0rem;
+    padding: 0;
+    margin: 0.25rem 0;
     border-radius: 0.5rem;
 
-    & {
-      &[aria-selected='true'] {
-        .optionItem {
-          background-color: color.mix(colors.$whiteMain, colors.$primary, 20%);
-          box-shadow: 0rem 0.1875rem 0.1875rem #00000029;
-          border-radius: 0.3125rem;
-        }
-      }
-    }
-
     .optionItem {
-      cursor: pointer;
       display: flex;
+      cursor: pointer;
 
       svg:first-child {
         width: 1.5rem;
@@ -40,11 +30,11 @@
       }
 
       .textOption {
-        font-size: commonStyles.$normalFontSize;
-        color: colors.$whiteMain;
-        margin-left: 0.5rem;
         visibility: visible;
         min-width: 8.6875rem;
+        margin-left: 0.5rem;
+        font-size: commonStyles.$normalFontSize;
+        color: colors.$whiteMain;
         opacity: 1;
         transition: all 0.2s linear;
       }
@@ -55,18 +45,18 @@
     }
 
     .listsubOptions {
-      background-color: color.mix(colors.$whiteMain, colors.$primary, 10%);
-      border-bottom-left-radius: 0.5rem;
-      border-bottom-right-radius: 0.5rem;
-      font-size: commonStyles.$normalFontSize;
-      margin-top: -0.5rem;
       padding-top: 0.5rem;
+      margin-top: -0.5rem;
+      font-size: commonStyles.$normalFontSize;
+      background-color: color.mix(colors.$whiteMain, colors.$primary, 10%);
+      border-bottom-right-radius: 0.5rem;
+      border-bottom-left-radius: 0.5rem;
 
       .listTitle {
-        color: colors.$whiteMain;
         display: none;
-        font-size: commonStyles.$biggerFontSize;
         padding: 0.75rem 0.5625rem;
+        font-size: commonStyles.$biggerFontSize;
+        color: colors.$whiteMain;
       }
 
       ul {
@@ -81,19 +71,26 @@
           }
 
           p {
-            color: colors.$whiteMain;
             font-size: commonStyles.$normalFontSize;
+            color: colors.$whiteMain;
           }
         }
       }
     }
 
-    & {
-      &[aria-selected='false'] {
-        .listsubOptions {
-          margin-top: 0rem;
-          padding-top: 0rem;
-        }
+    // States - more specific selectors
+    &[aria-selected='true'] {
+      .optionItem {
+        background-color: color.mix(colors.$whiteMain, colors.$primary, 20%);
+        border-radius: 0.3125rem;
+        box-shadow: 0 0.1875rem 0.1875rem #00000029;
+      }
+    }
+
+    &[aria-selected='false'] {
+      .listsubOptions {
+        padding-top: 0;
+        margin-top: 0;
       }
     }
   }
@@ -114,25 +111,25 @@
       }
 
       .listsubOptions {
-        background-color: colors.$primary;
         position: absolute;
-        z-index: 10;
-        left: 4.5rem;
         top: 0.1875rem;
+        left: 4.5rem;
+        z-index: 10;
         min-width: 11.25rem;
-        box-shadow: 0rem 0.1875rem 0.1875rem #00000029;
+        padding-top: 0;
+        margin-top: 0;
+        background-color: colors.$primary;
         border-radius: 0.1875rem;
-        margin-top: 0rem;
-        padding-top: 0rem;
+        box-shadow: 0 0.1875rem 0.1875rem #00000029;
 
         &::before {
-          content: '';
           position: absolute;
-          background-color: rgba(colors.$whiteMain, 0.1);
+          z-index: -1;
+          display: block;
           width: 100%;
           height: 100%;
-          display: block;
-          z-index: -1;
+          content: '';
+          background-color: rgba(colors.$whiteMain, 0.1);
         }
 
         .listTitle {

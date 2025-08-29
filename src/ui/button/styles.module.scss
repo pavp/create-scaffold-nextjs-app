@@ -2,13 +2,12 @@
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-  display: block;
 
   .loadingContainer {
     display: flex;
     flex-direction: row;
+    gap: 0.25rem;
     align-items: center;
     justify-content: center;
-    gap: 0.25rem;
   }
 }

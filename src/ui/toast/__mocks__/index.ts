@@ -1,4 +1,4 @@
-import { Toast } from '../types';
+import { Toast } from '../toast.types';
 
 export const mockToastData: Toast = {
   snackbarOpen: false,

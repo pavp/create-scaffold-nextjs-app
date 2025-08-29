@@ -1,1 +1,1 @@
-export { selectValue } from './select-value/select-value';
+export { selectValue } from './select-value/select-value.helper';

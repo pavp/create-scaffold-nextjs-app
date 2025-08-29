@@ -1,1 +1,1 @@
-export { type NumberPickerProps } from './types';
+export { type NumberPickerProps } from './number-picker.types';

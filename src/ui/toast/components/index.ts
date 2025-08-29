@@ -1,1 +1,1 @@
-export { ConfirmationComponent } from './confirmation-component/confirmation-component';
+export { ConfirmationComponent } from './confirmation-component/confirmation-component.component';

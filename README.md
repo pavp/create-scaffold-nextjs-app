@@ -84,10 +84,10 @@ cd shared-create-nextlane-app
 yarn install
 
 # Test the CLI interactively
-yarn test-cli-interactive
+yarn test:cli:interactive
 
 # Run automated tests
-yarn test-cli
+yarn test:cli
 
 # Test directly
 node ./bin/create-nextlane-app.js
@@ -152,7 +152,7 @@ We use **trunk-based development** with **semantic release** for automated versi
 
 ```bash
 # ✅ Short-lived branches (1-3 days max)
-feature/add-template-validation    # New functionality
+feat/add-template-validation    # New functionality
 fix/cli-initialization-error       # Bug fixes
 hotfix/critical-security-patch     # Urgent fixes
 chore/update-dependencies          # Maintenance
@@ -184,7 +184,7 @@ BREAKING CHANGE: --name flag is now --project-name
 1. **Create short branch:**
 
    ```bash
-   git checkout -b feature/improve-error-messages
+   git checkout -b feat/improve-error-messages
    ```
 
 2. **Make conventional commits:**
@@ -197,7 +197,7 @@ BREAKING CHANGE: --name flag is now --project-name
 3. **Push and create PR:**
 
    ```bash
-   git push origin feature/improve-error-messages
+   git push origin feat/improve-error-messages
    # Create PR on GitHub
    ```
 
@@ -272,11 +272,27 @@ These resolutions prevent version conflicts and reduce warning messages during i
 
 Here you have some documentation about the generated project. Please, read it before starting to work with it and ask anybody in the team if you have any question, find something that is not understandable or if you think something is missing or can be improved.
 
+### Getting Started
+
 - [Setup](docs/setup.md)
 - [Testing](docs/testing.md)
 - [Internationalization](docs/intl.md)
 - [Rules and Conventions](docs/rules-conventions.md)
 - [Project Structure](docs/project-structure.md)
+- [File Naming Conventions](docs/file-naming-conventions.md) - Guidelines for consistent file naming
+
+### Architecture & Patterns
+
+- [Module Architecture](docs/module-architecture.md) - Clean Architecture principles and layer separation
+- [Repository Pattern](docs/repository-pattern.md) - Data access abstraction with React Query integration
+- [Gateway Pattern](docs/gateway-pattern.md) - Data source abstraction (HTTP, localStorage, mock)
+- [Selector Pattern](docs/selector-pattern.md) - State selection and derived data computation
+- [Hook Patterns](docs/hook-patterns.md) - Business and Controller hook separation patterns
+
+### Development Guide
+
+- [Developer Guide](docs/developer-guide.md) - Complete step-by-step guide for creating modules and features
+- [Analytics and Feedback](docs/analytics-and-feedback.md) - Template-friendly analytics and feedback systems
 
 ## External Libraries
 

@@ -1,6 +1,6 @@
 import { getRequestConfig } from 'next-intl/server';
 
-import { Endpoint } from '@/api/endpoint';
+import { endpoints } from '@/api/endpoints';
 import { config } from '@/config';
 
 import { routing } from './routing';
@@ -17,7 +17,7 @@ export default getRequestConfig(async ({ requestLocale }) => {
   return {
     locale,
     messages: {
-      common: await fetch(`${config.apiUrl}${Endpoint.Translation}/${locale}/common`, {
+      common: await fetch(`${config.apiUrl}${endpoints.SETTINGS.TRANSLATION}/${locale}/common`, {
         next: { revalidate },
       } as RequestInit)
         .then((res) => res.json())

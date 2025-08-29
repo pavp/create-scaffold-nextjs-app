@@ -3,36 +3,35 @@ import Grid from '@mui/material/Grid';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import Link from 'next/link';
 
-export { AutocompleteSelector } from './autocomplete-selector/autocomplete-selector';
-export { Calendar } from './calendar/calendar';
-export { Checkbox } from './checkbox/checkbox';
-export { ColorPicker } from './color-picker/color-picker';
-export { DateCalendarModal } from './date-calendar-modal/date-calendar-modal';
-export { DateRangePicker } from './date-range-picker/date-range-picker';
-export { Dialog } from './dialog/dialog';
-export { Link } from './link/link';
-export { LoadingIndicator } from './loading-indicator/loading-indicator';
-export { LoadingModal } from './loading-modal/loading-modal';
-export { ModalHOC as Modal } from './modal/modal';
-export { NumberPicker } from './number-picker/number-picker';
-export { Pagination } from './pagination/pagination';
-export { Selector } from './selector/selector';
-export { Switch } from './switch/switch';
-export { TextArea } from './text-area/text-area';
-export { TextField } from './text-field/text-field';
+export { AutocompleteSelector } from './autocomplete-selector/autocomplete-selector.component';
+export { Calendar } from './calendar/calendar.component';
+export { Checkbox } from './checkbox/checkbox.component';
+export { ColorPicker } from './color-picker/color-picker.component';
+export { DateCalendarModal } from './date-calendar-modal/date-calendar-modal.component';
+export { DateRangePicker } from './date-range-picker/date-range-picker.component';
+export { Dialog } from './dialog/dialog.component';
+export { Link } from './link/link.component';
+export { LoadingIndicator } from './loading-indicator/loading-indicator.component';
+export { LoadingModal } from './loading-modal/loading-modal.component';
+export { ModalHOC as Modal } from './modal/modal.component';
+export { NumberPicker } from './number-picker/number-picker.component';
+export { Pagination } from './pagination/pagination.component';
+export { Selector } from './selector/selector.component';
+export { Switch } from './switch/switch.component';
+export { TextArea } from './text-area/text-area.component';
+export { TextField } from './text-field/text-field.component';
 export { Toast, ToastSeverity } from './toast';
-export { ToggleButton } from './toggle-button/toggle-button';
+export { ToggleButton } from './toggle-button/toggle-button.component';
 
 export { createTheme, CssBaseline, ThemeProvider };
 
 export { Link as NextIntlLink };
 
-export { Badge } from './badge/badge';
-export { Button } from './button/button';
-export { PopoverHOC as Popover } from './popover/popover';
-export { RadioButton } from './radio-button/radio-button';
+export { Badge } from './badge/badge.component';
+export { Button } from './button/button.component';
+export { PopoverHOC as Popover } from './popover/popover.component';
+export { RadioButton } from './radio-button/radio-button.component';
 export { DEFAULT_TIME_PICKER_FORMAT, DEFAULT_TIME_PICKER_VIEWS, TimePicker } from './time-picker';
-export * from './utils';
 export type { GridDirection, SvgIconTypeMap, SxProps, Theme } from '@mui/material';
 export {
   Accordion,
@@ -43,13 +42,23 @@ export {
   Box,
   Card,
   CardActionArea,
+  CardContent,
+  Chip,
+  CircularProgress,
   Collapse,
   Container,
+  DialogActions,
+  DialogContent,
+  DialogTitle,
   Divider,
   Fade,
+  FormControl,
   IconButton,
+  InputLabel,
   List,
   ListItemButton,
+  MenuItem,
+  Select,
   Skeleton,
   Snackbar,
   styled,

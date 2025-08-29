@@ -17,18 +17,23 @@ const config: Config = {
   testEnvironment: 'jsdom',
   clearMocks: true,
   testMatch: ['**/*.test.js', '**/*.test.ts', '**/*.test.jsx', '**/*.test.tsx'],
+  maxWorkers: process.env.CI ? 2 : '50%',
+  testTimeout: 10000,
   collectCoverage: true,
   collectCoverageFrom: [
+    'src/modules/**/*.{ts,tsx}',
     'src/components/**/*.{ts,tsx}',
-    'src/store/**/*.{ts,tsx}',
     'src/lib/**/*.{ts,tsx}',
     'src/helpers/**/*.{ts,tsx}',
-    'src/views/**/*.{ts,tsx}',
     'src/hooks/**/*.{ts,tsx}',
-    'src/ui/**/*.{ts,tsx}',
-    'src/core/**/*.{ts,tsx}',
+    'src/shared/**/*.{ts,tsx}',
     '!src/**/**/index.ts',
     '!src/**/**/route.ts',
+    '!src/**/*.types.ts',
+    '!src/**/*.type.ts',
+    '!src/**/types.ts',
+    '!src/**/types/**/*.ts',
+    '!src/**/constants.ts',
   ],
   coverageThreshold: {
     global: {
@@ -42,7 +47,7 @@ const config: Config = {
     '^@/(.*)': '<rootDir>/src/$1',
     // Handle CSS imports (with CSS modules)
     // https://jestjs.io/docs/webpack#mocking-css-modules
-    // '^.+\\.module\\.(css|sass|scss)$': 'identity-obj-proxy',
+    '^.+\\.module\\.(css|sass|scss)$': 'identity-obj-proxy',
 
     // Handle CSS imports (without CSS modules)
     '^.+\\.(css|styl|less|sass|scss)$': '<rootDir>/test/__mocks__/styleMock.js',
@@ -51,6 +56,7 @@ const config: Config = {
     // Handle image imports
     // https://jestjs.io/docs/webpack#handling-static-assets
     '^.+\\.(png|jpg|jpeg|gif|webp|avif|ico|bmp|svg)$/i': '<rootDir>/test/__mocks__/fileMock.js',
+    'react-color': '<rootDir>/test/__mocks__/react-color.js',
 
     // Handle module aliases
     '^@/components/(.*)$': '<rootDir>/components/$1',

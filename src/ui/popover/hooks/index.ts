@@ -1,1 +1,1 @@
-export { usePopover } from './use-popover/use-popover';
+export { usePopover } from './use-popover/use-popover.hook';

@@ -1,1 +1,1 @@
-export { AboutView } from './about-view/about-view';
+export { AboutView } from './about-view/about-view.view';

@@ -1,29 +1,29 @@
 .container {
-  width: auto;
-  height: fit-content;
   display: flex;
   align-items: center;
   justify-content: center;
+  width: auto;
+  height: fit-content;
   overflow: hidden;
 
   .dateCalendar {
-    height: 100%;
     width: 100%;
-
+    height: 100%;
     background-color: colors.$whiteMain;
+
     :global(.MuiPickersCalendarHeader-label) {
-      font-size: 18px;
+      font-size: 1.125rem;
       font-weight: bold;
       color: colors.$primaryBlue;
     }
 
     :global(.MuiDayCalendar-weekDayLabel) {
-      font-size: 18px;
+      font-size: 1.125rem;
       font-weight: bold;
     }
 
     :global(.MuiPickersDay-root) {
-      font-size: 16px;
+      font-size: 1rem;
     }
 
     :global(.MuiDayCalendar-header) {

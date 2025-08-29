@@ -6,15 +6,15 @@
 .user {
   display: flex;
   align-items: center;
+  width: max-content;
+  height: 2.5rem;
+  padding-right: 1.875rem;
   font-size: commonStyles.$biggerFontSize;
   font-weight: 700;
   line-height: 1rem;
-  width: max-content;
   color: colors.$primary;
   cursor: default;
-  padding-right: 1.875rem;
   border-right: 0.125rem solid colors.$greyLightBorder;
-  height: 2.5rem;
 
   .textMargin {
     margin-left: 0.6875rem;

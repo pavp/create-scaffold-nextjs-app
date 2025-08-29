@@ -1,7 +1,7 @@
 import mixpanel from 'mixpanel-browser';
 
+import { ANALYTICS_EVENTS } from './events/analytics-events';
 import Analytics from './analytics';
-import { Events } from './types';
 
 describe('Analytics', () => {
   beforeEach(() => {
@@ -15,7 +15,14 @@ describe('Analytics', () => {
   describe('init', () => {
     it('should initialize mixpanel when provided with a valid API key', () => {
       Analytics.init('valid-api-key');
-      expect(mixpanel.init).toHaveBeenCalledWith('valid-api-key');
+      expect(mixpanel.init).toHaveBeenCalledWith('valid-api-key', undefined);
+    });
+
+    it('should initialize mixpanel with config when provided', () => {
+      const config = { debug: true };
+
+      Analytics.init('valid-api-key', config);
+      expect(mixpanel.init).toHaveBeenCalledWith('valid-api-key', config);
     });
 
     it('should not initialize mixpanel when provided with an empty API key', () => {
@@ -24,21 +31,27 @@ describe('Analytics', () => {
     });
   });
 
-  describe('track', () => {
+  describe('trackEvent', () => {
     it('should track an event if enabled', () => {
       Analytics.init('valid-api-key');
-      Analytics.trackEvent('Login');
-      expect(mixpanel.track).toHaveBeenCalledWith(Events.Login, undefined);
+      Analytics.trackEvent(ANALYTICS_EVENTS.USER.LOGIN, { method: 'email' });
+      expect(mixpanel.track).toHaveBeenCalledWith(ANALYTICS_EVENTS.USER.LOGIN, { method: 'email' });
+    });
+
+    it('should track an event without properties if enabled', () => {
+      Analytics.init('valid-api-key');
+      Analytics.trackEvent(ANALYTICS_EVENTS.USER.LOGOUT);
+      expect(mixpanel.track).toHaveBeenCalledWith(ANALYTICS_EVENTS.USER.LOGOUT, undefined);
     });
 
     it('should not track an event if not enabled', () => {
       Analytics.init('');
-      Analytics.trackEvent('Login');
+      Analytics.trackEvent(ANALYTICS_EVENTS.USER.LOGIN);
       expect(mixpanel.track).not.toHaveBeenCalled();
     });
   });
 
-  describe('identify', () => {
+  describe('identifyUser', () => {
     const userData = {
       appName: 'TestApp',
       customUserId: 'custom123',
@@ -49,14 +62,13 @@ describe('Analytics', () => {
     it('should identify the user if enabled', () => {
       Analytics.init('valid-api-key');
       Analytics.identifyUser(userData);
-      expect(mixpanel.register).toHaveBeenCalledWith({ DealerGroup: userData.appName });
+      expect(mixpanel.register).toHaveBeenCalledWith({ appName: userData.appName });
       expect(mixpanel.identify).toHaveBeenCalledWith(userData.customUserId);
       expect(mixpanel.people.set).toHaveBeenCalledWith({
         id: userData.id,
         username: userData.username,
-        DealerGroup: userData.appName,
+        appName: userData.appName,
       });
-      expect(mixpanel.track).toHaveBeenCalledWith(Events.Login, undefined);
     });
 
     it('should identify the user if enabled and customUserId does not exist', () => {
@@ -64,14 +76,44 @@ describe('Analytics', () => {
 
       Analytics.init('valid-api-key');
       Analytics.identifyUser({ id, username, appName });
-      expect(mixpanel.register).toHaveBeenCalledWith({ DealerGroup: appName });
+      expect(mixpanel.register).toHaveBeenCalledWith({ appName });
       expect(mixpanel.identify).toHaveBeenCalledWith(id);
       expect(mixpanel.people.set).toHaveBeenCalledWith({
         id,
         username,
-        DealerGroup: appName,
+        appName,
       });
-      expect(mixpanel.track).toHaveBeenCalledWith(Events.Login, undefined);
+    });
+
+    it('should handle user data without appName', () => {
+      const { id, username, customUserId } = userData;
+
+      Analytics.init('valid-api-key');
+      Analytics.identifyUser({ id, username, customUserId });
+      expect(mixpanel.register).not.toHaveBeenCalled();
+      expect(mixpanel.identify).toHaveBeenCalledWith(customUserId);
+      expect(mixpanel.people.set).toHaveBeenCalledWith({
+        id,
+        username,
+      });
+    });
+
+    it('should include additional custom properties', () => {
+      const userWithCustomProps = {
+        ...userData,
+        role: 'admin',
+        department: 'IT',
+      };
+
+      Analytics.init('valid-api-key');
+      Analytics.identifyUser(userWithCustomProps);
+      expect(mixpanel.people.set).toHaveBeenCalledWith({
+        id: userWithCustomProps.id,
+        username: userWithCustomProps.username,
+        appName: userWithCustomProps.appName,
+        role: userWithCustomProps.role,
+        department: userWithCustomProps.department,
+      });
     });
 
     it('should not identify the user if not enabled', () => {
@@ -80,7 +122,6 @@ describe('Analytics', () => {
       expect(mixpanel.register).not.toHaveBeenCalled();
       expect(mixpanel.identify).not.toHaveBeenCalled();
       expect(mixpanel.people.set).not.toHaveBeenCalled();
-      expect(mixpanel.track).not.toHaveBeenCalled();
     });
   });
 

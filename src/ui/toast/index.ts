@@ -1,2 +1,2 @@
-export { Toast } from './toast';
-export { ToastSeverity } from './types';
+export { Toast } from './toast.component';
+export { ToastSeverity } from './toast.types';

@@ -1,8 +1,8 @@
 .confirmDeleteContainer {
   display: flex;
   flex-direction: row;
-  align-items: center;
   gap: 1rem;
+  align-items: center;
 
   .confirmDeleteMessage {
     font-size: commonStyles.$normalFontSize;
@@ -10,15 +10,15 @@
   }
 
   .confirmDeleteButton {
-    border: 0.0625rem solid colors.$whiteMain;
-    font-size: commonStyles.$normalFontSize;
-    height: 1.5rem;
-    color: colors.$whiteMain;
     display: -webkit-box;
-    -webkit-box-orient: vertical;
+    height: 1.5rem;
     overflow: hidden;
     -webkit-line-clamp: 3;
     line-clamp: 3;
+    font-size: commonStyles.$normalFontSize;
+    color: colors.$whiteMain;
+    border: 0.0625rem solid colors.$whiteMain;
+    -webkit-box-orient: vertical;
 
     &:hover {
       background-color: colors.$dangerHover;

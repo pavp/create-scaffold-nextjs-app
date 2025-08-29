@@ -6,7 +6,7 @@ Use this guide to test the CLI interactively during development.
 
 ```bash
 # Interactive testing
-yarn test-cli-interactive
+yarn test:cli:interactive
 ```
 
 ## Example Interactive Session

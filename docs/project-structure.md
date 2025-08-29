@@ -1,74 +1,215 @@
 # Project Structure
 
-If you open the new project in a editor you will see the following structure:
+The project follows **Clean Architecture** principles with clear separation of concerns. If you open the new project in an editor, you will see the following structure:
 
 ```sh
 .
-├── api/    ## any thing related to api calls and data fetching
-│ ├── index.ts
-│ ├── api.ts
-│ ├── endpoints.ts
-│ ├── types.ts
-│ └── common/
-├── app/    ## app router
-├── components/    ## any reusable components
-│ ├── loading-screen/
-│ └── footer/
-├── modules/    ## modules are representations of features/objects in the real world
-│ ├── login/
-│ ├── employees/
-│ └── admin/
-├── core/    ## core files such as auth, localization, storage and more
-│ ├── index.ts
-│ ├── components/
-│ ├── hooks/
-│ └── helpers/
-├── store/    ## any store configuration, e.g: redux, zustand
-│ ├── settings/
-│ ├── index.ts
-│ └── store.ts
-├── types/    ## global types
-│ └── index.ts
-├── ui/    ## core ui and theme configuration
-│ ├── switch/
-│ ├── modal/
-│ └── index.ts
-
+├── src/
+│   ├── api/                    ## Shared API configuration
+│   │   ├── endpoints.ts        ## API endpoint definitions
+│   │   ├── http-client.ts      ## HTTP client setup
+│   │   └── types.ts            ## API types
+│   ├── app/                    ## Next.js App Router
+│   │   ├── [locale]/           ## Internationalized routes
+│   │   └── layout.tsx          ## Root layout
+│   ├── components/             ## Reusable UI components
+│   │   ├── loading-screen/
+│   │   └── footer/
+│   ├── modules/                ## Feature modules (Clean Architecture)
+│   │   ├── [module-name]/      ## Each module contains:
+│   │   │   ├── api/            ## HTTP client integration
+│   │   │   ├── components/     ## Module-specific components
+│   │   │   ├── repositories/   ## Data access abstraction
+│   │   │   │   └── [entity]/
+│   │   │   │       ├── gateways/        ## Data source abstraction
+│   │   │   │       │   ├── http-gateway/
+│   │   │   │       │   ├── localStorage-gateway/
+│   │   │   │       │   └── mock-gateway/
+│   │   │   │       ├── helpers/         ## Business logic utilities
+│   │   │   │       ├── [entity].query-options.ts
+│   │   │   │       ├── [entity].repository.queries.ts
+│   │   │   │       └── [entity].repository.mutations.ts
+│   │   │   ├── selectors/      ## State selection hooks
+│   │   │   ├── stores/         ## Module state management
+│   │   │   ├── views/          ## Feature views with business/controller hooks
+│   │   │   ├── hooks/          ## Shared module hooks
+│   │   │   ├── index.ts        ## Module exports
+│   │   │   └── [module].types.ts ## Module types
+│   ├── core/                   ## Core shared functionality
+│   │   ├── components/         ## Shared core components
+│   │   ├── hooks/              ## Shared hooks
+│   │   ├── helpers/            ## Utility functions
+│   │   └── layouts/            ## Layout components
+│   ├── lib/                    ## External library integrations
+│   │   ├── react-query/        ## React Query helpers and configuration
+│   │   └── zustand/            ## Zustand store utilities
+│   ├── shared/                 ## Shared utilities and types
+│   │   ├── api/                ## Shared API utilities
+│   │   ├── gateways/           ## Base gateway types
+│   │   └── types/              ## Shared types
+│   ├── store/                  ## Global store configuration
+│   │   ├── index.ts
+│   │   └── store.ts
+│   ├── types/                  ## Global TypeScript types
+│   │   └── index.ts
+│   └── ui/                     ## Design system components
+│       ├── button/
+│       ├── modal/
+│       ├── form/
+│       └── index.ts
+├── docs/                       ## Project documentation
+├── test/                       ## Test utilities and configuration
+│   ├── utils/                  ## Testing utilities
+│   ├── entities/               ## Mock data factories
+│   └── __mocks__/              ## Jest mocks
+├── public/                     ## Static assets
+└── package.json
 ```
 
-- `api`: This folder contains the API files. We provide a basic API client with redux toolkit, you just need to create query and mutation for your modules.
+## Directory Descriptions
 
-- `app`: This folder contains the routes of the app, along with its layout routes such as stack and tab navigation structures.
+### Core Directories
 
-- `components:` This folder contains the components of the app. Mainly components used inside the modules folder. The only difference between ui and components is that ui is more generic and can be used in any project, while components are more specific to the project.
+- **`api/`**: Shared API configuration including HTTP client setup, endpoints, and base API types. This is the foundation for all API communications.
 
-- `modules:` This folder contains the modules or features of the app. Mainly views used inside the app folder.
+- **`app/`**: Next.js App Router structure with internationalized routes using `[locale]` dynamic segments for multi-language support.
 
-- `core:` This folder contains the core files, such as hooks, components, libs, and more. It can be shared with other projects. That’s why we are only including modules that have nothing to do with project logic. This approach helps us share code between projects and also update the starter with new features.
+- **`components/`**: Reusable UI components specific to this project. These components are used across multiple modules but are not generic enough for the design system.
 
-- `store:` This folder contains the global store of the application, serves as the centralized location for managing the application's state. This state includes data that needs to be accessible across multiple components or pages, such as user information, UI settings, and other global data. By centralizing state management, it becomes easier to manage, debug, and scale the application.
+### Feature Modules (`modules/`)
 
-- `types:` This folder contains the global types.
+Each module follows Clean Architecture patterns and represents a business domain (e.g., user management, product catalog, etc.). Every module contains:
 
-- `ui:` This folder contains all the UI components and the theme configuration. We provide minimal components with a basic obytes theme. You can add your own components and theme configuration here.
+#### Data Layer
 
-# Importing files
+- **`api/`**: HTTP client integration with Zod validation
+- **`repositories/`**: Data access abstraction with React Query integration
+- **`gateways/`**: Data source abstraction (HTTP, localStorage, mock, etc.)
 
-We use absolute imports to import files using the Babel module resolver plugin and TypeScript path mapping. This approach helps us avoid long relative paths and makes the code cleaner and more readable.
+#### Application Layer
 
-Here is a simple example of how looks with absolute imports.
+- **`selectors/`**: State selection and derived data computation hooks
+- **`stores/`**: Module-specific Zustand stores for local state
 
-```sh
-import { Card } from '@/components';
-import { Switch, Typography, Box } from '@/ui';
+#### Presentation Layer
 
-export default function Home() {
-    return (
-        <Box>
-            <Card/>
-            <Switch />
-            <Typography>test</Typography>
-        </Box>
-    );
+- **`components/`**: Module-specific UI components
+- **`views/`**: Complete page views with business and controller hooks
+- **`hooks/`**: Shared module hooks for common functionality
+
+### Shared Infrastructure
+
+- **`core/`**: Shared functionality that can be reused across projects. Contains components, hooks, and utilities without business logic dependencies.
+
+- **`lib/`**: External library integrations and wrappers:
+  - **`react-query/`**: Query client configuration, prefetch helpers, type definitions
+  - **`zustand/`**: Store creation utilities with middleware support
+
+- **`shared/`**: Project-specific shared utilities:
+  - **`api/`**: HTTP client and API utilities
+  - **`gateways/`**: Base gateway interfaces and types
+  - **`types/`**: Shared TypeScript definitions
+
+### Global Configuration
+
+- **`store/`**: Global application state management for cross-module concerns (user session, UI settings, etc.).
+
+- **`types/`**: Global TypeScript type definitions shared across the entire application.
+
+### Design System
+
+- **`ui/`**: Generic design system components with theming. These components can be reused across projects and form the foundation of the UI.
+
+### Testing & Documentation
+
+- **`test/`**: Comprehensive testing infrastructure:
+  - **`utils/`**: Testing utilities with provider wrappers
+  - **`entities/`**: Faker-based mock data factories
+  - **`__mocks__/`**: Jest mocks for external dependencies
+
+- **`docs/`**: Architecture documentation and development guides
+
+## Clean Architecture Benefits
+
+This structure provides several advantages:
+
+### ✅ **Separation of Concerns**
+
+- **Data Layer**: Handles all data access and external integrations
+- **Application Layer**: Contains business logic and state management
+- **Presentation Layer**: Focuses purely on UI rendering and user interactions
+
+### ✅ **Testability**
+
+- Each layer can be tested independently
+- Mock data factories provide consistent test data
+- Repository pattern enables easy mocking of data sources
+
+### ✅ **Flexibility**
+
+- Easy to switch between data sources (HTTP ↔ localStorage ↔ mock)
+- Gateway pattern abstracts data source implementation details
+- Modular structure supports feature-based development
+
+### ✅ **Scalability**
+
+- Consistent patterns across all modules
+- Clear boundaries prevent coupling between features
+- Independent module development by different team members
+
+## Importing Files
+
+We use **absolute imports** with TypeScript path mapping to avoid long relative paths and make the code cleaner and more readable.
+
+### Import Examples
+
+```typescript
+// UI components from design system
+import { Button, Typography, Box } from '@/ui';
+
+// Project-specific components
+import { Header, LoadingScreen } from '@/components';
+
+// Module exports (repositories, selectors, types)
+import { todoRepository, useTodoStatsSelector } from '@/modules/todo';
+import type { Todo, CreateTodoRequest } from '@/modules/todo';
+
+// Core utilities and hooks
+import { useApiClient, formatDate } from '@/core';
+
+// Shared types and utilities
+import type { DataSource } from '@/shared/gateways/base-gateway.types';
+import { httpClient } from '@/shared/api/http-client';
+
+// Test utilities
+import { renderWithProviders, createMockTodo } from '@test/utils';
+```
+
+### Path Mapping Configuration
+
+The following aliases are configured in `tsconfig.json`:
+
+```json
+{
+  "compilerOptions": {
+    "paths": {
+      "@/*": ["./src/*"],
+      "@/components/*": ["./src/components/*"],
+      "@/modules/*": ["./src/modules/*"],
+      "@/core/*": ["./src/core/*"],
+      "@/shared/*": ["./src/shared/*"],
+      "@/lib/*": ["./src/lib/*"],
+      "@/ui/*": ["./src/ui/*"],
+      "@test/*": ["./test/*"]
+    }
+  }
 }
 ```
+
+## Related Documentation
+
+- **[Module Architecture](./module-architecture.md)** - Detailed explanation of Clean Architecture principles
+- **[Developer Guide](./developer-guide.md)** - Step-by-step guide for creating new modules
+- **[Repository Pattern](./repository-pattern.md)** - Data access abstraction implementation
+- **[Gateway Pattern](./gateway-pattern.md)** - Data source abstraction patterns
+- **[Testing Guide](./testing.md)** - Comprehensive testing strategies and utilities

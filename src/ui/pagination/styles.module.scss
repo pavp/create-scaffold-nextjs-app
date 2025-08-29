@@ -1,9 +1,10 @@
 .container {
   display: flex;
   flex: 1;
-  margin-top: 1rem;
-  justify-content: flex-end;
   align-self: flex-end;
+  justify-content: flex-end;
+  padding: 0.625rem;
+  margin-top: 1rem;
 
   ul {
     align-items: flex-end;

@@ -1,75 +1,86 @@
 .mainContainer {
-  border-top: 0.25rem solid colors.$productFamily;
-  width: 15rem;
   display: flex;
-  align-items: center;
   flex-direction: column;
+  align-items: center;
+  width: 15rem;
   background-color: colors.$primary;
+  border-top: 0.25rem solid colors.$productFamily;
   transition: width 0.2s linear;
+
+  .image {
+    width: auto;
+    height: 2.25rem;
+    margin-top: 1.25rem;
+    margin-bottom: 0;
+  }
+
+  .listContainer {
+    box-sizing: border-box;
+    width: 100%;
+    overflow: hidden;
+    font-size: commonStyles.$normalFontSize;
+    font-weight: bold;
+
+    & > ul {
+      padding-top: 0;
+    }
+
+    .sectionTitle {
+      visibility: visible;
+      margin-top: 1.25rem;
+      margin-left: 1.1875rem;
+      font-size: commonStyles.$normalFontSize;
+      color: colors.$lightWhite;
+      opacity: 1;
+      transition: all 0.2s linear;
+    }
+  }
+
+  .collapseButton {
+    box-sizing: border-box;
+    width: calc(100% - 0.625rem);
+    text-align: right;
+    border-bottom: 0.0625rem solid colors.$primary;
+
+    button {
+      width: 1.5rem;
+      height: 1.5rem;
+      margin-top: -3.8rem;
+      margin-right: -1rem;
+      color: colors.$whiteMain;
+      background: colors.$primaryDetail;
+    }
+  }
+
+  .bottomMenuItemsList {
+    width: 12.5rem;
+    height: 0.125rem;
+    margin: 0 auto;
+    background-color: rgb(255 255 255 / 40%);
+  }
+
+  // Collapsed state - more specific selectors at the end
   &.collapsed {
     width: 4.5rem;
+
     .collapseButton {
       button {
         transform: rotate(180deg);
       }
     }
+
     .listContainer {
       overflow: visible;
+
       .sectionTitle {
         visibility: hidden;
-        opacity: 0;
         margin-top: 0;
+        opacity: 0;
       }
     }
+
     .bottomMenuItemsList {
       width: 1.5rem;
     }
-  }
-  .image {
-    height: 2.25rem;
-    width: auto;
-    margin-top: 1.25rem;
-    margin-bottom: 0rem;
-  }
-  .listContainer {
-    overflow: hidden;
-    font-size: commonStyles.$normalFontSize;
-    font-weight: bold;
-    width: 100%;
-    box-sizing: border-box;
-    & > ul {
-      padding-top: 0rem;
-    }
-    .sectionTitle {
-      font-size: commonStyles.$normalFontSize;
-      color: colors.$lightWhite;
-      margin-left: 1.1875rem;
-      margin-top: 1.25rem;
-
-      visibility: visible;
-      opacity: 1;
-      transition: all 0.2s linear;
-    }
-  }
-  .collapseButton {
-    border-bottom: 0.0625rem solid colors.$primary;
-    text-align: right;
-    box-sizing: border-box;
-    width: calc(100% - 0.625rem);
-    button {
-      background: colors.$primaryDetail;
-      width: 1.5rem;
-      height: 1.5rem;
-      color: colors.$whiteMain;
-      margin-right: -1rem;
-      margin-top: -3.8rem;
-    }
-  }
-
-  .bottomMenuItemsList {
-    height: 0.125rem;
-    width: 12.5rem;
-    background-color: rgba(255, 255, 255, 0.4);
-    margin: 0 auto;
   }
 }

@@ -118,12 +118,28 @@ These resolutions prevent version conflicts and reduce warning messages during i
 
 Here you have some documentation about this project. Please, read it before starting to work with it and ask anybody in the team if you have any question, find something that is not understandable or if you think something is missing or can be improved.
 
+### Getting Started
+
 - [Setup](docs/setup.md)
 - [Sign in](docs/signin.md)
 - [Testing](docs/testing.md)
 - [Internationalization](docs/intl.md)
 - [Rules and Conventions](docs/rules-conventions.md)
 - [Project Structure](docs/project-structure.md)
+- [File Naming Conventions](docs/file-naming-conventions.md) - Guidelines for consistent file naming
+
+### Architecture & Patterns
+
+- [Module Architecture](docs/module-architecture.md) - Clean Architecture principles and layer separation
+- [Repository Pattern](docs/repository-pattern.md) - Data access abstraction with React Query integration
+- [Gateway Pattern](docs/gateway-pattern.md) - Data source abstraction (HTTP, localStorage, mock)
+- [Selector Pattern](docs/selector-pattern.md) - State selection and derived data computation
+- [Hook Patterns](docs/hook-patterns.md) - Business and Controller hook separation patterns
+
+### Development Guide
+
+- [Developer Guide](docs/developer-guide.md) - Complete step-by-step guide for creating modules and features
+- [Analytics and Feedback](docs/analytics-and-feedback.md) - Template-friendly analytics and feedback systems
 
 ## External Libraries
 

@@ -1,38 +1,40 @@
 .container {
   display: flex;
-  background-color: colors.$greyLight;
-  height: 64px;
-  padding: 0rem 1rem 0 1rem;
   align-items: center;
+  height: 4rem;
+  padding: 0 1rem;
+  background-color: colors.$greyLight;
 
   .titleText {
+    margin-right: 0.25rem;
     font-size: 1.125rem;
     color: colors.$textColor;
-    margin-right: 0.25rem;
   }
 
   .boldText {
     font-weight: bold;
   }
+
   .iconButton {
     width: 1.875rem;
     height: 1.875rem;
   }
+
   .translateIconContainer {
-    background-color: colors.$textColor;
-    border-radius: 50%;
-    width: 1.5rem;
-    height: 1.5rem;
     display: flex;
     align-items: center;
     justify-content: center;
+    width: 1.5rem;
+    height: 1.5rem;
     margin-right: 0.5rem;
+    background-color: colors.$textColor;
+    border-radius: 50%;
 
     .translateIcon {
-      background-color: transparent;
-      color: colors.$whiteMain;
       width: 1rem;
       height: 1rem;
+      color: colors.$whiteMain;
+      background-color: transparent;
     }
   }
 }

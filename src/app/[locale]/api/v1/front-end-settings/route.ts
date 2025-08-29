@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 
-import { SettingsResponse } from '@/api/settings';
+import { SettingsResponse } from '@/shared/settings/settings.types';
 
 // localhost:3000/api/front-end-settings
 export async function GET(_request: NextRequest) {

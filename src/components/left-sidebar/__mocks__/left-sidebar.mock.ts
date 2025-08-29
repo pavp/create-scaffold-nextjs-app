@@ -1,4 +1,4 @@
-import ItemSidebarProps from '../types/item-sidebar-props';
+import ItemSidebarProps from '../types/item-sidebar-props.types';
 
 export const MENU_ITEMS: ItemSidebarProps[] = [
   { dataTestid: 'main1', text: 'Item 1', disabled: false, navigateTo: '/item1', hidden: false },

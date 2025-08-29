@@ -6,8 +6,8 @@ import {
   CustomNextIntlClientProvider,
   LocalizationProvider,
   MuiXLicense,
+  ReactQueryProvider,
   SettingsWrapper,
-  StoreProvider,
   Tracking,
 } from '@/core/components';
 import theme from '@/theme';
@@ -30,7 +30,7 @@ export default function RootLayout(props: RootLayoutProps) {
         <link data-testid="favicon" href="/favicon.png" rel="icon" type="image/x-icon" />
       </head>
       <body>
-        <StoreProvider>
+        <ReactQueryProvider>
           <MuiXLicense />
           <AppRouterCacheProvider options={{ enableCssLayer: true }}>
             <CustomNextIntlClientProvider locale={locale} messages={messages}>
@@ -49,7 +49,7 @@ export default function RootLayout(props: RootLayoutProps) {
               </SettingsWrapper>
             </CustomNextIntlClientProvider>
           </AppRouterCacheProvider>
-        </StoreProvider>
+        </ReactQueryProvider>
       </body>
     </html>
   );

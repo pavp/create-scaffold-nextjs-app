@@ -1,20 +1,21 @@
 .container {
   display: flex;
-  background-color: colors.$greyLight;
-  height: 64px;
-  padding: 0rem 1rem 0 1rem;
   align-items: center;
+  height: 4rem;
+  padding: 0 1rem;
+  background-color: colors.$greyLight;
 
   .titleText {
     flex-grow: 1;
     padding-right: 1rem;
-    font-weight: bold;
     overflow: hidden;
-    white-space: nowrap;
     text-overflow: ellipsis;
+    font-weight: bold;
+    white-space: nowrap;
   }
+
   .iconButton {
-    width: 30px;
-    height: 30px;
+    width: 1.875rem;
+    height: 1.875rem;
   }
 }
