@@ -14,8 +14,8 @@ updates:
     assignees:
       - 'pavillarreal_nextlane'
     commit-message:
-      prefix: 'deps'
-      prefix-development: 'deps-dev'
+      prefix: 'chore'
+      prefix-development: 'chore'
       include: 'scope'
     groups:
       # Group production dependencies
@@ -43,6 +43,7 @@ updates:
           - '@types/*'
       # Group testing dependencies
       testing-dependencies:
+        dependency-type: 'development'
         patterns:
           - '*jest*'
           - '@testing-library/*'
@@ -74,5 +75,5 @@ updates:
     assignees:
       - 'pavillarreal_nextlane'
     commit-message:
-      prefix: 'ci'
+      prefix: 'chore'
       include: 'scope'
