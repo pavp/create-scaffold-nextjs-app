@@ -1,7 +1,7 @@
 .CustomerDataContainer {
   display: flex;
-  gap: 1rem;
+  gap: var(--spacing-scale4);
   align-items: center;
-  height: 2.5rem;
-  margin-left: 1rem;
+  height: var(--spacing-scale10);
+  margin-left: var(--spacing-scale4);
 }

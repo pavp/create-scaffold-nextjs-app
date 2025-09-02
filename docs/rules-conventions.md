@@ -449,6 +449,30 @@ yarn lint:styles
 yarn lint:styles:fix
 ```
 
+### Branch Naming Validation
+
+Branch names are **automatically validated** to ensure consistency:
+
+```bash
+# ✅ Valid branch names (type/description format)
+feat/add-user-authentication
+fix/resolve-login-bug
+docs/update-api-guide
+chore/update-dependencies
+
+# ❌ Invalid branch names (will be rejected)
+MyFeature                    # Missing type/
+feat/Add_User_Auth          # Uppercase/underscores
+fix-login-bug               # Missing type/
+feat/add user auth          # Spaces not allowed
+```
+
+**Validation occurs at:**
+
+- **Pre-push**: Local validation prevents push with invalid names
+- **GitHub Actions**: PR validation ensures branch name compliance
+- **Manual check**: Run `yarn validate:branch` anytime
+
 ### Pre-commit Hooks (Husky)
 
 **NEVER use `--no-verify`** unless explicitly justified. The pre-commit workflow ensures code quality:

@@ -3,14 +3,14 @@
   flex-direction: column;
   align-items: center;
   width: 15rem;
-  background-color: colors.$primary;
-  border-top: 0.25rem solid colors.$productFamily;
+  background-color: var(--color-semantic-brand-primary);
+  border-top: var(--spacing-scale1) solid var(--color-primitive-yellow400);
   transition: width 0.2s linear;
 
   .image {
     width: auto;
     height: 2.25rem;
-    margin-top: 1.25rem;
+    margin-top: var(--spacing-scale5);
     margin-bottom: 0;
   }
 
@@ -18,7 +18,7 @@
     box-sizing: border-box;
     width: 100%;
     overflow: hidden;
-    font-size: commonStyles.$normalFontSize;
+    font-size: var(--font-size-xs);
     font-weight: bold;
 
     & > ul {
@@ -27,10 +27,10 @@
 
     .sectionTitle {
       visibility: visible;
-      margin-top: 1.25rem;
+      margin-top: var(--spacing-scale5);
       margin-left: 1.1875rem;
-      font-size: commonStyles.$normalFontSize;
-      color: colors.$lightWhite;
+      font-size: var(--font-size-xs);
+      color: var(--color-primitive-gray400);
       opacity: 1;
       transition: all 0.2s linear;
     }
@@ -40,15 +40,15 @@
     box-sizing: border-box;
     width: calc(100% - 0.625rem);
     text-align: right;
-    border-bottom: 0.0625rem solid colors.$primary;
+    border-bottom: 0.0625rem solid var(--color-semantic-brand-primary);
 
     button {
-      width: 1.5rem;
-      height: 1.5rem;
+      width: var(--spacing-scale6);
+      height: var(--spacing-scale6);
       margin-top: -3.8rem;
-      margin-right: -1rem;
-      color: colors.$whiteMain;
-      background: colors.$primaryDetail;
+      margin-right: calc(-1 * var(--spacing-scale4));
+      color: var(--color-primitive-white);
+      background: var(--color-semantic-brand-primary-detail);
     }
   }
 
@@ -80,7 +80,7 @@
     }
 
     .bottomMenuItemsList {
-      width: 1.5rem;
+      width: var(--spacing-scale6);
     }
   }
 }

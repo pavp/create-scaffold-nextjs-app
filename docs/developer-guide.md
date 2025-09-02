@@ -420,7 +420,7 @@ Create the gateway factory:
 
 ```typescript
 // repositories/[module-name]/gateways/index.ts
-import type { DataSource } from '@/shared/gateways/base-gateway.types';
+import type { DataSource } from '@/types/gateway.types';
 import { createHttpEntityGateway } from './http-gateway/http-gateway';
 import { createLocalStorageEntityGateway } from './local-storage-gateway/local-storage-gateway';
 
@@ -446,9 +446,9 @@ Define repository types:
 ```typescript
 // repositories/[module-name]/[module-name].repository.types.ts
 import { type UseMutationResult, type UseQueryResult } from '@tanstack/react-query';
-import type { BaseRepository, PrefetchOptions } from '@/lib/react-query';
-import { MutationOptions, QueryOptions } from '@/lib/react-query';
-import type { DataSource } from '@/shared/gateways/base-gateway.types';
+import type { BaseRepository, PrefetchOptions } from '@/core/lib/react-query';
+import { MutationOptions, QueryOptions } from '@/core/lib/react-query';
+import type { DataSource } from '@/types/gateway.types';
 import type {
   Entity,
   EntityFilters,
@@ -509,9 +509,9 @@ Create query options:
 
 ```typescript
 // repositories/[module-name]/[module-name].query-options.ts
-import { createPrefetchableQuery } from '@/lib/react-query';
+import { createPrefetchableQuery } from '@/core/lib/react-query';
 import { createEntityGateway } from './gateways';
-import type { DataSource } from '@/shared/gateways/base-gateway.types';
+import type { DataSource } from '@/types/gateway.types';
 import type { EntityFilters, CreateEntityRequest, UpdateEntityRequest, ErrorType } from '../../[module-name].types';
 
 // Query Options Factory Functions
@@ -585,7 +585,7 @@ Implement queries repository:
 ```typescript
 // repositories/[module-name]/[module-name].repository.queries.ts
 import { useQuery } from '@tanstack/react-query';
-import { createCancellationHelpers, createPrefetchHelpers } from '@/lib/react-query';
+import { createCancellationHelpers, createPrefetchHelpers } from '@/core/lib/react-query';
 import { entityQueryOptions } from './[module-name].query-options';
 import type { EntityQueriesRepository } from './[module-name].repository.types';
 
@@ -712,7 +712,7 @@ Create a basic selector:
 // selectors/use-[selector-name]-selector/use-[selector-name]-selector.hook.ts
 import { useMemo } from 'react';
 import { entityRepository } from '@/modules/[module-name]/repositories/[module-name]';
-import type { DataSource } from '@/shared/gateways/base-gateway.types';
+import type { DataSource } from '@/types/gateway.types';
 
 export const useCompletedEntitiesSelector = (dataSource: DataSource = 'http') => {
   const entitiesQuery = entityRepository.queries.useEntities(undefined, dataSource);
@@ -768,7 +768,7 @@ Implement the store:
 
 ```typescript
 // stores/[module-name].store.ts
-import { createStoreWithMiddleware } from '@/lib/zustand';
+import { createStoreWithMiddleware } from '@/core/lib/zustand';
 import type { EntityStore, EntityState, EntityActions } from './[module-name].store.types';
 
 const initialState: EntityState = {
@@ -823,7 +823,7 @@ import type {
   UpdateEntityRequest,
   EntityFilters,
 } from '@/modules/[module-name]/[module-name].types';
-import type { DataSource } from '@/shared/gateways/base-gateway.types';
+import type { DataSource } from '@/types/gateway.types';
 
 export const useEntityManagementBusiness = (dataSource: DataSource = 'http') => {
   const { setSelectedEntity, setFilters } = useEntityActions();
@@ -1006,7 +1006,7 @@ Create the main view:
 ```typescript
 // views/[view-name]/[view-name].view.tsx
 import { useState } from 'react';
-import type { DataSource } from '@/shared/gateways/base-gateway.types';
+import type { DataSource } from '@/types/gateway.types';
 import { useEntityManagementBusiness } from './hooks/use-entity-management-business/use-entity-management-business.hook';
 import { useEntityManagementController } from './hooks/use-entity-management-controller/use-entity-management-controller.hook';
 

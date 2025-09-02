@@ -6,7 +6,7 @@
   .loadingContainer {
     display: flex;
     flex-direction: row;
-    gap: 0.25rem;
+    gap: var(--spacing-scale1);
     align-items: center;
     justify-content: center;
   }

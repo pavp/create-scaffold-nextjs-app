@@ -6,6 +6,6 @@
   flex-direction: column;
   place-content: center center;
   overflow: hidden;
-  border-radius: 0.5rem;
+  border-radius: var(--border-radius-md);
   transform: translate(-50%, -50%);
 }

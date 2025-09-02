@@ -3,6 +3,7 @@
 import { memo } from 'react';
 
 import type { TodoFilters, TodoPriority } from '@/modules/todo/todo.types';
+import tokens from '@/styles/tokens';
 import { Box, Card, CardContent, Selector, TextField, Typography } from '@/ui';
 
 interface TodoFiltersProps {
@@ -12,12 +13,12 @@ interface TodoFiltersProps {
 
 export const TodoFiltersComponent = memo(({ filters, onFiltersChange }: TodoFiltersProps) => {
   return (
-    <Card sx={{ mb: 3 }}>
+    <Card sx={{ mb: tokens.spacing.scale6 }}>
       <CardContent>
         <Typography gutterBottom variant="h6">
           Filters
         </Typography>
-        <Box display="flex" flexDirection={{ xs: 'column', md: 'row' }} gap={2}>
+        <Box display="flex" flexDirection={{ xs: 'column', md: 'row' }} sx={{ gap: tokens.spacing.scale4 }}>
           <Box flex={1}>
             <Selector
               fullWidth

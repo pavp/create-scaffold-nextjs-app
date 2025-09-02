@@ -13,6 +13,8 @@ import {
 import theme from '@/theme';
 import { CssBaseline, Dialog, ThemeProvider, Toast } from '@/ui';
 
+import '@/styles/design-tokens.css';
+
 type RootLayoutProps = {
   children: ReactNode;
   params: Promise<{ locale: string }>;

@@ -9,6 +9,7 @@ import {
   TodoList,
 } from '@/modules/todo/components';
 import { useDataSource } from '@/modules/todo/hooks';
+import tokens from '@/styles/tokens';
 import { Box, Typography } from '@/ui';
 
 import { useTodoManagementBusiness, useTodoManagementController } from './hooks';
@@ -41,7 +42,7 @@ export const TodoManagementView = () => {
   }
 
   return (
-    <Box p={3}>
+    <Box sx={{ p: tokens.spacing.scale6 }}>
       <Typography gutterBottom variant="h4">
         Todo Management
       </Typography>

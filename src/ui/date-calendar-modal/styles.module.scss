@@ -5,8 +5,8 @@
 
 .saveButton {
   width: 6.25rem;
-  padding: 0.5rem;
-  font-size: 1.25rem;
-  font-weight: 300;
-  border-radius: 24;
+  padding: var(--spacing-scale2);
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-light);
+  border-radius: 24px;
 }

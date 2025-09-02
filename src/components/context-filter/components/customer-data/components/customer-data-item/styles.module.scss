@@ -1,6 +1,6 @@
 .CustomerDataItemContainer {
   display: flex;
-  gap: 0.5rem;
+  gap: var(--spacing-scale2);
   align-items: center;
 }
 
@@ -13,8 +13,8 @@
   border-radius: 0.3125rem;
 
   svg {
-    width: 1.25rem;
-    color: colors.$whiteMain;
+    width: var(--spacing-scale5);
+    color: var(--color-primitive-white);
   }
 }
 
@@ -24,12 +24,12 @@
 }
 
 .CustomerDataItemLabel {
-  margin-top: 0.25rem;
-  font-size: commonStyles.$normalFontSize;
-  line-height: 0.5rem;
+  margin-top: var(--spacing-scale1);
+  font-size: var(--font-size-xs);
+  line-height: var(--spacing-scale2);
 }
 
 .CustomerDataItemValue {
-  font-size: commonStyles.$biggerFontSize;
+  font-size: var(--font-size-sm);
   font-weight: bold;
 }

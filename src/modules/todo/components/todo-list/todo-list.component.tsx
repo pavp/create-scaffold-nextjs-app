@@ -5,6 +5,7 @@ import { Refresh } from '@mui/icons-material';
 
 import { TodoItem } from '@/modules/todo/components/todo-item/todo-item.component';
 import type { Todo } from '@/modules/todo/todo.types';
+import tokens from '@/styles/tokens';
 import { Box, Button, Card, CardContent, CircularProgress, Typography } from '@/ui';
 
 interface TodoListProps {
@@ -21,7 +22,7 @@ export const TodoList = memo(
     return (
       <>
         {/* Actions */}
-        <Box alignItems="center" display="flex" justifyContent="space-between" mb={3}>
+        <Box alignItems="center" display="flex" justifyContent="space-between" sx={{ mb: tokens.spacing.scale6 }}>
           <Typography variant="h6">Todos ({todos.length})</Typography>
           <Button
             disabled={isLoading}
@@ -35,7 +36,7 @@ export const TodoList = memo(
 
         {/* Loading State */}
         {isLoading && (
-          <Box display="flex" justifyContent="center" p={4}>
+          <Box display="flex" justifyContent="center" sx={{ p: tokens.spacing.scale8 }}>
             <CircularProgress />
           </Box>
         )}
@@ -54,8 +55,8 @@ export const TodoList = memo(
             ) : (
               <Box
                 display="grid"
-                gap={2}
                 sx={{
+                  gap: tokens.spacing.scale4,
                   gridTemplateColumns: {
                     xs: '1fr',
                     sm: 'repeat(2, 1fr)',

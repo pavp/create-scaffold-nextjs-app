@@ -5,6 +5,7 @@ import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useTranslations } from 'next-intl';
 
+import tokens from '@/styles/tokens';
 import { Box, Button, Container, Grid, Link, TextField, Typography } from '@/ui';
 
 import { FormPersonalInfoInput, FormPersonalInfoInputSchema } from './about-view.types';
@@ -33,14 +34,14 @@ export const AboutView = () => {
     <Container maxWidth="largeScreen">
       <Box
         sx={{
-          my: 4,
+          my: tokens.spacing.scale8,
           display: 'flex',
           flexDirection: 'column',
           justifyContent: 'center',
           alignItems: 'center',
         }}
       >
-        <Typography component="h1" data-testid="about-page" sx={{ mb: 2 }} variant="h4">
+        <Typography component="h1" data-testid="about-page" sx={{ mb: tokens.spacing.scale4 }} variant="h4">
           Material UI - Next.js example in TypeScript
         </Typography>
         <Box sx={{ maxWidth: 'sm' }}>
@@ -91,7 +92,7 @@ export const AboutView = () => {
                 />
               </Grid>
             </Grid>
-            <Box sx={{ mt: 2 }}>
+            <Box sx={{ mt: tokens.spacing.scale4 }}>
               <Button disabled={!isValid} type="submit" variant="outlined">
                 Submit
               </Button>

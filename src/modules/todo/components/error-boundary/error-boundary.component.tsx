@@ -3,6 +3,7 @@
 import { memo, type MouseEvent, useCallback } from 'react';
 import { Refresh } from '@mui/icons-material';
 
+import tokens from '@/styles/tokens';
 import { Box, Button, Typography } from '@/ui';
 
 interface ErrorBoundaryProps {
@@ -22,14 +23,14 @@ export const ErrorBoundary = memo(({ error, onRetry }: ErrorBoundaryProps) => {
   if (!error) return null;
 
   return (
-    <Box p={3}>
+    <Box sx={{ p: tokens.spacing.scale6 }}>
       <Typography color="error" variant="h6">
         Error loading todos
       </Typography>
       <Typography color="error" variant="body2">
         {error.message}
       </Typography>
-      <Button startIcon={<Refresh />} sx={{ mt: 2 }} onClick={handleRetry}>
+      <Button startIcon={<Refresh />} sx={{ mt: tokens.spacing.scale4 }} onClick={handleRetry}>
         Retry
       </Button>
     </Box>

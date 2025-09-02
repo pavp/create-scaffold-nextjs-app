@@ -84,7 +84,7 @@ src/helpers/
 **Pattern**: `store-name.store.ts`
 
 ```
-src/stores/
+src/modules/[module-name]/stores/
 ├── todo.store.ts
 ├── user.store.ts
 └── settings.store.ts

@@ -9,33 +9,33 @@
   .dateCalendar {
     width: 100%;
     height: 100%;
-    background-color: colors.$whiteMain;
+    background-color: var(--color-primitive-white);
 
     :global(.MuiPickersCalendarHeader-label) {
-      font-size: 1.125rem;
+      font-size: var(--font-size-lg);
       font-weight: bold;
-      color: colors.$primaryBlue;
+      color: var(--color-semantic-brand-primary);
     }
 
     :global(.MuiDayCalendar-weekDayLabel) {
-      font-size: 1.125rem;
+      font-size: var(--font-size-lg);
       font-weight: bold;
     }
 
     :global(.MuiPickersDay-root) {
-      font-size: 1rem;
+      font-size: var(--font-size-base);
     }
 
     :global(.MuiDayCalendar-header) {
-      border-bottom: 0.5px solid colors.$greyLightBorder;
+      border-bottom: 0.5px solid var(--color-semantic-border-primary);
     }
 
     :global(.MuiPickersArrowSwitcher-previousIconButton) {
-      margin-right: 0.5rem;
+      margin-right: var(--spacing-scale2);
     }
 
     :global(.MuiPickersArrowSwitcher-nextIconButton) {
-      margin-left: 0.5rem;
+      margin-left: var(--spacing-scale2);
     }
 
     :global(.MuiPickersArrowSwitcher-spacer) {
@@ -56,7 +56,7 @@
 
   .smallDateCalendar {
     :global(.MuiPickersCalendarHeader-root) {
-      margin-top: 0.5rem;
+      margin-top: var(--spacing-scale2);
     }
   }
 }

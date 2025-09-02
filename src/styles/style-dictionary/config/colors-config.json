@@ -1,21 +1,24 @@
 {
   "source": ["src/styles/style-dictionary/tokens/colors.json"],
   "platforms": {
-    "scss": {
-      "buildPath": "src/styles/",
-      "files": [
-        {
-          "format": "custom-css-format-colors",
-          "destination": "colors.module.scss"
-        }
-      ]
-    },
     "js": {
-      "buildPath": "src/styles/",
+      "buildPath": "src/styles/colors/",
       "files": [
         {
           "format": "custom-js-format-colors",
           "destination": "colors.ts"
+        }
+      ]
+    },
+    "css": {
+      "buildPath": "src/styles/colors/",
+      "files": [
+        {
+          "format": "css-custom-properties",
+          "destination": "colors.css",
+          "options": {
+            "category": "colors"
+          }
         }
       ]
     }

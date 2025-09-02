@@ -174,6 +174,24 @@ async function main() {
     console.log(`${colors.yellow}📁 Copying template files...${colors.reset}`);
     copyDirectory(templateDir, targetDir, excludeDirs);
 
+    // Remove CLI-specific documentation files
+    const cliSpecificFiles = [
+      path.join(targetDir, 'docs', 'contributing.md'),
+      path.join(targetDir, 'bin'),
+      path.join(targetDir, 'test-cli-automated.js'),
+      path.join(targetDir, 'test-interactive.js'),
+    ];
+
+    cliSpecificFiles.forEach((filePath) => {
+      if (fs.existsSync(filePath)) {
+        if (fs.statSync(filePath).isDirectory()) {
+          fs.rmSync(filePath, { recursive: true, force: true });
+        } else {
+          fs.unlinkSync(filePath);
+        }
+      }
+    });
+
     // Define replacements
     const replacements = {
       'swat-frontend': packageName,

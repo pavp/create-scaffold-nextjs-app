@@ -4,7 +4,7 @@
   align-self: flex-end;
   justify-content: flex-end;
   padding: 0.625rem;
-  margin-top: 1rem;
+  margin-top: var(--spacing-scale4);
 
   ul {
     align-items: flex-end;

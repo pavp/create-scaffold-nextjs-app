@@ -41,20 +41,138 @@ yarn lint
 yarn lint:fix
 ```
 
+## 🤝 Development Guidelines
+
+### 🌿 Branch Naming (Required)
+
+Branch names are **automatically validated** by pre-push hooks and GitHub Actions:
+
+```bash
+# ✅ Required format: type/description
+feat/add-user-authentication      # New functionality
+fix/resolve-login-bug             # Bug fixes
+hotfix/critical-security-patch    # Urgent fixes
+chore/update-dependencies         # Maintenance
+docs/update-readme               # Documentation
+refactor/simplify-validation     # Code refactoring
+test/add-integration-tests       # Testing improvements
+perf/optimize-build-process      # Performance improvements
+```
+
+**Validation Rules:**
+
+- Format: `type/description` (lowercase only)
+- Types: `feat`, `fix`, `hotfix`, `chore`, `docs`, `refactor`, `test`, `perf`
+- Description: lowercase letters, numbers, and hyphens only
+- Duration: Keep branches short-lived (1-3 days max)
+
+**Validation enforced at:**
+
+- **Local**: Pre-push hook prevents push with invalid names
+- **GitHub Actions**: PR validation ensures branch name compliance
+- **Manual check**: Run `yarn validate:branch` anytime
+
+### 📝 Commit Format (Required)
+
+We use **Conventional Commits** validated by Husky:
+
+```bash
+# ✅ Correct format
+feat: add user authentication system
+fix: resolve login validation error
+docs: update API documentation
+chore: update dependencies to latest versions
+
+# With scope (optional - for better organization)
+feat(auth): add social login integration
+fix(ui): resolve button alignment issue
+docs(modules): update module documentation
+
+# Breaking changes
+feat!: redesign authentication flow
+feat(api)!: change user endpoint structure
+
+BREAKING CHANGE: User API now requires authentication token
+```
+
+**Commit types that trigger releases:**
+
+- `feat:` → **Minor release** (1.0.0 → 1.1.0)
+- `fix:`, `perf:` → **Patch release** (1.0.0 → 1.0.1)
+- `feat!:`, `BREAKING CHANGE:` → **Major release** (1.0.0 → 2.0.0)
+
+**Other types (no release):**
+
+- `docs:`, `chore:`, `test:`, `style:`, `refactor:`
+
+**Available scopes (optional):**
+
+- Clean Architecture: `modules`, `core`, `shared`, `types`
+- UI & Components: `ui`, `components`
+- API & Data: `api`, `actions`, `auth`
+- App Structure: `app`, `navigation`, `i18n`, `hooks`
+- Design Tokens: `styles`, `tokens`, `design-tokens`
+- Infrastructure: `config`, `build`, `test`, `lint`
+- Dependencies: `dependencies`, `deps`
+
+**Validation enforced at:**
+
+- **Automatic**: Husky validates format on every commit
+- **Manual**: `yarn validate:commits` or `yarn commit` (interactive guidance)
+
+### 🔄 Development Workflow
+
+1. **Create branch** with correct naming:
+
+   ```bash
+   git checkout -b feat/add-user-dashboard
+   ```
+
+2. **Make commits** using conventional format:
+
+   ```bash
+   git commit -m "feat(ui): add user dashboard component"
+   git commit -m "test(ui): add dashboard component tests"
+   ```
+
+3. **Push and create PR**:
+
+   ```bash
+   git push origin feat/add-user-dashboard
+   # Create PR on GitHub
+   ```
+
+4. **Automated validation** runs:
+   - ✅ Branch name validation
+   - ✅ Commit format validation
+   - ✅ Lint, test, and build checks
+
+5. **After merge**: Semantic release automatically creates new version if applicable
+
 ## 📦 Project Structure
 
 ```
 {{PACKAGE_NAME}}/
 ├── src/
-│   ├── components/
-│   ├── pages/
-│   ├── styles/
-│   └── utils/
-├── docs/
-├── public/
+│   ├── actions/                # Server actions
+│   ├── api/                    # Shared API configuration
+│   ├── app/                    # Next.js App Router
+│   ├── components/             # Reusable UI components
+│   ├── core/                   # Shared core functionality
+│   ├── hooks/                  # Custom React hooks
+│   ├── i18n/                   # Internationalization configuration
+│   ├── modules/                # Feature modules (Clean Architecture)
+│   ├── navigation/             # Navigation utilities
+│   ├── shared/                 # Shared utilities and types
+│   ├── styles/                 # Design tokens and styling
+│   ├── types/                  # Global TypeScript types
+│   └── ui/                     # Design system components
+├── docs/                       # Project documentation
+├── test/                       # Test utilities and configuration
+├── public/                     # Static assets
 ├── package.json
 ├── README.md
-├── next.config.js
+├── next.config.mjs
 ├── tsconfig.json
 └── .gitignore
 ```
@@ -121,6 +239,7 @@ Here you have some documentation about this project. Please, read it before star
 ### Getting Started
 
 - [Setup](docs/setup.md)
+- [Design Tokens](docs/design-tokens.md) - Comprehensive design tokens system with Style Dictionary
 - [Sign in](docs/signin.md)
 - [Testing](docs/testing.md)
 - [Internationalization](docs/intl.md)

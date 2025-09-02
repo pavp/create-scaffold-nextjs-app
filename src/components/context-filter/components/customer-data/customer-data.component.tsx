@@ -3,7 +3,7 @@ import BusinessCenterIcon from '@mui/icons-material/BusinessCenter';
 import PersonIcon from '@mui/icons-material/Person';
 import { useTranslations } from 'next-intl';
 
-import colors from '@/styles/colors';
+// Hardcoded colors since customerDataBlue/Pink don't exist in tokens
 import { Box } from '@/ui';
 
 import { CustomerDataItem } from './components/customer-data-item/customer-data-item.component';
@@ -20,18 +20,8 @@ const CustomerData = () => {
 
   return (
     <Box className={CustomerDataContainer} data-testid="customer-data-container">
-      <CustomerDataItem
-        Icon={PersonIcon}
-        bgcolor={colors.customerDataBlue}
-        label={t('customer')}
-        value={customerName}
-      />
-      <CustomerDataItem
-        Icon={BusinessCenterIcon}
-        bgcolor={colors.customerDataPink}
-        label={t('company')}
-        value={companyName}
-      />
+      <CustomerDataItem Icon={PersonIcon} bgcolor="#2563eb" label={t('customer')} value={customerName} />
+      <CustomerDataItem Icon={BusinessCenterIcon} bgcolor="#ec4899" label={t('company')} value={companyName} />
     </Box>
   );
 };

@@ -6,8 +6,8 @@
   flex-direction: column;
   max-width: 95vw;
   overflow: hidden;
-  background-color: colors.$whiteMain;
-  border-radius: 8px;
+  background-color: var(--color-primitive-white);
+  border-radius: var(--border-radius-md);
   transform: translate(-50%, -50%);
 }
 
@@ -16,7 +16,7 @@
   height: 95%;
 
   // Mobile
-  @media (min-width: breakpoints.$breakpoint-mobile-min) and (max-width: breakpoints.$breakpoint-mobile-max) {
+  @media (min-width: var(--breakpoint-mobile-min)) and (max-width: var(--breakpoint-mobile-max)) {
     width: 93%;
     height: 90%;
   }

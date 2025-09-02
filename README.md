@@ -98,15 +98,25 @@ node ./bin/create-nextlane-app.js
 ```
 my-awesome-project/
 ├── src/
-│   ├── components/
-│   ├── pages/
-│   ├── styles/
-│   └── utils/
-├── docs/
-├── public/
+│   ├── actions/                # Server actions
+│   ├── api/                    # Shared API configuration
+│   ├── app/                    # Next.js App Router
+│   ├── components/             # Reusable UI components
+│   ├── core/                   # Shared core functionality
+│   ├── hooks/                  # Custom React hooks
+│   ├── i18n/                   # Internationalization configuration
+│   ├── modules/                # Feature modules (Clean Architecture)
+│   ├── navigation/             # Navigation utilities
+│   ├── shared/                 # Shared utilities and types
+│   ├── styles/                 # Design tokens and styling
+│   ├── types/                  # Global TypeScript types
+│   └── ui/                     # Design system components
+├── docs/                       # Project documentation
+├── test/                       # Test utilities and configuration
+├── public/                     # Static assets
 ├── package.json
 ├── README.md
-├── next.config.js
+├── next.config.mjs
 ├── tsconfig.json
 └── .gitignore
 ```
@@ -148,16 +158,30 @@ This project uses **semantic release** for automated versioning based on convent
 
 We use **trunk-based development** with **semantic release** for automated versioning.
 
-### 🌿 Branch Types
+### 🌿 Branch Naming (Required)
+
+Branch names are **automatically validated** by pre-push hooks and GitHub Actions:
 
 ```bash
-# ✅ Short-lived branches (1-3 days max)
-feat/add-template-validation    # New functionality
-fix/cli-initialization-error       # Bug fixes
-hotfix/critical-security-patch     # Urgent fixes
-chore/update-dependencies          # Maintenance
-docs/improve-readme               # Documentation
+# ✅ Required format: type/description
+feat/add-template-validation      # New functionality
+fix/cli-initialization-error      # Bug fixes
+hotfix/critical-security-patch    # Urgent fixes
+chore/update-dependencies         # Maintenance
+docs/improve-readme              # Documentation
+refactor/simplify-validation     # Code refactoring
+test/add-integration-tests       # Testing improvements
+perf/optimize-build-process      # Performance improvements
 ```
+
+**Validation Rules:**
+
+- Format: `type/description` (lowercase only)
+- Types: `feat`, `fix`, `hotfix`, `chore`, `docs`, `refactor`, `test`, `perf`
+- Description: lowercase letters, numbers, and hyphens only
+- Duration: Keep branches short-lived (1-3 days max)
+
+**Manual validation:** `yarn validate:branch`
 
 ### 📝 Commit Format (Required)
 
@@ -172,12 +196,38 @@ chore: update eslint configuration       # No release
 perf: optimize template download          # Patch release
 refactor: improve validation logic        # No release
 
+# With scope (optional - for better organization)
+feat(cli): add interactive mode
+fix(design-tokens): resolve token generation
+docs(template): update project structure guide
+
 # Breaking changes (Major release 1.0.0 → 2.0.0)
 feat!: redesign CLI interface
-feat: change argument structure
+feat(cli)!: change argument structure
 
 BREAKING CHANGE: --name flag is now --project-name
 ```
+
+**Commit types and releases:**
+
+- `feat:` → **Minor release** (new features)
+- `fix:`, `perf:` → **Patch release** (bug fixes, performance)
+- `feat!:`, `BREAKING CHANGE:` → **Major release** (breaking changes)
+- `docs:`, `chore:`, `test:`, `style:`, `refactor:` → **No release**
+
+**Available scopes (optional):**
+
+- CLI: `cli`, `bin`, `scripts`
+- Project: `template`, `docs`, `test`
+- Infrastructure: `config`, `husky`, `lint`, `ci`, `build`
+- Dependencies: `dependencies`, `deps`
+- Design Tokens: `styles`, `tokens`, `design-tokens`
+- Architecture: `core`, `shared`, `types`
+
+**Validation commands:**
+
+- `yarn validate:commits` - Check commit format
+- `yarn commit` - Interactive commit with guidance
 
 ### 🔄 Development Workflow
 
@@ -275,6 +325,7 @@ Here you have some documentation about the generated project. Please, read it be
 ### Getting Started
 
 - [Setup](docs/setup.md)
+- [Design Tokens](docs/design-tokens.md) - Comprehensive design tokens system with Style Dictionary
 - [Testing](docs/testing.md)
 - [Internationalization](docs/intl.md)
 - [Rules and Conventions](docs/rules-conventions.md)

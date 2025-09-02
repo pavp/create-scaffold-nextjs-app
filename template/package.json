@@ -21,7 +21,8 @@
     "commit": "git-cz",
     "pre:commit": "lint-staged",
     "pre:push": "yarn test && yarn build",
-    "validate:commits": "commitlint --from origin/main --to HEAD --verbose"
+    "validate:commits": "commitlint --from origin/main --to HEAD --verbose",
+    "validate:branch": "node scripts/validate-branch-name.js"
   },
   "dependencies": {
     "@emotion/cache": "^11.14.0",

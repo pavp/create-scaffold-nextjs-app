@@ -35,7 +35,7 @@ export interface ParameterizedSelectorHook<T, P> {
 // selectors/use-completed-entities-selector/use-completed-entities-selector.hook.ts
 import { useMemo } from 'react';
 import { entityRepository } from '@/modules/entity/repositories/entity';
-import type { DataSource } from '@/shared/gateways/base-gateway.types';
+import type { DataSource } from '@/types/gateway.types';
 
 /**
  * Selector for completed entities
@@ -67,7 +67,7 @@ import { useMemo } from 'react';
 import { entityRepository } from '@/modules/entity/repositories/entity';
 import { filterEntities } from '@/modules/entity/repositories/entity/helpers/filter-entities';
 import type { EntityFilters } from '@/modules/entity/entity.types';
-import type { DataSource } from '@/shared/gateways/base-gateway.types';
+import type { DataSource } from '@/types/gateway.types';
 
 /**
  * Selector for filtered entities
@@ -102,7 +102,7 @@ export const useFilteredEntitiesSelector = (filters: EntityFilters, dataSource: 
 // selectors/use-entity-stats-selector/use-entity-stats-selector.hook.ts
 import { useMemo } from 'react';
 import { entityRepository } from '@/modules/entity/repositories/entity';
-import type { DataSource } from '@/shared/gateways/base-gateway.types';
+import type { DataSource } from '@/types/gateway.types';
 
 export interface EntityStats {
   total: number;
@@ -217,7 +217,7 @@ export const useEntityStatsSelector = (dataSource: DataSource = 'http') => {
 // selectors/use-entity-comparison-selector/use-entity-comparison-selector.hook.ts
 import { useMemo } from 'react';
 import { entityRepository } from '@/modules/entity/repositories/entity';
-import type { DataSource } from '@/shared/gateways/base-gateway.types';
+import type { DataSource } from '@/types/gateway.types';
 
 export interface EntityComparison {
   httpData: Entity[];
@@ -321,7 +321,7 @@ export const useEntityComparisonSelector = () => {
 // selectors/use-selected-entity-selector/use-selected-entity-selector.hook.ts
 import { useEntityStore } from '@/modules/entity/stores/entity.store';
 import { entityRepository } from '@/modules/entity/repositories/entity';
-import type { DataSource } from '@/shared/gateways/base-gateway.types';
+import type { DataSource } from '@/types/gateway.types';
 
 /**
  * Selector for the currently selected entity

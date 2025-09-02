@@ -3,6 +3,7 @@
 import { memo } from 'react';
 import { Settings } from '@mui/icons-material';
 
+import tokens from '@/styles/tokens';
 import type { DataSource } from '@/types/gateway.types';
 import { Box, Card, CardContent, Chip, IconButton, Selector, Typography } from '@/ui';
 
@@ -26,7 +27,7 @@ export const DataSourceSwitcher = memo(
     ];
 
     return (
-      <Card sx={{ mb: 2 }}>
+      <Card sx={{ mb: tokens.spacing.scale4 }}>
         <CardContent>
           <Box alignItems="center" display="flex" gap={2} justifyContent="space-between">
             <Box alignItems="center" display="flex" gap={2}>

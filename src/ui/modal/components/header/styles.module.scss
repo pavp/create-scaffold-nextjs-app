@@ -1,13 +1,13 @@
 .container {
   display: flex;
   align-items: center;
-  height: 4rem;
-  padding: 0 1rem;
-  background-color: colors.$greyLight;
+  height: var(--spacing-scale16);
+  padding: 0 var(--spacing-scale4);
+  background-color: var(--color-primitive-blue300);
 
   .titleText {
     flex-grow: 1;
-    padding-right: 1rem;
+    padding-right: var(--spacing-scale4);
     overflow: hidden;
     text-overflow: ellipsis;
     font-weight: bold;

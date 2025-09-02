@@ -3,6 +3,7 @@
 import { memo, useCallback } from 'react';
 
 import { ERROR_TYPES, ErrorType } from '@/modules/todo/todo.types';
+import tokens from '@/styles/tokens';
 import { Box, Button, Typography } from '@/ui';
 
 import { useErrorTestBusiness } from './hooks/use-error-test-business/use-error-test-business.hook';
@@ -29,7 +30,14 @@ export const ErrorTestButton = memo(({ className = '' }: ErrorTestButtonProps) =
   );
 
   return (
-    <Box bgcolor="grey.50" border={1} borderColor="grey.300" borderRadius={2} className={className} p={2}>
+    <Box
+      bgcolor="grey.50"
+      border={1}
+      borderColor="grey.300"
+      borderRadius={tokens.borders.borderRadiusMd}
+      className={className}
+      sx={{ p: tokens.spacing.scale4 }}
+    >
       <Typography gutterBottom variant="h6">
         Test Error Handling
       </Typography>
@@ -37,7 +45,7 @@ export const ErrorTestButton = memo(({ className = '' }: ErrorTestButtonProps) =
         Click any button to test different error types and see toast notifications:
       </Typography>
 
-      <Box display="flex" flexWrap="wrap" gap={1} mt={2}>
+      <Box display="flex" flexWrap="wrap" sx={{ gap: tokens.spacing.scale2, mt: tokens.spacing.scale4 }}>
         {ERROR_TYPES.map(({ type, label, color }) => (
           <Button
             key={type}
@@ -46,7 +54,7 @@ export const ErrorTestButton = memo(({ className = '' }: ErrorTestButtonProps) =
             size="small"
             sx={{
               minWidth: 'auto',
-              fontSize: '0.75rem',
+              fontSize: tokens.typography.fontSizeXs,
               opacity: controller.selectedErrorType === type && business.isLoading ? 0.7 : 1,
             }}
             variant="contained"
@@ -57,7 +65,7 @@ export const ErrorTestButton = memo(({ className = '' }: ErrorTestButtonProps) =
         ))}
       </Box>
 
-      <Typography color="text.secondary" display="block" mt={1} variant="caption">
+      <Typography color="text.secondary" display="block" sx={{ mt: tokens.spacing.scale2 }} variant="caption">
         <strong>Note:</strong> All errors will show toast notifications. Unauthorized errors will also redirect to
         login.
       </Typography>

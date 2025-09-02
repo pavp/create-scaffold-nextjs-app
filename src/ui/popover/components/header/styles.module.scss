@@ -1,14 +1,14 @@
 .container {
   display: flex;
   align-items: center;
-  height: 4rem;
-  padding: 0 1rem;
-  background-color: colors.$greyLight;
+  height: var(--spacing-scale16);
+  padding: 0 var(--spacing-scale4);
+  background-color: var(--color-primitive-blue300);
 
   .titleText {
-    margin-right: 0.25rem;
-    font-size: 1.125rem;
-    color: colors.$textColor;
+    margin-right: var(--spacing-scale1);
+    font-size: var(--font-size-lg);
+    color: var(--color-semantic-text-primary);
   }
 
   .boldText {
@@ -24,16 +24,16 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 1.5rem;
-    height: 1.5rem;
-    margin-right: 0.5rem;
-    background-color: colors.$textColor;
+    width: var(--spacing-scale6);
+    height: var(--spacing-scale6);
+    margin-right: var(--spacing-scale2);
+    background-color: var(--color-semantic-text-primary);
     border-radius: 50%;
 
     .translateIcon {
-      width: 1rem;
-      height: 1rem;
-      color: colors.$whiteMain;
+      width: var(--spacing-scale4);
+      height: var(--spacing-scale4);
+      color: var(--color-primitive-white);
       background-color: transparent;
     }
   }

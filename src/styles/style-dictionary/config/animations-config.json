@@ -1,0 +1,29 @@
+{
+  "source": ["src/styles/style-dictionary/tokens/animations.json"],
+  "platforms": {
+    "css": {
+      "buildPath": "src/styles/animations/",
+      "files": [
+        {
+          "format": "css-custom-properties",
+          "destination": "animations.css",
+          "options": {
+            "category": "animations"
+          }
+        }
+      ]
+    },
+    "js": {
+      "buildPath": "src/styles/animations/",
+      "files": [
+        {
+          "format": "custom-js-format-generic",
+          "destination": "animations.ts",
+          "options": {
+            "exportName": "animations"
+          }
+        }
+      ]
+    }
+  }
+}

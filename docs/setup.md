@@ -212,11 +212,19 @@ This project follows **Clean Architecture** principles:
 
 ```
 src/
-├── modules/           # Feature modules (Clean Architecture)
+├── actions/           # Server actions
+├── api/               # Shared API configuration
+├── app/               # Next.js App Router
+├── components/        # Reusable UI components
 ├── core/              # Shared core functionality
-├── ui/                # Design system components
+├── hooks/             # Custom React hooks
+├── i18n/              # Internationalization configuration
+├── modules/           # Feature modules (Clean Architecture)
+├── navigation/        # Navigation utilities
 ├── shared/            # Shared utilities and types
-└── lib/               # External library integrations
+├── styles/            # Design tokens and styling
+├── types/             # Global TypeScript types
+└── ui/                # Design system components
 ```
 
 ### Key Patterns

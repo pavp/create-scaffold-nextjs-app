@@ -4,7 +4,7 @@ import { memo, useCallback } from 'react';
 import { Controller, FieldValues } from 'react-hook-form';
 import { FormControl, FormControlLabel, ToggleButton as MuiToggleButton } from '@mui/material';
 
-import colors from '@/styles/colors';
+import tokens from '@/styles/tokens';
 
 import { ToggleButtonProps, ToggleButtonRenderProps } from './toggle-button.types';
 
@@ -19,8 +19,8 @@ const ToggleButton = <T extends FieldValues>({
   children,
   height = 44,
   width = 58,
-  selectedBackgroundColor = colors.primary,
-  unselectedBackgroundColor = colors.whiteMain,
+  selectedBackgroundColor = tokens.colors.primitiveBlue600,
+  unselectedBackgroundColor = tokens.colors.primitiveWhite,
   ...rest
 }: ToggleButtonProps<T>) => {
   const handleChange = useCallback(

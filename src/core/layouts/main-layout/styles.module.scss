@@ -1,14 +1,14 @@
 .MainLayoutContainer {
   display: flex;
   height: 100vh;
-  background-color: colors.$greyBackground;
+  background-color: var(--color-semantic-background-surface);
 }
 
 .MainLayoutRightContent {
   display: flex;
   flex-grow: 1;
   flex-direction: column;
-  margin: 1rem 1.5rem;
+  margin: var(--spacing-scale4) var(--spacing-scale6);
 }
 
 .MainLayoutHeaderContainer {

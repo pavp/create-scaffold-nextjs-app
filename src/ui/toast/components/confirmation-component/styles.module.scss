@@ -1,27 +1,27 @@
 .confirmDeleteContainer {
   display: flex;
   flex-direction: row;
-  gap: 1rem;
+  gap: var(--spacing-scale4);
   align-items: center;
 
   .confirmDeleteMessage {
-    font-size: commonStyles.$normalFontSize;
-    color: colors.$whiteMain;
+    font-size: var(--font-size-xs);
+    color: var(--color-primitive-white);
   }
 
   .confirmDeleteButton {
     display: -webkit-box;
-    height: 1.5rem;
+    height: var(--spacing-scale6);
     overflow: hidden;
     -webkit-line-clamp: 3;
     line-clamp: 3;
-    font-size: commonStyles.$normalFontSize;
-    color: colors.$whiteMain;
-    border: 0.0625rem solid colors.$whiteMain;
+    font-size: var(--font-size-xs);
+    color: var(--color-primitive-white);
+    border: 0.0625rem solid var(--color-primitive-white);
     -webkit-box-orient: vertical;
 
     &:hover {
-      background-color: colors.$dangerHover;
+      background-color: var(--color-semantic-feedback-error-hover);
     }
   }
 }

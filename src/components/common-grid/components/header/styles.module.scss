@@ -2,8 +2,8 @@
   display: flex;
   flex-direction: column;
   width: 100%;
-  padding-bottom: 1rem;
-  border-bottom: 1px solid colors.$greyBackground;
+  padding-bottom: var(--spacing-scale4);
+  border-bottom: 1px solid var(--color-semantic-background-surface);
 
   &.noChildrenContainer {
     padding-bottom: 0;
@@ -21,7 +21,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-top: 0.5rem;
+    margin-top: var(--spacing-scale2);
 
     .iconsContainer {
       margin-left: auto;

@@ -1,6 +1,6 @@
 .container {
   flex: 1;
   align-self: center;
-  padding: 1rem;
+  padding: var(--spacing-scale4);
   overflow: auto;
 }

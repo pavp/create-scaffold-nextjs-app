@@ -1,9 +1,9 @@
 .container {
   display: flex;
-  gap: 1rem;
+  gap: var(--spacing-scale4);
   justify-content: flex-end;
   width: 100%;
-  min-height: 4rem;
-  padding: 1rem;
-  border-top: 1px solid colors.$greyBackground;
+  min-height: var(--spacing-scale16);
+  padding: var(--spacing-scale4);
+  border-top: 1px solid var(--color-semantic-background-surface);
 }

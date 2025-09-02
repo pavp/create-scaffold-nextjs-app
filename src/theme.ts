@@ -2,8 +2,7 @@
 
 import { Roboto } from 'next/font/google';
 
-import breakpoints from '@/styles/breakpoints';
-import colors from '@/styles/colors';
+import tokens from '@/styles/tokens';
 
 import { createTheme } from './ui';
 
@@ -33,13 +32,13 @@ declare module '@mui/material/styles' {
 let theme = createTheme({
   breakpoints: {
     values: {
-      minMobile: parseInt(breakpoints.mobileMin.split('px')[0]),
-      maxMobile: parseInt(breakpoints.mobileMax.split('px')[0]),
-      minTablet: parseInt(breakpoints.tabletMin.split('px')[0]),
-      maxTablet: parseInt(breakpoints.tabletMax.split('px')[0]),
-      minDesktop: parseInt(breakpoints.desktopMin.split('px')[0]),
-      largeScreen: parseInt(breakpoints.desktopLargeScreen.split('px')[0]),
-      xlargeScreen: parseInt(breakpoints.desktopXLargeScreen.split('px')[0]),
+      minMobile: parseInt(tokens.breakpoints.mobileMin.split('px')[0]),
+      maxMobile: parseInt(tokens.breakpoints.mobileMax.split('px')[0]),
+      minTablet: parseInt(tokens.breakpoints.tabletMin.split('px')[0]),
+      maxTablet: parseInt(tokens.breakpoints.tabletMax.split('px')[0]),
+      minDesktop: parseInt(tokens.breakpoints.desktopMin.split('px')[0]),
+      largeScreen: parseInt(tokens.breakpoints.desktopLargeScreen.split('px')[0]),
+      xlargeScreen: parseInt(tokens.breakpoints.desktopXLargeScreen.split('px')[0]),
     },
   },
 });
@@ -50,7 +49,7 @@ theme = createTheme({
     MuiOutlinedInput: {
       styleOverrides: {
         input: {
-          color: colors.opacityBlack,
+          color: tokens.colors.semanticBackgroundOverlay,
           '&::placeholder': {
             opacity: 1,
           },
@@ -70,12 +69,12 @@ theme = createTheme({
           },
         },
         root: {
-          borderRadius: 30,
+          borderRadius: parseInt(tokens.borders.borderRadiusFull.split('px')[0]),
           height: '2.8125rem',
           width: 'fit-content',
-          fontWeight: 400,
-          fontSize: '18px',
-          lineHeight: '18px',
+          fontWeight: tokens.typography.fontWeightNormal,
+          fontSize: tokens.typography.fontSizeLg,
+          lineHeight: tokens.typography.fontSizeLg,
           [theme.breakpoints.between('minMobile', 'maxMobile')]: {
             width: 'fit-content',
           },
@@ -84,11 +83,11 @@ theme = createTheme({
             height: '2.125rem',
           },
           '&.Mui-disabled': {
-            background: colors.primaryDisable,
-            borderColor: colors.primaryDisable,
+            background: tokens.colors.semanticComponentButtonDisabled,
+            borderColor: tokens.colors.semanticComponentButtonDisabled,
           },
           '&.MuiButtonBase-root-MuiButton-root': {
-            color: colors.primary,
+            color: tokens.colors.semanticBrandPrimary,
           },
         },
       },
@@ -108,10 +107,10 @@ theme = createTheme({
       styleOverrides: {
         root: {
           '&.Mui-checked': {
-            color: colors.primary,
+            color: tokens.colors.semanticBrandPrimary,
           },
           '&.Mui-disabled': {
-            color: colors.primaryDisable,
+            color: tokens.colors.semanticComponentButtonDisabled,
           },
         },
       },
@@ -139,10 +138,10 @@ theme = createTheme({
                 height: 'auto',
               },
               input: {
-                color: colors.textColor,
-                fontSize: '16px',
+                color: tokens.colors.semanticTextPrimary,
+                fontSize: tokens.typography.fontSizeBase,
                 '&::placeholder': {
-                  color: colors.greyMainLight,
+                  color: tokens.colors.semanticTextSecondary,
                 },
               },
             },
@@ -207,7 +206,7 @@ theme = createTheme({
           alignItems: 'flex-start',
           '&.Mui-required .MuiOutlinedInput-notchedOutline': {
             border: '0.125rem solid',
-            borderColor: colors.mandatoryColor,
+            borderColor: tokens.colors.semanticComponentMandatory,
           },
           '.MuiFormControlLabel-asterisk': {
             display: 'none',
@@ -240,20 +239,20 @@ theme = createTheme({
               transform: 'translateX(16px)',
               color: '#fff',
               '& + .MuiSwitch-track': {
-                backgroundColor: colors.primary,
+                backgroundColor: tokens.colors.semanticBrandPrimary,
                 opacity: 1,
                 border: 0,
               },
               '&.Mui-disabled + .MuiSwitch-track': {
-                backgroundColor: colors.primaryDisable,
+                backgroundColor: tokens.colors.semanticComponentButtonDisabled,
               },
             },
             '&.Mui-focusVisible .MuiSwitch-thumb': {
-              color: colors.primary,
+              color: tokens.colors.semanticBrandPrimary,
               border: '6px solid #fff',
             },
             '&.Mui-disabled .MuiSwitch-thumb': {
-              color: colors.primaryDisable,
+              color: tokens.colors.semanticComponentButtonDisabled,
             },
             '&.Mui-disabled + .MuiSwitch-track': {
               opacity: 0.7,
@@ -266,7 +265,7 @@ theme = createTheme({
           },
           '& .MuiSwitch-track': {
             borderRadius: 26 / 2,
-            backgroundColor: colors.greyMainTint,
+            backgroundColor: tokens.colors.semanticBorderSecondary,
             opacity: 1,
             transition: {
               'background-color': {
@@ -289,7 +288,7 @@ theme = createTheme({
         icon: {
           marginLeft: 'auto',
           svg: {
-            color: colors.whiteMain,
+            color: tokens.colors.primitiveWhite,
             width: '1.25rem',
             height: '1.25rem',
           },
@@ -302,22 +301,22 @@ theme = createTheme({
         },
         standardError: {
           borderRadius: 'unset',
-          background: colors.danger,
+          background: tokens.colors.semanticFeedbackError,
           color: 'white',
         },
         standardSuccess: {
           borderRadius: 'unset',
-          background: colors.success,
+          background: tokens.colors.semanticFeedbackSuccess,
           color: 'white',
         },
         standardInfo: {
           borderRadius: 'unset',
-          background: colors.info,
+          background: tokens.colors.semanticFeedbackInfo,
           color: 'white',
         },
         standardWarning: {
           borderRadius: 'unset',
-          background: colors.warning,
+          background: tokens.colors.semanticFeedbackWarning,
           color: 'white',
         },
       },
@@ -325,7 +324,7 @@ theme = createTheme({
     MuiDivider: {
       styleOverrides: {
         root: {
-          backgroundColor: colors.dividerGrey,
+          backgroundColor: tokens.colors.semanticBorderDivider,
         },
       },
     },
@@ -334,12 +333,12 @@ theme = createTheme({
         root: {
           '&.warningDialog': {
             '.MuiDialogTitle-root': {
-              backgroundColor: colors.dialogWarning,
+              backgroundColor: tokens.colors.semanticDialogWarning,
             },
           },
           '&.errorDialog': {
             '.MuiDialogTitle-root': {
-              backgroundColor: colors.dialogError,
+              backgroundColor: tokens.colors.semanticDialogError,
             },
           },
           '.MuiDialog-paper': {
@@ -349,9 +348,9 @@ theme = createTheme({
             display: 'flex',
             alignItems: 'center',
             gap: '0.5rem',
-            color: colors.whiteMain,
-            fontSize: '18px',
-            fontWeight: '700',
+            color: tokens.colors.primitiveWhite,
+            fontSize: tokens.typography.fontSizeLg,
+            fontWeight: tokens.typography.fontWeightBold,
             svg: {
               width: '1.5rem',
               height: '1.5rem',
@@ -393,21 +392,21 @@ theme = createTheme({
   },
   typography: {
     fontFamily: roboto.style.fontFamily,
-    fontWeightMedium: 500,
-    fontWeightBold: 700,
+    fontWeightMedium: tokens.typography.fontWeightMedium,
+    fontWeightBold: tokens.typography.fontWeightBold,
     button: {
       textTransform: 'capitalize',
-      fontSize: 16,
+      fontSize: tokens.typography.fontSizeBase,
     },
   },
   palette: {
     primary: {
-      main: '#2a165b',
-      contrastText: '#ffffff',
+      main: tokens.colors.semanticBrandPrimary,
+      contrastText: tokens.colors.primitiveWhite,
     },
     secondary: {
-      main: '#000000',
-      contrastText: '#fff',
+      main: tokens.colors.primitiveBlack,
+      contrastText: tokens.colors.primitiveWhite,
     },
     surface: {
       main: '#F8F8F8',
@@ -427,17 +426,17 @@ theme = createTheme({
       dark: '#353915',
     },
     whiteColor: {
-      main: '#FFFFFF',
+      main: tokens.colors.primitiveWhite,
     },
     blueColor: {
       main: '#2165BD',
       dark: '#0B2C5F',
       darker: '#0B2C5F',
-      contrastText: '#fff',
+      contrastText: tokens.colors.primitiveWhite,
     },
   },
   shape: {
-    borderRadius: 5,
+    borderRadius: parseInt(tokens.borders.borderRadiusBase.split('px')[0]),
   },
 });
 

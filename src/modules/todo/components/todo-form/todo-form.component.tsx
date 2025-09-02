@@ -4,6 +4,7 @@ import { memo, useState } from 'react';
 import { Add } from '@mui/icons-material';
 
 import type { CreateTodoRequest, TodoPriority } from '@/modules/todo/todo.types';
+import tokens from '@/styles/tokens';
 import { Box, Button, Card, CardContent, CircularProgress, Selector, TextField, Typography } from '@/ui';
 
 interface TodoFormProps {
@@ -25,12 +26,12 @@ export const TodoForm = memo(({ isCreating, onSubmit }: TodoFormProps) => {
   };
 
   return (
-    <Card sx={{ mb: 3 }}>
+    <Card sx={{ mb: tokens.spacing.scale6 }}>
       <CardContent>
         <Typography gutterBottom variant="h6">
           Add New Todo
         </Typography>
-        <Box display="flex" flexDirection={{ xs: 'column', sm: 'row' }} gap={2}>
+        <Box display="flex" flexDirection={{ xs: 'column', sm: 'row' }} sx={{ gap: tokens.spacing.scale4 }}>
           <Box flex={3}>
             <TextField
               fullWidth
@@ -67,7 +68,7 @@ export const TodoForm = memo(({ isCreating, onSubmit }: TodoFormProps) => {
             </Button>
           </Box>
         </Box>
-        <Box mt={2}>
+        <Box sx={{ mt: tokens.spacing.scale4 }}>
           <TextField
             fullWidth
             multiline

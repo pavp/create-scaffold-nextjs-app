@@ -39,17 +39,18 @@ The project follows **Clean Architecture** principles with clear separation of c
 │   │   ├── components/         ## Shared core components
 │   │   ├── hooks/              ## Shared hooks
 │   │   ├── helpers/            ## Utility functions
-│   │   └── layouts/            ## Layout components
-│   ├── lib/                    ## External library integrations
-│   │   ├── react-query/        ## React Query helpers and configuration
-│   │   └── zustand/            ## Zustand store utilities
+│   │   ├── layouts/            ## Layout components
+│   │   └── lib/                ## External library integrations
+│   │       ├── react-query/    ## React Query helpers and configuration
+│   │       └── zustand/        ## Zustand store utilities
+│   ├── hooks/                  ## Custom React hooks
+│   ├── i18n/                   ## Internationalization configuration
+│   ├── navigation/             ## Navigation utilities
 │   ├── shared/                 ## Shared utilities and types
 │   │   ├── api/                ## Shared API utilities
 │   │   ├── gateways/           ## Base gateway types
 │   │   └── types/              ## Shared types
-│   ├── store/                  ## Global store configuration
-│   │   ├── index.ts
-│   │   └── store.ts
+│   ├── styles/                 ## Design tokens and styling
 │   ├── types/                  ## Global TypeScript types
 │   │   └── index.ts
 │   └── ui/                     ## Design system components
@@ -101,9 +102,9 @@ Each module follows Clean Architecture patterns and represents a business domain
 
 - **`core/`**: Shared functionality that can be reused across projects. Contains components, hooks, and utilities without business logic dependencies.
 
-- **`lib/`**: External library integrations and wrappers:
-  - **`react-query/`**: Query client configuration, prefetch helpers, type definitions
-  - **`zustand/`**: Store creation utilities with middleware support
+- **`hooks/`**: Custom React hooks for shared functionality across the application.
+- **`i18n/`**: Internationalization configuration and locale management.
+- **`navigation/`**: Navigation utilities and routing helpers.
 
 - **`shared/`**: Project-specific shared utilities:
   - **`api/`**: HTTP client and API utilities
@@ -178,7 +179,7 @@ import type { Todo, CreateTodoRequest } from '@/modules/todo';
 import { useApiClient, formatDate } from '@/core';
 
 // Shared types and utilities
-import type { DataSource } from '@/shared/gateways/base-gateway.types';
+import type { DataSource } from '@/types/gateway.types';
 import { httpClient } from '@/shared/api/http-client';
 
 // Test utilities
@@ -198,7 +199,7 @@ The following aliases are configured in `tsconfig.json`:
       "@/modules/*": ["./src/modules/*"],
       "@/core/*": ["./src/core/*"],
       "@/shared/*": ["./src/shared/*"],
-      "@/lib/*": ["./src/lib/*"],
+      "@/core/*": ["./src/core/*"],
       "@/ui/*": ["./src/ui/*"],
       "@test/*": ["./test/*"]
     }

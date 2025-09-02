@@ -4,13 +4,7 @@ const withNextIntl = createNextIntlPlugin();
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  sassOptions: {
-    prependData: `
-      @use "@/styles/colors.module.scss";
-      @use "@/styles/commonStyles.module.scss";
-      @use "@/styles/breakpoints.module.scss";
-    `,
-  },
+  sassOptions: {},
   reactStrictMode: false,
   webpack: (config) => {
     /* On `node-fetch` v2, that `supabase-js` uses,

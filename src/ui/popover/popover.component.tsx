@@ -1,6 +1,8 @@
 import React, { PropsWithChildren, ReactNode } from 'react';
 import { Box, Popover as PopoverMui } from '@mui/material';
 
+import tokens from '@/styles/tokens';
+
 import { HeaderProps } from './components/header/header.component';
 import { Content, Footer, Header } from './components';
 
@@ -25,12 +27,12 @@ const Popover = ({ anchorEl, children, id, indicator, open, anchorOrigin }: Popo
             width: 0,
             height: 0,
             position: 'fixed',
-            borderRight: '15px solid #FFFFFF',
+            borderRight: `15px solid ${tokens.colors.primitiveWhite}`,
             borderBottom: '15px solid transparent',
             borderTop: '15px solid transparent',
             top: anchorEl ? anchorEl.getBoundingClientRect().top + anchorEl.getBoundingClientRect().height / 2 - 15 : 0,
             left: anchorEl ? anchorEl.getBoundingClientRect().right - 15 : 0,
-            zIndex: 1301,
+            zIndex: 1301, // In mui the modal has 1300 z-index, so in order to show the indicator we have to set it to 1301 (check this link https://mui.com/components/modal/#css)
           }}
         />
       )}

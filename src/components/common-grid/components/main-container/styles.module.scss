@@ -5,9 +5,9 @@
   align-items: center;
   justify-content: flex-start;
   width: 100%;
-  padding-right: 1rem;
-  padding-left: 1rem;
-  margin-top: 1rem;
-  margin-bottom: 1rem;
+  padding-right: var(--spacing-scale4);
+  padding-left: var(--spacing-scale4);
+  margin-top: var(--spacing-scale4);
+  margin-bottom: var(--spacing-scale4);
   overflow: auto;
 }

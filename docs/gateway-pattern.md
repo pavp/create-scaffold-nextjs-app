@@ -286,7 +286,7 @@ export const createMockEntityGateway = (): EntityGateway => {
 
 ```typescript
 // gateways/index.ts
-import type { DataSource } from '@/shared/gateways/base-gateway.types';
+import type { DataSource } from '@/types/gateway.types';
 import { createHttpEntityGateway } from './http-gateway/http-gateway';
 import { createLocalStorageEntityGateway } from './local-storage-gateway/local-storage-gateway';
 import { createMockEntityGateway } from './mock-gateway/mock-gateway';

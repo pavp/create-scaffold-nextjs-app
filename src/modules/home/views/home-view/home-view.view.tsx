@@ -10,7 +10,7 @@ import { CommonGrid } from '@/components/common-grid/common-grid.component';
 import { NoSearchResults } from '@/components/no-search-results/no-search-results.component';
 import { createAutocompleteOptionBuilder } from '@/core/builders';
 import { MainLayout } from '@/core/layouts';
-import colors from '@/styles/colors';
+import tokens from '@/styles/tokens';
 import {
   AutocompleteSelector,
   Badge,
@@ -61,14 +61,14 @@ export const HomeView = () => {
             <Container data-testid="main-page" maxWidth="largeScreen">
               <Box
                 sx={{
-                  my: 4,
+                  my: tokens.spacing.scale8,
                   display: 'flex',
                   flexDirection: 'column',
                   justifyContent: 'center',
                   alignItems: 'center',
                 }}
               >
-                <Typography component="h1" sx={{ mb: 2 }} variant="h4">
+                <Typography component="h1" sx={{ mb: tokens.spacing.scale4 }} variant="h4">
                   Material UI - Next.js App Router example in TypeScript
                 </Typography>
                 <Link href="/about">{t('appointmentLabel')}</Link>
@@ -92,10 +92,10 @@ export const HomeView = () => {
                   Show Dialog
                 </Button>
                 <NoSearchResults />
-                <Box sx={{ marginBottom: 2 }}>
+                <Box sx={{ marginBottom: tokens.spacing.scale4 }}>
                   <Pagination page={page} totalPages={4} onChangePage={onChangePage} />
                 </Box>
-                <Box sx={{ marginBottom: 2 }}>
+                <Box sx={{ marginBottom: tokens.spacing.scale4 }}>
                   <Selector
                     handleOnChange={(value) => console.log(value)}
                     list={[{ key: '1', value: '1', label: 'Option 1' }]}
@@ -103,15 +103,17 @@ export const HomeView = () => {
                     placeholder="Select"
                   />
                 </Box>
-                <Box sx={{ marginBottom: 2 }}>
+                <Box sx={{ marginBottom: tokens.spacing.scale4 }}>
                   <Switch label="Right" labelLeft="Left" onChange={(checked) => console.log(checked)} />
                 </Box>
-                <Box sx={{ marginBottom: 2, width: '50%' }}>
+                <Box sx={{ marginBottom: tokens.spacing.scale4, width: '50%' }}>
                   <AutocompleteSelector
-                    backgroundColor={colors.whiteMain}
+                    backgroundColor={tokens.colors.primitiveWhite}
                     options={optionsAutoComplete}
                     placeholder="Search"
-                    startAdornment={<SearchIcon style={{ fontSize: '1.5rem', color: colors.greyMainLight }} />}
+                    startAdornment={
+                      <SearchIcon style={{ fontSize: '1.5rem', color: tokens.colors.primitiveGray500 }} />
+                    }
                     onChange={(value) => console.log(value)}
                     onChangeInput={(value) => console.log(value)}
                   />
@@ -119,7 +121,7 @@ export const HomeView = () => {
 
                 <Box
                   sx={{
-                    marginBottom: 2,
+                    marginBottom: tokens.spacing.scale4,
                     width: '50px',
                   }}
                 >
@@ -138,13 +140,13 @@ export const HomeView = () => {
                     }}
                     variant="dot"
                   >
-                    <Box sx={{ width: '50px', height: '50px', backgroundColor: colors.blackMain }} />
+                    <Box sx={{ width: '50px', height: '50px', backgroundColor: tokens.colors.primitiveGray900 }} />
                   </Badge>
                 </Box>
 
                 <Box
                   sx={{
-                    marginBottom: 2,
+                    marginBottom: tokens.spacing.scale4,
                     width: '50%',
                   }}
                 >
@@ -160,7 +162,7 @@ export const HomeView = () => {
 
                 <Box
                   sx={{
-                    marginBottom: 2,
+                    marginBottom: tokens.spacing.scale4,
                     width: '50%',
                   }}
                 >
@@ -169,7 +171,7 @@ export const HomeView = () => {
 
                 <Box
                   sx={{
-                    marginBottom: 2,
+                    marginBottom: tokens.spacing.scale4,
                     width: '20%',
                   }}
                 >

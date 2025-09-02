@@ -66,7 +66,7 @@ export interface EntityMutationsRepository {
 
 ```typescript
 // entity.query-options.ts
-import { createPrefetchableQuery } from '@/lib/react-query';
+import { createPrefetchableQuery } from '@/core/lib/react-query';
 import { createEntityGateway } from './gateways';
 
 const getEntitiesQueryOptions = (filters?: EntityFilters, dataSource: DataSource = 'http') => ({
@@ -96,7 +96,7 @@ export const entityQueryOptions = {
 ```typescript
 // entity.repository.queries.ts
 import { useQuery } from '@tanstack/react-query';
-import { createCancellationHelpers, createPrefetchHelpers } from '@/lib/react-query';
+import { createCancellationHelpers, createPrefetchHelpers } from '@/core/lib/react-query';
 import { entityQueryOptions } from './entity.query-options';
 
 const createEntityQueriesRepository = (): EntityQueriesRepository => {

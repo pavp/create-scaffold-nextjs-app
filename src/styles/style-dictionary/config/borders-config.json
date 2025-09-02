@@ -1,0 +1,29 @@
+{
+  "source": ["src/styles/style-dictionary/tokens/borders.json"],
+  "platforms": {
+    "css": {
+      "buildPath": "src/styles/borders/",
+      "files": [
+        {
+          "format": "css-custom-properties",
+          "destination": "borders.css",
+          "options": {
+            "category": "borders"
+          }
+        }
+      ]
+    },
+    "js": {
+      "buildPath": "src/styles/borders/",
+      "files": [
+        {
+          "format": "custom-js-format-generic",
+          "destination": "borders.ts",
+          "options": {
+            "exportName": "borders"
+          }
+        }
+      ]
+    }
+  }
+}

@@ -4,23 +4,41 @@
 
 This project uses **trunk-based development** with collaborative workflow.
 
-## 🌿 Branch Types
+## 🌿 Branch Naming (Required & Validated)
+
+Branch names are **automatically validated** by pre-push hooks and GitHub Actions:
 
 ```bash
-# ✅ Use these (short branches, 1-3 days max)
-feature/add-new-component
-fix/validation-error
-hotfix/critical-security-patch
-chore/update-dependencies
-docs/improve-readme
+# ✅ Required format: type/description (lowercase only)
+feat/add-new-component           # New functionality
+fix/validation-error             # Bug fixes
+hotfix/critical-security-patch   # Urgent fixes
+chore/update-dependencies        # Maintenance
+docs/improve-readme             # Documentation
+refactor/simplify-validation    # Code refactoring
+test/add-integration-tests      # Testing improvements
+perf/optimize-build-process     # Performance improvements
 ```
+
+**Validation enforced at:**
+
+- **Local**: Pre-push hook prevents push with invalid names
+- **CI**: GitHub Actions validates PR branch names
+- **Manual**: Run `yarn validate:branch` to check current branch
+
+**Rules:**
+
+- Format: `type/description`
+- Types: `feat`, `fix`, `hotfix`, `chore`, `docs`, `refactor`, `test`, `perf`
+- Description: lowercase letters, numbers, and hyphens only
+- Duration: Keep short-lived (1-3 days max)
 
 ## 📝 Commit Format (Required)
 
 We use **Conventional Commits** validated by Husky:
 
 ```bash
-# ✅ Correct
+# ✅ Correct format
 feat: add TypeScript template support
 fix: resolve CLI initialization error
 docs: update installation guide
@@ -30,11 +48,28 @@ refactor: improve validation logic
 test: add CLI integration tests
 hotfix: patch critical security vulnerability
 
-# ❌ Incorrect (Husky will reject it)
-add new feature
-fix bug
-update docs
+# With scope (optional)
+feat(cli): add interactive template selection
+fix(validation): resolve input sanitization issue
+docs(api): update endpoint documentation
+
+# Breaking changes
+feat!: redesign CLI interface
+feat(api)!: change authentication flow
+
+BREAKING CHANGE: API now requires authentication tokens
+
+# ❌ Incorrect (Husky will reject these)
+add new feature                    # Missing type:
+Fix Bug                           # Wrong case
+feat:add user auth                # Missing space after :
+feature: add login                # Wrong type (should be feat:)
 ```
+
+**Validation:**
+
+- **Automatic**: Husky validates on every commit
+- **Manual**: `yarn validate:commits` or `yarn commit` (interactive)
 
 ## 🎯 Automatic Releases
 

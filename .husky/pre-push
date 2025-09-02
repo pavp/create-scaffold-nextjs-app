@@ -1,0 +1,4 @@
+#!/usr/bin/env sh
+
+# Validate branch name using the shared script
+node scripts/validate-branch-name.js
