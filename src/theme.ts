@@ -53,6 +53,18 @@ theme = createTheme({
           '&::placeholder': {
             opacity: 1,
           },
+          '&:-webkit-autofill': {
+            WebkitBoxShadow: `0 0 0 1000px ${tokens.colors.semanticBackgroundPrimary} inset`,
+            WebkitTextFillColor: tokens.colors.semanticTextPrimary,
+          },
+          '&:-webkit-autofill:hover': {
+            WebkitBoxShadow: `0 0 0 1000px ${tokens.colors.semanticBackgroundPrimary} inset`,
+            WebkitTextFillColor: tokens.colors.semanticTextPrimary,
+          },
+          '&:-webkit-autofill:focus': {
+            WebkitBoxShadow: `0 0 0 1000px ${tokens.colors.semanticBackgroundPrimary} inset`,
+            WebkitTextFillColor: tokens.colors.semanticTextPrimary,
+          },
         },
         root: {
           height: '2.75rem',
