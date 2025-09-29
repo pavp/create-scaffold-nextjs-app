@@ -8,19 +8,31 @@ updates:
       day: 'monday'
       time: '09:00'
       timezone: 'UTC'
-    open-pull-requests-limit: 3
+    open-pull-requests-limit: 8
     commit-message:
       prefix: 'chore'
       prefix-development: 'chore'
       include: 'scope'
     groups:
-      # Group production dependencies
-      production-dependencies:
+      # Group MUI dependencies separately for easier UI updates
+      mui-dependencies:
+        dependency-type: 'production'
+        patterns:
+          - '@mui/*'
+      # Group React ecosystem dependencies
+      react-ecosystem:
         dependency-type: 'production'
         patterns:
           - '@emotion/*'
+          - 'react'
+          - 'react-dom'
+          - 'react-color'
+          - 'react-hook-form'
           - '@hookform/*'
-          - '@mui/*'
+      # Group other production dependencies
+      production-dependencies:
+        dependency-type: 'production'
+        patterns:
           - '@screeb/*'
           - '@tanstack/react-query'
           - 'async-mutex'
@@ -32,43 +44,55 @@ updates:
           - 'mixpanel-browser'
           - 'next'
           - 'next-intl'
-          - 'react'
-          - 'react-*'
           - 'zod'
           - 'zustand'
-      # Group development dependencies
-      development-dependencies:
+      # Group React dev tools
+      react-dev-tools:
         dependency-type: 'development'
         patterns:
-          - 'eslint*'
-          - '@eslint/*'
-          - '@stylistic/*'
-          - '@typescript-eslint/*'
-          - 'typescript-eslint'
-          - 'prettier'
-          - 'stylelint*'
-          - 'postcss*'
-          - 'sass'
-          - 'husky'
-          - 'lint-staged'
-          - '@types/*'
-          - 'ts-node'
-          - 'typescript'
-          - '@commitlint/*'
-          - 'commitizen'
-          - 'cz-conventional-changelog'
-          - 'style-dictionary'
-          - 'identity-obj-proxy'
-          - 'whatwg-fetch'
+          - '@tanstack/react-query-devtools'
       # Group testing dependencies
       testing-dependencies:
         dependency-type: 'development'
         patterns:
-          - '*jest*'
+          - '@testing-library/*'
           - 'jest'
           - 'jest-environment-jsdom'
-          - '@testing-library/*'
           - '@faker-js/*'
+          - 'whatwg-fetch'
+          - 'identity-obj-proxy'
+      # Group code quality and formatting tools
+      code-quality-dependencies:
+        dependency-type: 'development'
+        patterns:
+          - 'eslint'
+          - 'eslint-config-*'
+          - 'eslint-plugin-*'
+          - '@eslint/*'
+          - 'prettier'
+          - 'husky'
+          - 'lint-staged'
+          - '@stylistic/*'
+      # Group TypeScript and build tools
+      typescript-build-dependencies:
+        dependency-type: 'development'
+        patterns:
+          - '@types/*'
+          - '@typescript-eslint/*'
+          - 'typescript'
+          - 'typescript-eslint'
+          - 'ts-node'
+          - 'sass'
+          - 'style-dictionary'
+          - 'stylelint*'
+          - 'postcss*'
+      # Group commitlint and development tools
+      development-tools:
+        dependency-type: 'development'
+        patterns:
+          - '@commitlint/*'
+          - 'commitizen'
+          - 'cz-conventional-changelog'
     ignore:
       # Ignore major version updates for stable packages
       - dependency-name: 'react'
@@ -79,6 +103,10 @@ updates:
         update-types: ['version-update:semver-major']
       # Ignore specific packages that require manual updates
       - dependency-name: '@types/node'
+        update-types: ['version-update:semver-major']
+      - dependency-name: 'typescript'
+        update-types: ['version-update:semver-major']
+      - dependency-name: 'eslint'
         update-types: ['version-update:semver-major']
 
   # Enable version updates for GitHub Actions
