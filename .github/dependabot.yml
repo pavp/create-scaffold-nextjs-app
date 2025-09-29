@@ -11,7 +11,7 @@ updates:
     open-pull-requests-limit: 3
     commit-message:
       prefix: 'chore'
-      prefix-development: 'chore(deps-dev)'
+      prefix-development: 'chore'
       include: 'scope'
     groups:
       # Group production dependencies
