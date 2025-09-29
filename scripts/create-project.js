@@ -180,6 +180,7 @@ async function main() {
       path.join(targetDir, 'bin'),
       path.join(targetDir, 'test-cli-automated.js'),
       path.join(targetDir, 'test-interactive.js'),
+      path.join(targetDir, '.github', 'dependabot.yml'),
     ];
 
     cliSpecificFiles.forEach((filePath) => {

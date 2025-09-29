@@ -79,6 +79,12 @@ jobs:
             exit 0
           fi
 
+          # Skip validation for dependabot branches
+          if echo "$BRANCH_NAME" | grep -qE '^dependabot\/'; then
+            echo "✅ Dependabot branch - skipping validation: $BRANCH_NAME"
+            exit 0
+          fi
+
           # Validate branch name pattern
           if echo "$BRANCH_NAME" | grep -qE '^(feat|fix|hotfix|chore|docs|refactor|test|perf)\/[a-z0-9\-]+$'; then
             echo "✅ Branch name is valid: $BRANCH_NAME"
