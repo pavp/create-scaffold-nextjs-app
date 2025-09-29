@@ -11,6 +11,9 @@ jobs:
     # Only run for dependabot PRs
     if: github.actor == 'dependabot[bot]'
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
 
     steps:
       - name: Checkout code
@@ -18,6 +21,7 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           fetch-depth: 0
+          ref: ${{ github.head_ref }}
 
       - name: Setup Node.js and Yarn
         uses: ./.github/actions/setup-node-yarn
@@ -46,7 +50,5 @@ jobs:
 
       - name: Push changes
         if: steps.check-changes.outputs.changes == 'true'
-        uses: ad-m/github-push-action@master
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          branch: ${{ github.head_ref }}
+        run: |
+          git push origin ${{ github.head_ref }}
