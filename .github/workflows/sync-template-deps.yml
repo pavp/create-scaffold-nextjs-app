@@ -2,7 +2,7 @@ name: Sync Template Dependencies
 
 on:
   pull_request:
-    types: [opened, synchronize]
+    types: [opened]
     paths:
       - 'package.json'
 
