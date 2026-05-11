@@ -184,36 +184,43 @@ async function downloadTemplate(targetDir, projectData = {}) {
         }
 
         try {
-          // Ensure destination directory exists
-          const destDir = path.dirname(destPath);
+          const srcStat = fs.statSync(srcPath);
 
-          if (!fs.existsSync(destDir)) {
-            fs.mkdirSync(destDir, { recursive: true });
-          }
+          if (srcStat.isDirectory()) {
+            copyDirectory(srcPath, destPath);
+            console.log(`${colors.green}✅ ${file}/ copied from template${colors.reset}`);
+          } else {
+            // Ensure destination directory exists
+            const destDir = path.dirname(destPath);
 
-          fs.copyFileSync(srcPath, destPath);
-          console.log(`${colors.green}✅ ${file} copied from template${colors.reset}`);
+            if (!fs.existsSync(destDir)) {
+              fs.mkdirSync(destDir, { recursive: true });
+            }
 
-          // Apply replacements to template files immediately after copying
-          if (file.endsWith('.ts') || file.endsWith('.js') || file.endsWith('.json') || file.endsWith('.md')) {
-            try {
-              let content = fs.readFileSync(destPath, 'utf8');
-              const replacements = {
-                '{{PACKAGE_NAME}}': projectData.packageName || 'unknown',
-                '{{PROJECT_NAME}}': projectData.packageName || 'unknown',
-                '{{PROJECT_DESCRIPTION}}': projectData.description || 'Unknown description',
-              };
+            fs.copyFileSync(srcPath, destPath);
+            console.log(`${colors.green}✅ ${file} copied from template${colors.reset}`);
 
-              for (const [placeholder, replacement] of Object.entries(replacements)) {
-                const regex = new RegExp(placeholder, 'g');
+            // Apply replacements to template files immediately after copying
+            if (file.endsWith('.ts') || file.endsWith('.js') || file.endsWith('.json') || file.endsWith('.md')) {
+              try {
+                let content = fs.readFileSync(destPath, 'utf8');
+                const replacements = {
+                  '{{PACKAGE_NAME}}': projectData.packageName || 'unknown',
+                  '{{PROJECT_NAME}}': projectData.packageName || 'unknown',
+                  '{{PROJECT_DESCRIPTION}}': projectData.description || 'Unknown description',
+                };
 
-                content = content.replace(regex, replacement);
+                for (const [placeholder, replacement] of Object.entries(replacements)) {
+                  const regex = new RegExp(placeholder, 'g');
+
+                  content = content.replace(regex, replacement);
+                }
+
+                fs.writeFileSync(destPath, content, 'utf8');
+                console.log(`${colors.green}✅ ${file} placeholders replaced${colors.reset}`);
+              } catch (error) {
+                console.log(`${colors.yellow}Warning: Could not process placeholders in ${file}${colors.reset}`);
               }
-
-              fs.writeFileSync(destPath, content, 'utf8');
-              console.log(`${colors.green}✅ ${file} placeholders replaced${colors.reset}`);
-            } catch (error) {
-              console.log(`${colors.yellow}Warning: Could not process placeholders in ${file}${colors.reset}`);
             }
           }
         } catch (error) {
@@ -312,40 +319,47 @@ function copyLocalTemplate(targetDir, projectData = {}) {
       }
 
       try {
-        // Ensure destination directory exists
-        const destDir = path.dirname(destPath);
+        const srcStat = fs.statSync(srcPath);
 
-        if (!fs.existsSync(destDir)) {
-          fs.mkdirSync(destDir, { recursive: true });
-        }
-
-        fs.copyFileSync(srcPath, destPath);
-        if (file === '.env.template') {
-          console.log(`${colors.green}✅ .env.local created from template${colors.reset}`);
+        if (srcStat.isDirectory()) {
+          copyDirectory(srcPath, destPath);
+          console.log(`${colors.green}✅ ${file}/ copied from template${colors.reset}`);
         } else {
-          console.log(`${colors.green}✅ ${file} copied from template${colors.reset}`);
-        }
+          // Ensure destination directory exists
+          const destDir = path.dirname(destPath);
 
-        // Apply replacements to template files immediately after copying
-        if (file.endsWith('.ts') || file.endsWith('.js') || file.endsWith('.json') || file.endsWith('.md')) {
-          try {
-            let content = fs.readFileSync(destPath, 'utf8');
-            const replacements = {
-              '{{PACKAGE_NAME}}': projectData.packageName || 'unknown',
-              '{{PROJECT_NAME}}': projectData.packageName || 'unknown',
-              '{{PROJECT_DESCRIPTION}}': projectData.description || 'Unknown description',
-            };
+          if (!fs.existsSync(destDir)) {
+            fs.mkdirSync(destDir, { recursive: true });
+          }
 
-            for (const [placeholder, replacement] of Object.entries(replacements)) {
-              const regex = new RegExp(placeholder, 'g');
+          fs.copyFileSync(srcPath, destPath);
+          if (file === '.env.template') {
+            console.log(`${colors.green}✅ .env.local created from template${colors.reset}`);
+          } else {
+            console.log(`${colors.green}✅ ${file} copied from template${colors.reset}`);
+          }
 
-              content = content.replace(regex, replacement);
+          // Apply replacements to template files immediately after copying
+          if (file.endsWith('.ts') || file.endsWith('.js') || file.endsWith('.json') || file.endsWith('.md')) {
+            try {
+              let content = fs.readFileSync(destPath, 'utf8');
+              const replacements = {
+                '{{PACKAGE_NAME}}': projectData.packageName || 'unknown',
+                '{{PROJECT_NAME}}': projectData.packageName || 'unknown',
+                '{{PROJECT_DESCRIPTION}}': projectData.description || 'Unknown description',
+              };
+
+              for (const [placeholder, replacement] of Object.entries(replacements)) {
+                const regex = new RegExp(placeholder, 'g');
+
+                content = content.replace(regex, replacement);
+              }
+
+              fs.writeFileSync(destPath, content, 'utf8');
+              console.log(`${colors.green}✅ ${file} placeholders replaced${colors.reset}`);
+            } catch (error) {
+              console.log(`${colors.yellow}Warning: Could not process placeholders in ${file}${colors.reset}`);
             }
-
-            fs.writeFileSync(destPath, content, 'utf8');
-            console.log(`${colors.green}✅ ${file} placeholders replaced${colors.reset}`);
-          } catch (error) {
-            console.log(`${colors.yellow}Warning: Could not process placeholders in ${file}${colors.reset}`);
           }
         }
       } catch (error) {
