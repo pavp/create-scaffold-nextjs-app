@@ -18,7 +18,8 @@ export const todoMutationsRepository: TodoMutationsRepository = {
 
     return useMutation({
       ...baseOptions,
-      onSuccess: (newTodo, variables, context) => {
+      // eslint-disable-next-line max-params
+      onSuccess: (newTodo, variables, onMutateResult, context) => {
         // Repository-specific cache logic
         queryClient.invalidateQueries({ queryKey: todoQueryKeys.lists(dataSource) });
 
@@ -28,7 +29,7 @@ export const todoMutationsRepository: TodoMutationsRepository = {
         });
 
         // Call user's onSuccess if provided
-        options?.onSuccess?.(newTodo, variables, context);
+        options?.onSuccess?.(newTodo, variables, onMutateResult, context);
       },
       ...options,
     });
@@ -44,7 +45,8 @@ export const todoMutationsRepository: TodoMutationsRepository = {
 
     return useMutation({
       ...baseOptions,
-      onSuccess: (updatedTodo, variables, context) => {
+      // eslint-disable-next-line max-params
+      onSuccess: (updatedTodo, variables, onMutateResult, context) => {
         // Repository-specific cache logic
         queryClient.setQueryData<Todo[]>(todoQueryKeys.lists(), (oldData) => {
           return oldData?.map((todo) => (todo.id === updatedTodo.id ? updatedTodo : todo));
@@ -57,7 +59,7 @@ export const todoMutationsRepository: TodoMutationsRepository = {
         queryClient.invalidateQueries({ queryKey: todoQueryKeys.lists(dataSource) });
 
         // Call user's onSuccess if provided
-        options?.onSuccess?.(updatedTodo, variables, context);
+        options?.onSuccess?.(updatedTodo, variables, onMutateResult, context);
       },
       ...options,
     });
@@ -73,7 +75,8 @@ export const todoMutationsRepository: TodoMutationsRepository = {
 
     return useMutation({
       ...baseOptions,
-      onSuccess: (result, deletedId, context) => {
+      // eslint-disable-next-line max-params
+      onSuccess: (result, deletedId, onMutateResult, context) => {
         // Repository-specific cache logic
         queryClient.setQueryData<Todo[]>(todoQueryKeys.lists(), (oldData) => {
           return oldData?.filter((todo) => todo.id !== deletedId);
@@ -86,7 +89,7 @@ export const todoMutationsRepository: TodoMutationsRepository = {
         queryClient.invalidateQueries({ queryKey: todoQueryKeys.lists(dataSource) });
 
         // Call user's onSuccess if provided
-        options?.onSuccess?.(result, deletedId, context);
+        options?.onSuccess?.(result, deletedId, onMutateResult, context);
       },
       ...options,
     });
@@ -102,7 +105,8 @@ export const todoMutationsRepository: TodoMutationsRepository = {
 
     return useMutation({
       ...baseOptions,
-      onSuccess: (deletedIds, variables, context) => {
+      // eslint-disable-next-line max-params
+      onSuccess: (deletedIds, variables, onMutateResult, context) => {
         // Repository-specific cache logic
         queryClient.setQueryData<Todo[]>(todoQueryKeys.lists(), (oldData) => {
           return oldData?.filter((todo) => !deletedIds.includes(todo.id));
@@ -117,7 +121,7 @@ export const todoMutationsRepository: TodoMutationsRepository = {
         queryClient.invalidateQueries({ queryKey: todoQueryKeys.lists(dataSource) });
 
         // Call user's onSuccess if provided
-        options?.onSuccess?.(deletedIds, variables, context);
+        options?.onSuccess?.(deletedIds, variables, onMutateResult, context);
       },
       ...options,
     });

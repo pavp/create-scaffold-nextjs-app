@@ -169,18 +169,22 @@ async function main() {
 
     // Copy template files
     const templateDir = path.join(__dirname, '..');
-    const excludeDirs = ['node_modules', '.git', 'coverage', 'scripts'];
+    const excludeDirs = ['node_modules', '.git', 'coverage'];
 
     console.log(`${colors.yellow}📁 Copying template files...${colors.reset}`);
     copyDirectory(templateDir, targetDir, excludeDirs);
 
-    // Remove CLI-specific documentation files
+    // Remove CLI-specific files
     const cliSpecificFiles = [
       path.join(targetDir, 'docs', 'contributing.md'),
       path.join(targetDir, 'bin'),
       path.join(targetDir, 'test-cli-automated.js'),
       path.join(targetDir, 'test-interactive.js'),
+      path.join(targetDir, 'test-simple.js'),
+      path.join(targetDir, 'scripts', 'create-project.js'),
       path.join(targetDir, '.github', 'dependabot.yml'),
+      path.join(targetDir, '.github', 'workflows', 'semantic-release.yml'),
+      path.join(targetDir, '.github', 'workflows', 'manual-dependabot-trigger.yml'),
     ];
 
     cliSpecificFiles.forEach((filePath) => {

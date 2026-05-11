@@ -13,7 +13,7 @@ export type QueryOptions = {
   select?: (data: any) => any;
 };
 
-export type MutationOptions = Partial<Omit<UseMutationOptions<any, any, any>, 'mutationFn'>>;
+export type MutationOptions = Partial<Omit<UseMutationOptions<any, any, any, any>, 'mutationFn'>>;
 
 // API Response wrapper
 export interface ApiResponse<T = unknown> {

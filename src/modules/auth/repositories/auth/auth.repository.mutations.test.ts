@@ -105,7 +105,7 @@ describe('authMutationsRepository', () => {
         expect(result.current.isSuccess).toBe(true);
       });
 
-      expect(customOnSuccess).toHaveBeenCalledWith(mockAuthResponse, mockCredentials, undefined);
+      expect(customOnSuccess).toHaveBeenCalledWith(mockAuthResponse, mockCredentials, undefined, expect.anything());
     });
   });
 
@@ -178,7 +178,7 @@ describe('authMutationsRepository', () => {
         expect(result.current.isSuccess).toBe(true);
       });
 
-      expect(customOnSuccess).toHaveBeenCalledWith(undefined, undefined, undefined);
+      expect(customOnSuccess).toHaveBeenCalledWith(undefined, undefined, undefined, expect.anything());
     });
   });
 
@@ -236,7 +236,7 @@ describe('authMutationsRepository', () => {
         expect(result.current.isSuccess).toBe(true);
       });
 
-      expect(customOnSuccess).toHaveBeenCalledWith(mockAuthResponse, mockRefreshToken, undefined);
+      expect(customOnSuccess).toHaveBeenCalledWith(mockAuthResponse, mockRefreshToken, undefined, expect.anything());
     });
   });
 
@@ -312,8 +312,8 @@ describe('authMutationsRepository', () => {
         expect(result.current.isSuccess).toBe(true);
       });
 
-      expect(onMutate).toHaveBeenCalledWith(mockCredentials);
-      expect(onSettled).toHaveBeenCalledWith(mockAuthResponse, null, mockCredentials, undefined);
+      expect(onMutate).toHaveBeenCalledWith(mockCredentials, expect.anything());
+      expect(onSettled).toHaveBeenCalledWith(mockAuthResponse, null, mockCredentials, undefined, expect.anything());
     });
   });
 

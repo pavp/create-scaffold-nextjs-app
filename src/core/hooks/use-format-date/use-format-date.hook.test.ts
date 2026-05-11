@@ -24,6 +24,7 @@ const useFormatterMock = {
     return formattedDate;
   }),
   dateTimeRange: jest.fn(),
+  displayName: jest.fn(),
 };
 
 const MOCK_ISO_DATE = '2021-12-30T15:30:29'; // If does not have Z at the end of the word is considered localtime

@@ -15,12 +15,13 @@ export const authMutationsRepository: AuthMutationsRepository = {
 
     return useMutation({
       ...baseOptions,
-      onSuccess: (loginResponse, variables, context) => {
+      // eslint-disable-next-line max-params
+      onSuccess: (loginResponse, variables, onMutateResult, context) => {
         // Repository-specific cache logic
         // Projects should implement their own token storage and cache invalidation
 
         // Call user's onSuccess if provided
-        options?.onSuccess?.(loginResponse, variables, context);
+        options?.onSuccess?.(loginResponse, variables, onMutateResult, context);
       },
       ...options,
     });
@@ -36,7 +37,8 @@ export const authMutationsRepository: AuthMutationsRepository = {
 
     return useMutation({
       ...baseOptions,
-      onSuccess: (result, variables, context) => {
+      // eslint-disable-next-line max-params
+      onSuccess: (result, variables, onMutateResult, context) => {
         // Repository-specific cache logic
         // Clear all auth-related queries
         queryClient.removeQueries({ queryKey: authQueryKeys.all });
@@ -44,7 +46,7 @@ export const authMutationsRepository: AuthMutationsRepository = {
         // Projects should implement their own token cleanup
 
         // Call user's onSuccess if provided
-        options?.onSuccess?.(result, variables, context);
+        options?.onSuccess?.(result, variables, onMutateResult, context);
       },
       ...options,
     });
@@ -59,12 +61,13 @@ export const authMutationsRepository: AuthMutationsRepository = {
 
     return useMutation({
       ...baseOptions,
-      onSuccess: (refreshResponse, variables, context) => {
+      // eslint-disable-next-line max-params
+      onSuccess: (refreshResponse, variables, onMutateResult, context) => {
         // Repository-specific cache logic
         // Projects should implement their own token update logic
 
         // Call user's onSuccess if provided
-        options?.onSuccess?.(refreshResponse, variables, context);
+        options?.onSuccess?.(refreshResponse, variables, onMutateResult, context);
       },
       ...options,
     });
