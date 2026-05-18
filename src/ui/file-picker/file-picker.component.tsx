@@ -84,7 +84,7 @@ const FilePicker = ({
             sx={{ alignSelf: 'flex-start', width }}
             value={value}
             onClick={() => {
-              inputFile?.current && inputFile.current.click();
+              inputFile?.current?.click();
             }}
           />
         }

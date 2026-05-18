@@ -217,9 +217,9 @@ Some dependency conflicts are resolved using package resolutions in package.json
 ```json
 {
   "resolutions": {
-    "@types/react": "19.0.10",
-    "@types/react-dom": "19.0.4",
-    "glob": "^10.0.0",
+    "@types/react": "19.2.14",
+    "@types/react-dom": "19.2.3",
+    "glob": "^13.0.0",
     "rimraf": "^5.0.0"
   }
 }

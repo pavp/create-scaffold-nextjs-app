@@ -21,7 +21,7 @@ export const useLoginController = () => {
   }, []);
 
   const handleSubmit = useCallback(
-    (loginFn: (credentials: AuthCredentials) => Promise<void>) => (e: React.FormEvent) => {
+    (loginFn: (credentials: AuthCredentials) => Promise<void>) => (e: React.SyntheticEvent) => {
       e.preventDefault();
       loginFn(credentials);
     },

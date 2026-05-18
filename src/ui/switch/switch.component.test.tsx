@@ -19,7 +19,7 @@ describe('Switch', () => {
   it('should renders switch with default props', () => {
     render(<Switch onChange={jest.fn()} />);
 
-    const switchElement = screen.getByRole('checkbox');
+    const switchElement = screen.getByRole('switch');
 
     expect(switchElement).toBeInTheDocument();
     expect(switchElement).not.toBeChecked();
@@ -40,7 +40,7 @@ describe('Switch', () => {
 
     render(<Switch onChange={onChangeMock} />);
 
-    const switchElement = screen.getByRole('checkbox');
+    const switchElement = screen.getByRole('switch');
 
     fireEvent.click(switchElement);
 
@@ -51,7 +51,7 @@ describe('Switch', () => {
   it('should updates checked state when clicked', () => {
     render(<Switch onChange={jest.fn()} />);
 
-    const switchElement = screen.getByRole('checkbox');
+    const switchElement = screen.getByRole('switch');
 
     fireEvent.click(switchElement);
 
