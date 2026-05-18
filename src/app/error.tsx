@@ -15,15 +15,11 @@ export default function Error({ error }: { error: Error & { digest?: string } })
   }, [error]);
 
   return (
-    <html>
-      <body>
-        <ErrorView
-          Icon={CrisisAlertIcon}
-          error={t('titleError')}
-          message={t('errorMessage')}
-          subtitle={t('errorSubtitle')}
-        />
-      </body>
-    </html>
+    <ErrorView
+      Icon={CrisisAlertIcon}
+      error={t('titleError')}
+      message={t('errorMessage')}
+      subtitle={t('errorSubtitle')}
+    />
   );
 }
