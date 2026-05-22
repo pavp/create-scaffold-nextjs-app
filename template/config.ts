@@ -10,7 +10,7 @@ export const config = {
   apiUrl: process.env.NEXT_PUBLIC_API_URL || '/api/v1',
   appName: '{{PROJECT_NAME}}' as const,
   muiLicense: process.env.NEXT_PUBLIC_MUI_PRO || '',
-translation: {
+  translation: {
     revalidate: env === 'development' ? revalidateTranslationsDev : revalidateTranslationsProd,
     // after adding a new locale, you need to add the locale in LocalizationProvider
     locales: ['en', 'es', 'fr', 'pt', 'de', 'nl', 'sv'] as const,

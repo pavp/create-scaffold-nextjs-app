@@ -9,8 +9,6 @@ describe('useMuiApiKeySelector', () => {
   beforeEach(() => {
     // Reset store to initial state before each test
     mockZustandStore(useSettingsStore, {
-      
-      
       muiApiKey: '',
       actions: {} as any,
     });
@@ -20,8 +18,6 @@ describe('useMuiApiKeySelector', () => {
     const testApiKey = 'test_mui_key_123';
 
     mockZustandStore(useSettingsStore, {
-      
-      
       muiApiKey: testApiKey,
       actions: {} as any,
     });
@@ -38,8 +34,6 @@ describe('useMuiApiKeySelector', () => {
 
   it('should handle empty MUI API key (allowed by schema)', () => {
     mockZustandStore(useSettingsStore, {
-      
-      
       muiApiKey: '', // Empty is valid for MUI
       actions: {} as any,
     });
@@ -60,16 +54,13 @@ describe('useMuiApiKeySelector', () => {
     const mockSettings = createMockSettings();
 
     mockZustandStore(useSettingsStore, {
-      
-      
       muiApiKey: mockSettings.muiKey,
       actions: {} as any,
     });
     const { result } = renderHook(() => useMuiApiKeySelector());
 
     expect(result.current.muiApiKey).toBe(mockSettings.muiKey);
-    
-    
+
     expect(result.current).not.toHaveProperty('actions');
   });
 
@@ -77,8 +68,6 @@ describe('useMuiApiKeySelector', () => {
     const realisticKey = 'mui_license_1234567890abcdef1234567890abcdef12345678';
 
     mockZustandStore(useSettingsStore, {
-      
-      
       muiApiKey: realisticKey,
       actions: {} as any,
     });
@@ -91,8 +80,6 @@ describe('useMuiApiKeySelector', () => {
     const testApiKey = 'test_mui_key';
 
     mockZustandStore(useSettingsStore, {
-      
-      
       muiApiKey: testApiKey,
       actions: {} as any,
     });
@@ -101,8 +88,6 @@ describe('useMuiApiKeySelector', () => {
     const initialResult = result.current;
 
     mockZustandStore(useSettingsStore, {
-      
-      
       muiApiKey: testApiKey, // Same value
       actions: {} as any,
     });
@@ -118,8 +103,6 @@ describe('useMuiApiKeySelector', () => {
     const changedKey = 'changed_mui_key';
 
     mockZustandStore(useSettingsStore, {
-      
-      
       muiApiKey: initialKey,
       actions: {} as any,
     });
@@ -129,8 +112,6 @@ describe('useMuiApiKeySelector', () => {
     expect(result.current.muiApiKey).toBe(initialKey);
 
     mockZustandStore(useSettingsStore, {
-      
-      
       muiApiKey: changedKey,
       actions: {} as any,
     });
@@ -143,8 +124,6 @@ describe('useMuiApiKeySelector', () => {
     const longApiKey = 'mui_license_' + 'a'.repeat(200);
 
     mockZustandStore(useSettingsStore, {
-      
-      
       muiApiKey: longApiKey,
       actions: {} as any,
     });
@@ -158,8 +137,6 @@ describe('useMuiApiKeySelector', () => {
     const specialKey = 'mui_key-with.special_chars123!@#$%^&*()';
 
     mockZustandStore(useSettingsStore, {
-      
-      
       muiApiKey: specialKey,
       actions: {} as any,
     });
@@ -173,8 +150,6 @@ describe('useMuiApiKeySelector', () => {
       const muiProLicense = 'x-license-pro_1234567890abcdef';
 
       mockZustandStore(useSettingsStore, {
-        
-        
         muiApiKey: muiProLicense,
         actions: {} as any,
       });
@@ -186,8 +161,6 @@ describe('useMuiApiKeySelector', () => {
 
     it('should distinguish between empty and undefined (schema compliance)', () => {
       mockZustandStore(useSettingsStore, {
-        
-        
         muiApiKey: '',
         actions: {} as any,
       });
@@ -220,8 +193,6 @@ describe('useMuiApiKeySelector', () => {
 
       // Update store
       mockZustandStore(useSettingsStore, {
-        
-        
         muiApiKey: testKey,
         actions: {} as any,
       });
@@ -238,8 +209,6 @@ describe('useMuiApiKeySelector', () => {
       const whitespaceKey = '  mui_key_with_spaces  ';
 
       mockZustandStore(useSettingsStore, {
-        
-        
         muiApiKey: whitespaceKey,
         actions: {} as any,
       });
@@ -252,8 +221,6 @@ describe('useMuiApiKeySelector', () => {
       const numericKey = '123456789';
 
       mockZustandStore(useSettingsStore, {
-        
-        
         muiApiKey: numericKey,
         actions: {} as any,
       });

@@ -8,7 +8,6 @@ import {
   MuiXLicense,
   ReactQueryProvider,
   SettingsWrapper,
-  Tracking,
 } from '@/core/components';
 import theme from '@/theme';
 import { CssBaseline, Dialog, ThemeProvider, Toast } from '@/ui';
@@ -39,13 +38,10 @@ export default function RootLayout(props: RootLayoutProps) {
               <SettingsWrapper>
                 <ThemeProvider theme={theme}>
                   <LocalizationProvider>
-                    <Tracking>
-                      {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
-                      <CssBaseline />
-                      <Toast />
-                      <Dialog />
-                      {props.children}
-                    </Tracking>
+                    <CssBaseline />
+                    <Toast />
+                    <Dialog />
+                    {props.children}
                   </LocalizationProvider>
                 </ThemeProvider>
               </SettingsWrapper>

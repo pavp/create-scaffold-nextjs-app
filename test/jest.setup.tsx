@@ -9,25 +9,6 @@ jest.mock('@mui/x-license', () => ({
   },
 }));
 
-jest.mock('@/core/lib/analytics', () => ({
-  default: {
-    init: jest.fn(),
-    identifyUser: jest.fn(),
-    reset: jest.fn(),
-    trackEvent: jest.fn(),
-  },
-}));
-
-jest.mock('@/core/lib/feedback/feedback', () => ({
-  default: {
-    init: jest.fn(),
-    close: jest.fn(),
-    reset: jest.fn(),
-    isInitialized: jest.fn(),
-    isLoaded: jest.fn(),
-  },
-}));
-
 jest.mock('@/api/http-client', () => ({
   httpClient: {
     get: jest.fn(),

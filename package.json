@@ -1,5 +1,5 @@
 {
-  "name": "create-scaffold-app",
+  "name": "create-scaffold-nextjs-app",
   "version": "0.0.0",
   "private": false,
   "description": "Official CLI tool to bootstrap modern frontend applications with Scaffold's template",
@@ -35,7 +35,7 @@
     "test:watch": "jest --watch",
     "test:changed": "jest --changedSince=origin/main --coverage --coverageReporters=text-summary --passWithNoTests",
     "typecheck": "tsc --noEmit --skipLibCheck",
-    "prepare": "husky",
+    "prepare": "node -e \"if(process.env.CI !== 'true') require('child_process').execSync('husky', {stdio: 'inherit'})\"",
     "build:dictionary": "node ./src/styles/style-dictionary/build.mjs",
     "create:project": "node ./scripts/create-project.js",
     "test:cli": "node ./test-cli-automated.js",

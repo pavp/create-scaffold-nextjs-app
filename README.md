@@ -5,20 +5,18 @@ Official CLI tool to bootstrap modern frontend applications with Scaffold's temp
 ## 🚀 Quick Start
 
 ```bash
-npx github:pavp/scaffold-nextjs-app
+npx create-scaffold-nextjs-app
 ```
 
 **Requirements:**
 
-- ✅ GitHub account associated with Scaffold organization
-- ✅ Access to `pavp/scaffold-nextjs-app` repository
 - ✅ Node.js installed
 - ✅ Internet connection
 
 ## 💡 Example Usage
 
 ```bash
-$ npx github:pavp/scaffold-nextjs-app
+$ npx create-scaffold-nextjs-app
 
 🚀 Create Scaffold App
 Bootstrap a modern frontend application with Scaffold's template

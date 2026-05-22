@@ -36,7 +36,9 @@ export const createDeterministicSettings = (
 ): SettingsResponse => {
   faker.seed(seed);
   const settings = createMockSettings(overrides);
+
   faker.seed();
+
   return settings;
 };
 

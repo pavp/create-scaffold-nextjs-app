@@ -94,7 +94,7 @@ describe('settingsQueriesRepository', () => {
     });
 
     it('should handle different data sources', async () => {
-      const localStorageSettings = createMockSettings({ mixPanelKey: 'localStorage_key' });
+      const localStorageSettings = createMockSettings({ muiKey: 'localStorage_key' });
 
       mockGateway.getSettings.mockResolvedValue(localStorageSettings);
 

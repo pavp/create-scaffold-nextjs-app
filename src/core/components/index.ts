@@ -6,4 +6,3 @@ export { MediaQuery } from './media-query/media-query.component';
 export { MuiXLicense } from './mui-x-license/mui-x-license.component';
 export { ReactQueryProvider } from './react-query-provider/react-query-provider.component';
 export { SettingsWrapper } from './settings-wrapper/settings-wrapper.component';
-export { Tracking } from './tracking/tracking.component';

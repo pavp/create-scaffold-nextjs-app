@@ -89,6 +89,7 @@ describe('useSettingsBusiness', () => {
 
     it('should return current data source', () => {
       const { result } = renderHook(() => useSettingsBusiness('localStorage'));
+
       expect(result.current.dataSource).toBe('localStorage');
     });
   });
@@ -150,12 +151,14 @@ describe('useSettingsBusiness', () => {
     it('should handle error without message', () => {
       mockUseSettings.mockReturnValue({ ...mockQueryResult, isError: true, error: {}, data: null });
       const { result } = renderHook(() => useSettingsBusiness());
+
       expect(result.current.error).toBe(null);
     });
 
     it('should handle error with null error object', () => {
       mockUseSettings.mockReturnValue({ ...mockQueryResult, isError: true, error: null, data: null });
       const { result } = renderHook(() => useSettingsBusiness());
+
       expect(result.current.error).toBe(null);
     });
   });
@@ -164,21 +167,27 @@ describe('useSettingsBusiness', () => {
     describe('refreshSettings', () => {
       it('should call refetch when refreshSettings is called', async () => {
         const { result } = renderHook(() => useSettingsBusiness());
-        await act(async () => { await result.current.refreshSettings(); });
+
+        await act(async () => {
+          await result.current.refreshSettings();
+        });
         expect(mockRefetch).toHaveBeenCalledTimes(1);
       });
 
       it('should be stable across re-renders', () => {
         const { result, rerender } = renderHook(() => useSettingsBusiness());
         const first = result.current.refreshSettings;
+
         rerender();
         expect(result.current.refreshSettings).toBe(first);
       });
 
       it('should handle refetch errors gracefully', async () => {
         const mockRefetchWithError = jest.fn().mockRejectedValue(new Error('Refetch failed'));
+
         mockUseSettings.mockReturnValue({ ...mockQueryResult, refetch: mockRefetchWithError });
         const { result } = renderHook(() => useSettingsBusiness());
+
         await expect(result.current.refreshSettings()).rejects.toThrow('Refetch failed');
       });
     });
@@ -186,7 +195,10 @@ describe('useSettingsBusiness', () => {
     describe('resetSettings', () => {
       it('should call clearSettings and cancelAll when resetSettings is called', () => {
         const { result } = renderHook(() => useSettingsBusiness());
-        act(() => { result.current.resetSettings(); });
+
+        act(() => {
+          result.current.resetSettings();
+        });
         expect(mockClearSettings).toHaveBeenCalledTimes(1);
         expect(mockCancelAll).toHaveBeenCalledTimes(1);
       });
@@ -194,6 +206,7 @@ describe('useSettingsBusiness', () => {
       it('should be stable across re-renders', () => {
         const { result, rerender } = renderHook(() => useSettingsBusiness());
         const first = result.current.resetSettings;
+
         rerender();
         expect(result.current.resetSettings).toBe(first);
       });
@@ -204,6 +217,7 @@ describe('useSettingsBusiness', () => {
     it('should handle different data sources', () => {
       (['http', 'localStorage'] as const).forEach((dataSource) => {
         const { result } = renderHook(() => useSettingsBusiness(dataSource));
+
         expect(result.current.dataSource).toBe(dataSource);
         expect(mockUseSettings).toHaveBeenCalledWith(dataSource);
       });
@@ -218,6 +232,7 @@ describe('useSettingsBusiness', () => {
 
     it('should handle React Query status changes', () => {
       const { result, rerender } = renderHook(() => useSettingsBusiness());
+
       expect(result.current.isSuccess).toBe(true);
 
       mockUseSettings.mockReturnValue({ ...mockQueryResult, isLoading: true, isSuccess: false });
@@ -233,6 +248,7 @@ describe('useSettingsBusiness', () => {
       const { result, rerender } = renderHook(() => useSettingsBusiness());
       const firstRefresh = result.current.refreshSettings;
       const firstReset = result.current.resetSettings;
+
       rerender();
       expect(result.current.refreshSettings).toBe(firstRefresh);
       expect(result.current.resetSettings).toBe(firstReset);
@@ -240,6 +256,7 @@ describe('useSettingsBusiness', () => {
 
     it('should return expected fields', () => {
       const { result } = renderHook(() => useSettingsBusiness());
+
       expect(result.current).toHaveProperty('muiApiKey');
       expect(result.current).not.toHaveProperty('actions');
     });
