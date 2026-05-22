@@ -1,0 +1,39 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding-bottom: var(--spacing-scale4);
+  border-bottom: 1px solid var(--color-semantic-background-surface);
+
+  &.noChildrenContainer {
+    padding-bottom: 0;
+    margin-bottom: 0;
+    border-bottom: 0;
+  }
+
+  .headerTopContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .headerBottomContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: var(--spacing-scale2);
+
+    .iconsContainer {
+      margin-left: auto;
+
+      button.active {
+        background-color: rgb(0 0 0 / 20%);
+      }
+    }
+  }
+
+  .goBackButton {
+    background-color: transparent;
+    border: none;
+  }
+}

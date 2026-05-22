@@ -1,0 +1,92 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-scale4);
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  padding: var(--spacing-scale4);
+  background-color: var(--color-primitive-yellow400);
+
+  .card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: 64rem;
+    background-color: var(--color-primitive-white);
+    border-radius: 20px;
+
+    // Mobile
+    @media (min-width: var(--breakpoint-mobile-min)) and (max-width: var(--breakpoint-mobile-max)) {
+      padding: var(--spacing-scale4);
+    }
+
+    // Tablet
+    @media (min-width: var(--breakpoint-tablet-min)) and (max-width: var(--breakpoint-tablet-max)) {
+      padding: var(--spacing-scale8);
+    }
+
+    // Desktop
+    @media (min-width: var(--breakpoint-desktop-min)) {
+      padding: var(--spacing-scale16);
+    }
+
+    .codeTextError {
+      font-weight: 900;
+
+      // Vertical
+      @media (orientation: portrait) {
+        font-size: clamp(2rem, 10vw, 10.5rem);
+      }
+
+      // Horizontal
+      @media (orientation: landscape) {
+        font-size: clamp(2rem, 10vh, 10.5rem);
+      }
+    }
+
+    .messageText {
+      font-weight: var(--font-weight-normal);
+      text-align: center;
+
+      // Vertical
+      @media (orientation: portrait) {
+        font-size: clamp(1rem, 2vw, 1.5rem);
+      }
+
+      // Horizontal
+      @media (orientation: landscape) {
+        font-size: clamp(1rem, 2vh, 1.5rem);
+      }
+    }
+
+    .subtitleText {
+      font-weight: var(--font-weight-medium);
+      text-align: center;
+
+      // Vertical
+      @media (orientation: portrait) {
+        font-size: clamp(1.5rem, 5vw, 5rem);
+      }
+
+      // Horizontal
+      @media (orientation: landscape) {
+        font-size: clamp(1.5rem, 5vh, 5rem);
+      }
+    }
+
+    .divider {
+      width: 100%;
+      margin-top: var(--spacing-scale4);
+      margin-bottom: var(--spacing-scale4);
+      border-top: 1px solid var(--color-semantic-background-surface);
+    }
+  }
+
+  .icon {
+    width: 10rem;
+    height: clamp(3rem, 20vh, 13.5rem);
+    color: var(--color-primitive-white);
+  }
+}

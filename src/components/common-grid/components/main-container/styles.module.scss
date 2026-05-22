@@ -1,0 +1,13 @@
+.container {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  padding-right: var(--spacing-scale4);
+  padding-left: var(--spacing-scale4);
+  margin-top: var(--spacing-scale4);
+  margin-bottom: var(--spacing-scale4);
+  overflow: auto;
+}

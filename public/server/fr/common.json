@@ -1,0 +1,37 @@
+{
+  "windowTitle": "SWAT",
+  "datePickerPlaceHolder": "Sélectionnez une date",
+  "noResultsFilter": "Aucun résultat trouvé",
+  "notFound": "Non trouvé",
+  "notFoundMessage": "La ressource demandée n'a pas été trouvée",
+  "globalError": "Une erreur s'est produite",
+  "globalErrorMessage": "Une erreur s'est produite lors du traitement de votre demande. Veuillez réessayer plus tard.",
+  "appointmentLabel": "Rendez-vous",
+  "customer": "Customer",
+  "company": "Company",
+  "dialog": {
+  "accept": "Confirmer",
+  "cancel": "Annuler",
+  "title": "D'accord"
+  },
+  "api": {
+    "invalidArgumentsWithParams": "Les arguments fournis ne correspondent pas aux arguments attendus : {url} : {errors}",
+    "invalidExpectedDataWithParams": "Données attendues invalides pour le point de terminaison {url} : {errors}",
+    "invalidArgumentsWith": "Les arguments fournis ne correspondent pas aux arguments attendus",
+    "invalidExpectedDataWith": "Données attendues invalides pour le point de terminaison"
+  },
+  "textField": {
+    "noOptionsText": "Pas d'options",
+    "validate": {
+      "required": "Ce champ est requis",
+      "email": "E-mail invalide",
+      "phone": "Numéro de téléphone invalide",
+      "number": "Nombre invalide",
+      "minLength": "La valeur est trop courte",
+      "maxLength": "La valeur est trop longue",
+      "min": "La valeur est trop basse",
+      "max": "La valeur est trop élevée",
+      "pattern": "Format invalide"
+    }
+  }
+}

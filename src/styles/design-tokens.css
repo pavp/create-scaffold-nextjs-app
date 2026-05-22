@@ -1,0 +1,11 @@
+/* Design Tokens - Import all token categories */
+/* This file consolidates all design tokens for easy import */
+
+/* Import individual token categories */
+@import './colors/colors.css';
+@import './spacing/spacing.css';
+@import './typography/typography.css';
+@import './shadows/shadows.css';
+@import './borders/borders.css';
+@import './animations/animations.css';
+@import './breakpoints/breakpoints.css';

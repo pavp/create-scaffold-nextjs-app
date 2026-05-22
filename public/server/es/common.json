@@ -1,0 +1,37 @@
+{
+  "windowTitle": "SWAT",
+  "datePickerPlaceHolder": "Selecciona una fecha",
+  "noResultsFilter": "No se encontraron resultados",
+  "notFound": "No encontrado",
+  "notFoundMessage": "El recurso solicitado no fue encontrado",
+  "globalError": "Ocurrió un error",
+  "globalErrorMessage": "Ocurrió un error mientras se procesaba tu solicitud. Por favor, inténtalo de nuevo más tarde.",
+  "appointmentLabel": "Cita",
+  "customer": "Customer",
+  "company": "Company",
+  "dialog": {
+  "accept": "Confirmar",
+  "cancel": "Cancelar",
+  "title": "Aceptar"
+  },
+  "api": {
+    "invalidArgumentsWithParams": "Los argumentos proporcionados no coinciden con los argumentos esperados: {url}: {errors}",
+    "invalidExpectedDataWithParams": "Datos esperados inválidos para el endpoint {url}: {errors}",
+    "invalidArgumentsWith": "Los argumentos proporcionados no coinciden con los argumentos esperados",
+    "invalidExpectedDataWith": "Datos esperados inválidos para el endpoint"
+  },
+  "textField": {
+    "noOptionsText": "Sin opciones",
+    "validate": {
+      "required": "Este campo es requerido",
+      "email": "Correo inválido",
+      "phone": "Número de teléfono inválido",
+      "number": "Número inválido",
+      "minLength": "El valor es demasiado corto",
+      "maxLength": "El valor es demasiado largo",
+      "min": "El valor es demasiado bajo",
+      "max": "El valor es demasiado alto",
+      "pattern": "Formato inválido"
+    }
+  }
+}

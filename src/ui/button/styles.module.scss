@@ -1,0 +1,13 @@
+.buttonRow {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+
+  .loadingContainer {
+    display: flex;
+    flex-direction: row;
+    gap: var(--spacing-scale1);
+    align-items: center;
+    justify-content: center;
+  }
+}

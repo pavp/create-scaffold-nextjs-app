@@ -1,0 +1,22 @@
+.snackbar {
+  position: absolute;
+  top: 0;
+  bottom: auto;
+  left: 0;
+  align-items: start;
+  width: 100%;
+
+  .messageAlert {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
+  }
+
+  .hideAction {
+    :global(.MuiAlert-action) {
+      visibility: hidden;
+    }
+  }
+}

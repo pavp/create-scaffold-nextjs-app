@@ -1,0 +1,35 @@
+.CustomerDataItemContainer {
+  display: flex;
+  gap: var(--spacing-scale2);
+  align-items: center;
+}
+
+.CustomerDataItemIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.75rem;
+  height: 1.75rem;
+  border-radius: 0.3125rem;
+
+  svg {
+    width: var(--spacing-scale5);
+    color: var(--color-primitive-white);
+  }
+}
+
+.CustomerDataItemContent {
+  display: flex;
+  flex-direction: column;
+}
+
+.CustomerDataItemLabel {
+  margin-top: var(--spacing-scale1);
+  font-size: var(--font-size-xs);
+  line-height: var(--spacing-scale2);
+}
+
+.CustomerDataItemValue {
+  font-size: var(--font-size-sm);
+  font-weight: bold;
+}

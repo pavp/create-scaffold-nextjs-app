@@ -1,0 +1,11 @@
+# Build and cache directories
+.next
+.cache
+public
+node_modules
+
+# Config and lock files
+package-lock.json
+next-env.d.ts
+next.config.ts
+yarn.lock

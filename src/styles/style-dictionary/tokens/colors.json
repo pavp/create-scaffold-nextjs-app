@@ -1,0 +1,385 @@
+{
+  "color": {
+    "primitive": {
+      "blue": {
+        "50": {
+          "value": "#f0f9ff",
+          "name": "primitiveBlue50",
+          "type": "color"
+        },
+        "100": {
+          "value": "#e0f2fe",
+          "name": "primitiveBlue100",
+          "type": "color"
+        },
+        "200": {
+          "value": "#b7adcd",
+          "name": "primitiveBlue200",
+          "type": "color"
+        },
+        "300": {
+          "value": "#edebf3",
+          "name": "primitiveBlue300",
+          "type": "color"
+        },
+        "500": {
+          "value": "#2a165b",
+          "name": "primitiveBlue500",
+          "type": "color"
+        },
+        "600": {
+          "value": "#532bb5",
+          "name": "primitiveBlue600",
+          "type": "color"
+        },
+        "700": {
+          "value": "#6f3af2",
+          "name": "primitiveBlue700",
+          "type": "color"
+        }
+      },
+      "gray": {
+        "50": {
+          "value": "#fafbfc",
+          "name": "primitiveGray50",
+          "type": "color"
+        },
+        "100": {
+          "value": "#f2f2f2",
+          "name": "primitiveGray100",
+          "type": "color"
+        },
+        "200": {
+          "value": "#ebebeb",
+          "name": "primitiveGray200",
+          "type": "color"
+        },
+        "300": {
+          "value": "#e2e2e2",
+          "name": "primitiveGray300",
+          "type": "color"
+        },
+        "400": {
+          "value": "#dddddd",
+          "name": "primitiveGray400",
+          "type": "color"
+        },
+        "500": {
+          "value": "#929292",
+          "name": "primitiveGray500",
+          "type": "color"
+        },
+        "600": {
+          "value": "#5a6268",
+          "name": "primitiveGray600",
+          "type": "color"
+        },
+        "700": {
+          "value": "#474747",
+          "name": "primitiveGray700",
+          "type": "color"
+        },
+        "800": {
+          "value": "#444444",
+          "name": "primitiveGray800",
+          "type": "color"
+        },
+        "900": {
+          "value": "#222222",
+          "name": "primitiveGray900",
+          "type": "color"
+        }
+      },
+      "white": {
+        "value": "#ffffff",
+        "name": "primitiveWhite",
+        "type": "color"
+      },
+      "black": {
+        "value": "#000000",
+        "name": "primitiveBlack",
+        "type": "color"
+      },
+      "green": {
+        "400": {
+          "value": "#31ca54",
+          "name": "primitiveGreen400",
+          "type": "color"
+        },
+        "500": {
+          "value": "#28a745",
+          "name": "primitiveGreen500",
+          "type": "color"
+        }
+      },
+      "red": {
+        "400": {
+          "value": "#ff3c4f",
+          "name": "primitiveRed400",
+          "type": "color"
+        },
+        "500": {
+          "value": "#c82333",
+          "name": "primitiveRed500",
+          "type": "color"
+        },
+        "600": {
+          "value": "#b00020",
+          "name": "primitiveRed600",
+          "type": "color"
+        }
+      },
+      "yellow": {
+        "400": {
+          "value": "#ffc469",
+          "name": "primitiveYellow400",
+          "type": "color"
+        },
+        "500": {
+          "value": "#ffc107",
+          "name": "primitiveYellow500",
+          "type": "color"
+        },
+        "600": {
+          "value": "#ffa543",
+          "name": "primitiveYellow600",
+          "type": "color"
+        }
+      },
+      "orange": {
+        "500": {
+          "value": "#ffa500",
+          "name": "primitiveOrange500",
+          "type": "color"
+        },
+        "600": {
+          "value": "#ff8c00",
+          "name": "primitiveOrange600",
+          "type": "color"
+        },
+        "700": {
+          "value": "#ef7d00",
+          "name": "primitiveOrange700",
+          "type": "color"
+        }
+      },
+      "cyan": {
+        "400": {
+          "value": "#5cc7e8",
+          "name": "primitiveCyan400",
+          "type": "color"
+        },
+        "500": {
+          "value": "#17a2b8",
+          "name": "primitiveCyan500",
+          "type": "color"
+        },
+        "600": {
+          "value": "#138496",
+          "name": "primitiveCyan600",
+          "type": "color"
+        }
+      },
+      "purple": {
+        "400": {
+          "value": "#f266fa",
+          "name": "primitivePurple400",
+          "type": "color"
+        }
+      }
+    },
+    "semantic": {
+      "brand": {
+        "primary": {
+          "value": "#2a165b",
+          "name": "semanticBrandPrimary",
+          "type": "color"
+        },
+        "primaryHover": {
+          "value": "#532bb5",
+          "name": "semanticBrandPrimaryHover",
+          "type": "color"
+        },
+        "primaryLight": {
+          "value": "#b7adcd",
+          "name": "semanticBrandPrimaryLight",
+          "type": "color"
+        },
+        "primaryDetail": {
+          "value": "#6f3af2",
+          "name": "semanticBrandPrimaryDetail",
+          "type": "color"
+        }
+      },
+      "text": {
+        "primary": {
+          "value": "#222222",
+          "name": "semanticTextPrimary",
+          "type": "color"
+        },
+        "secondary": {
+          "value": "#929292",
+          "name": "semanticTextSecondary",
+          "type": "color"
+        },
+        "muted": {
+          "value": "#5a6268",
+          "name": "semanticTextMuted",
+          "type": "color"
+        },
+        "disabled": {
+          "value": "#aba7af",
+          "name": "semanticTextDisabled",
+          "type": "color"
+        },
+        "onPrimary": {
+          "value": "#ffffff",
+          "name": "semanticTextOnPrimary",
+          "type": "color"
+        }
+      },
+      "background": {
+        "primary": {
+          "value": "#ffffff",
+          "name": "semanticBackgroundPrimary",
+          "type": "color"
+        },
+        "secondary": {
+          "value": "#fafbfc",
+          "name": "semanticBackgroundSecondary",
+          "type": "color"
+        },
+        "surface": {
+          "value": "#f2f2f2",
+          "name": "semanticBackgroundSurface",
+          "type": "color"
+        },
+        "disabled": {
+          "value": "#d4d2d5",
+          "name": "semanticBackgroundDisabled",
+          "type": "color"
+        },
+        "overlay": {
+          "value": "#00000099",
+          "name": "semanticBackgroundOverlay",
+          "type": "color"
+        }
+      },
+      "border": {
+        "primary": {
+          "value": "#ebebeb",
+          "name": "semanticBorderPrimary",
+          "type": "color"
+        },
+        "secondary": {
+          "value": "#e2e2e2",
+          "name": "semanticBorderSecondary",
+          "type": "color"
+        },
+        "focus": {
+          "value": "#2a165b",
+          "name": "semanticBorderFocus",
+          "type": "color"
+        },
+        "divider": {
+          "value": "#d9d1e0",
+          "name": "semanticBorderDivider",
+          "type": "color"
+        }
+      },
+      "feedback": {
+        "success": {
+          "value": "#28a745",
+          "name": "semanticFeedbackSuccess",
+          "type": "color"
+        },
+        "successLight": {
+          "value": "#31ca54",
+          "name": "semanticFeedbackSuccessLight",
+          "type": "color"
+        },
+        "warning": {
+          "value": "#ffc107",
+          "name": "semanticFeedbackWarning",
+          "type": "color"
+        },
+        "warningLight": {
+          "value": "#ffa543",
+          "name": "semanticFeedbackWarningLight",
+          "type": "color"
+        },
+        "error": {
+          "value": "#c82333",
+          "name": "semanticFeedbackError",
+          "type": "color"
+        },
+        "errorLight": {
+          "value": "#ff3c4f",
+          "name": "semanticFeedbackErrorLight",
+          "type": "color"
+        },
+        "errorHover": {
+          "value": "#b00020",
+          "name": "semanticFeedbackErrorHover",
+          "type": "color"
+        },
+        "info": {
+          "value": "#17a2b8",
+          "name": "semanticFeedbackInfo",
+          "type": "color"
+        },
+        "infoLight": {
+          "value": "#138496",
+          "name": "semanticFeedbackInfoLight",
+          "type": "color"
+        }
+      },
+      "component": {
+        "buttonPrimary": {
+          "value": "#2a165b",
+          "name": "semanticComponentButtonPrimary",
+          "type": "color"
+        },
+        "buttonDisabled": {
+          "value": "#d4d2d5",
+          "name": "semanticComponentButtonDisabled",
+          "type": "color"
+        },
+        "inputPlaceholder": {
+          "value": "#929292",
+          "name": "semanticComponentInputPlaceholder",
+          "type": "color"
+        },
+        "mandatory": {
+          "value": "#ffa500",
+          "name": "semanticComponentMandatory",
+          "type": "color"
+        }
+      },
+      "status": {
+        "dms": {
+          "value": "#5cc7e8",
+          "name": "semanticStatusDms",
+          "type": "color"
+        },
+        "dos": {
+          "value": "#f266fa",
+          "name": "semanticStatusDos",
+          "type": "color"
+        }
+      },
+      "dialog": {
+        "warning": {
+          "value": "#ef7d00",
+          "name": "semanticDialogWarning",
+          "type": "color"
+        },
+        "error": {
+          "value": "#c82333",
+          "name": "semanticDialogError",
+          "type": "color"
+        }
+      }
+    }
+  }
+}

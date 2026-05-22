@@ -1,0 +1,24 @@
+/* Auto-generated spacing design tokens - Do not edit manually */
+:root {
+  --spacing-scale0: 0rem;
+  --spacing-scale1: 0.25rem;
+  --spacing-scale2: 0.5rem;
+  --spacing-scale3: 0.75rem;
+  --spacing-scale4: 1rem;
+  --spacing-scale5: 1.25rem;
+  --spacing-scale6: 1.5rem;
+  --spacing-scale8: 2rem;
+  --spacing-scale10: 2.5rem;
+  --spacing-scale12: 3rem;
+  --spacing-scale16: 4rem;
+  --spacing-scale20: 5rem;
+  --button-padding-x: 1.5rem;
+  --button-padding-y: 0.75rem;
+  --card-padding: 1rem;
+  --modal-padding: 1.5rem;
+  --input-padding-x: 0.75rem;
+  --input-padding-y: 0.5rem;
+  --container-max-width: 75rem;
+  --sidebar-width: 17.5rem;
+  --header-height: 4rem;
+}

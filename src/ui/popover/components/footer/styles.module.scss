@@ -1,0 +1,9 @@
+.container {
+  display: flex;
+  gap: var(--spacing-scale4);
+  justify-content: flex-end;
+  width: 100%;
+  min-height: var(--spacing-scale16);
+  padding: var(--spacing-scale4);
+  border-top: 1px solid var(--color-semantic-background-surface);
+}
