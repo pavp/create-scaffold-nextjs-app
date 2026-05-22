@@ -2,6 +2,17 @@
 
 ### 🚀 Features
 
+* initial scaffold-nextjs-app setup ([0b151ee](https://github.com/pavp/scaffold-nextjs-app/commit/0b151ee55192805c156c47874926cfd097f5738d))
+
+### 🐛 Bug Fixes
+
+* initial release ([7bc7ab3](https://github.com/pavp/scaffold-nextjs-app/commit/7bc7ab3fdeae813a7b286748fb85f2b878158349))
+* trigger initial release pipeline ([359b88b](https://github.com/pavp/scaffold-nextjs-app/commit/359b88b1b1a681e17b0d63dc31882eb4b713daa5))
+
+## 1.0.0 (2026-05-22)
+
+### 🚀 Features
+
 - initial scaffold-nextjs-app setup ([0b151ee](https://github.com/pavp/scaffold-nextjs-app/commit/0b151ee55192805c156c47874926cfd097f5738d))
 
 ### 🐛 Bug Fixes
