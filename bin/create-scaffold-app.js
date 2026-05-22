@@ -24,7 +24,7 @@ const colors = {
 };
 
 // GitHub repository configuration
-const GITHUB_REPO = 'pavp/scaffold-nextjs-app';
+const GITHUB_REPO = 'pavp/create-scaffold-nextjs-app';
 const GITHUB_BRANCH = 'main';
 const GITHUB_API_URL = `https://api.github.com/repos/${GITHUB_REPO}`;
 const GITHUB_DOWNLOAD_URL = `https://github.com/${GITHUB_REPO}/archive/${GITHUB_BRANCH}.zip`;
