@@ -20,7 +20,7 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       - name: Trigger NPM dependencies check
         if: ${{ github.event.inputs.ecosystem == 'npm' || github.event.inputs.ecosystem == 'all' }}
