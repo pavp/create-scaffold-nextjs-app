@@ -1,3 +1,11 @@
+## [1.0.1](https://github.com/pavp/create-scaffold-nextjs-app/compare/v1.0.0...v1.0.1) (2026-05-22)
+
+### 🐛 Bug Fixes
+
+* follow all redirects when downloading template zip ([a01badf](https://github.com/pavp/create-scaffold-nextjs-app/commit/a01badfc214a5cf5147adce601a86c6da5082def))
+* trigger release for redirect fix ([abe6a95](https://github.com/pavp/create-scaffold-nextjs-app/commit/abe6a9510bd65cbf5f172d382930efd4dc9f0a6b))
+* update repository urls to match renamed github repo ([11b169f](https://github.com/pavp/create-scaffold-nextjs-app/commit/11b169fbbaad6c2bf17f98c26ad7dafb6c6ad220))
+
 ## 1.0.0 (2026-05-22)
 
 ### 🚀 Features

@@ -1,6 +1,6 @@
 {
   "name": "create-scaffold-nextjs-app",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "private": false,
   "description": "Official CLI tool to bootstrap modern frontend applications with Scaffold's template",
   "keywords": [
