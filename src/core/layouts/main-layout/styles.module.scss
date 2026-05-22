@@ -1,0 +1,21 @@
+.MainLayoutContainer {
+  display: flex;
+  height: 100vh;
+  background-color: var(--color-semantic-background-surface);
+}
+
+.MainLayoutRightContent {
+  display: flex;
+  flex-grow: 1;
+  flex-direction: column;
+  margin: var(--spacing-scale4) var(--spacing-scale6);
+}
+
+.MainLayoutHeaderContainer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.MainLayoutChildrenContainer {
+  flex-grow: 1;
+}

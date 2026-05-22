@@ -1,0 +1,10 @@
+#!/usr/bin/env sh
+
+# Skip validation in CI environments (GitHub Actions, etc.)
+if [ "$CI" = "true" ] || [ "$GITHUB_ACTIONS" = "true" ]; then
+  echo "🤖 CI environment detected - skipping branch validation"
+  exit 0
+fi
+
+# Validate branch name using the shared script
+node scripts/validate-branch-name.js

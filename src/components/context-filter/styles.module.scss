@@ -1,0 +1,27 @@
+.contextContainer {
+  display: flex;
+  height: 3.125rem;
+}
+
+.user {
+  display: flex;
+  align-items: center;
+  width: max-content;
+  height: var(--spacing-scale10);
+  padding-right: 1.875rem;
+  font-size: var(--font-size-sm);
+  font-weight: 700;
+  line-height: var(--spacing-scale4);
+  color: var(--color-semantic-brand-primary);
+  cursor: default;
+  border-right: 0.125rem solid var(--color-semantic-border-primary);
+
+  .textMargin {
+    margin-left: 0.6875rem;
+  }
+
+  .icon {
+    width: 0.875rem;
+    height: 0.875rem;
+  }
+}

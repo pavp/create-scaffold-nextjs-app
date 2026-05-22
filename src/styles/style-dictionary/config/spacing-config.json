@@ -1,0 +1,29 @@
+{
+  "source": ["src/styles/style-dictionary/tokens/spacing.json"],
+  "platforms": {
+    "js": {
+      "buildPath": "src/styles/spacing/",
+      "files": [
+        {
+          "format": "custom-js-format-generic",
+          "destination": "spacing.ts",
+          "options": {
+            "exportName": "spacing"
+          }
+        }
+      ]
+    },
+    "css": {
+      "buildPath": "src/styles/spacing/",
+      "files": [
+        {
+          "format": "css-custom-properties",
+          "destination": "spacing.css",
+          "options": {
+            "category": "spacing"
+          }
+        }
+      ]
+    }
+  }
+}

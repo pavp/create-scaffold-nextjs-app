@@ -1,0 +1,33 @@
+{
+  "breakpoint": {
+    "mobileMin": {
+      "value": "0px",
+      "type": "breakpoint"
+    },
+    "mobileMax": {
+      "value": "767px",
+      "type": "breakpoint"
+    },
+    "tabletMin": {
+      "value": "768px",
+      "max": "1023px",
+      "type": "breakpoint"
+    },
+    "tabletMax": {
+      "value": "1023px",
+      "type": "breakpoint"
+    },
+    "desktopMin": {
+      "value": "1024px",
+      "type": "breakpoint"
+    },
+    "desktopLargeScreen": {
+      "value": "1440px",
+      "type": "breakpoint"
+    },
+    "desktopXLargeScreen": {
+      "value": "2560px",
+      "type": "breakpoint"
+    }
+  }
+}

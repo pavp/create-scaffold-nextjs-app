@@ -1,0 +1,12 @@
+.footer {
+  display: flex;
+  justify-content: center;
+}
+
+.saveButton {
+  width: 6.25rem;
+  padding: var(--spacing-scale2);
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-light);
+  border-radius: 24px;
+}

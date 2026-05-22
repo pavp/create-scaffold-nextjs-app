@@ -1,0 +1,85 @@
+{
+  "border": {
+    "width": {
+      "none": {
+        "value": "0px",
+        "name": "borderWidthNone",
+        "type": "borderWidth"
+      },
+      "thin": {
+        "value": "1px",
+        "name": "borderWidthThin",
+        "type": "borderWidth"
+      },
+      "medium": {
+        "value": "2px",
+        "name": "borderWidthMedium",
+        "type": "borderWidth"
+      },
+      "thick": {
+        "value": "4px",
+        "name": "borderWidthThick",
+        "type": "borderWidth"
+      }
+    },
+    "radius": {
+      "none": {
+        "value": "0px",
+        "name": "borderRadiusNone",
+        "type": "borderRadius"
+      },
+      "xs": {
+        "value": "2px",
+        "name": "borderRadiusXs",
+        "type": "borderRadius"
+      },
+      "sm": {
+        "value": "4px",
+        "name": "borderRadiusSm",
+        "type": "borderRadius"
+      },
+      "base": {
+        "value": "6px",
+        "name": "borderRadiusBase",
+        "type": "borderRadius"
+      },
+      "md": {
+        "value": "8px",
+        "name": "borderRadiusMd",
+        "type": "borderRadius"
+      },
+      "lg": {
+        "value": "12px",
+        "name": "borderRadiusLg",
+        "type": "borderRadius"
+      },
+      "xl": {
+        "value": "16px",
+        "name": "borderRadiusXl",
+        "type": "borderRadius"
+      },
+      "full": {
+        "value": "9999px",
+        "name": "borderRadiusFull",
+        "type": "borderRadius"
+      }
+    },
+    "style": {
+      "solid": {
+        "value": "solid",
+        "name": "borderStyleSolid",
+        "type": "borderStyle"
+      },
+      "dashed": {
+        "value": "dashed",
+        "name": "borderStyleDashed",
+        "type": "borderStyle"
+      },
+      "dotted": {
+        "value": "dotted",
+        "name": "borderStyleDotted",
+        "type": "borderStyle"
+      }
+    }
+  }
+}

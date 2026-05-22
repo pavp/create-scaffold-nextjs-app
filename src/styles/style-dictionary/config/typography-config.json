@@ -1,0 +1,29 @@
+{
+  "source": ["src/styles/style-dictionary/tokens/typography.json"],
+  "platforms": {
+    "css": {
+      "buildPath": "src/styles/typography/",
+      "files": [
+        {
+          "format": "css-custom-properties",
+          "destination": "typography.css",
+          "options": {
+            "category": "typography"
+          }
+        }
+      ]
+    },
+    "js": {
+      "buildPath": "src/styles/typography/",
+      "files": [
+        {
+          "format": "custom-js-format-generic",
+          "destination": "typography.ts",
+          "options": {
+            "exportName": "typography"
+          }
+        }
+      ]
+    }
+  }
+}

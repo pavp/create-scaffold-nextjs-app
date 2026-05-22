@@ -1,0 +1,6 @@
+.container {
+  display: flex;
+  gap: var(--spacing-scale4);
+  height: 100%;
+  max-height: calc(100vh - 5.125rem);
+}

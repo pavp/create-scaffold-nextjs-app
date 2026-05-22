@@ -1,0 +1,16 @@
+/* Auto-generated animations design tokens - Do not edit manually */
+:root {
+  --duration-instant: 0ms;
+  --duration-fast: 150ms;
+  --duration-normal: 300ms;
+  --duration-slow: 500ms;
+  --duration-slower: 750ms;
+  --easing-linear: linear;
+  --easing-ease-in: cubic-bezier(0.4, 0, 1, 1);
+  --easing-ease-out: cubic-bezier(0, 0, 0.2, 1);
+  --easing-ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+  --easing-bounce: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  --transition-fast: all 150ms cubic-bezier(0, 0, 0.2, 1);
+  --transition-normal: all 300ms cubic-bezier(0, 0, 0.2, 1);
+  --transition-slow: all 500ms cubic-bezier(0, 0, 0.2, 1);
+}

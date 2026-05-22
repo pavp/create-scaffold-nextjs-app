@@ -1,0 +1,21 @@
+.container {
+  display: flex;
+  align-items: center;
+  height: var(--spacing-scale16);
+  padding: 0 var(--spacing-scale4);
+  background-color: var(--color-primitive-blue300);
+
+  .titleText {
+    flex-grow: 1;
+    padding-right: var(--spacing-scale4);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-weight: bold;
+    white-space: nowrap;
+  }
+
+  .iconButton {
+    width: 1.875rem;
+    height: 1.875rem;
+  }
+}

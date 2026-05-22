@@ -1,0 +1,1 @@
+export const DEFAULT_NUMBER_PICKER_WIDTH = '200px';

@@ -1,0 +1,115 @@
+{
+  "spacing": {
+    "scale": {
+      "0": {
+        "value": "0rem",
+        "name": "scale0",
+        "type": "spacing"
+      },
+      "1": {
+        "value": "0.25rem",
+        "name": "scale1",
+        "type": "spacing"
+      },
+      "2": {
+        "value": "0.5rem",
+        "name": "scale2",
+        "type": "spacing"
+      },
+      "3": {
+        "value": "0.75rem",
+        "name": "scale3",
+        "type": "spacing"
+      },
+      "4": {
+        "value": "1rem",
+        "name": "scale4",
+        "type": "spacing"
+      },
+      "5": {
+        "value": "1.25rem",
+        "name": "scale5",
+        "type": "spacing"
+      },
+      "6": {
+        "value": "1.5rem",
+        "name": "scale6",
+        "type": "spacing"
+      },
+      "8": {
+        "value": "2rem",
+        "name": "scale8",
+        "type": "spacing"
+      },
+      "10": {
+        "value": "2.5rem",
+        "name": "scale10",
+        "type": "spacing"
+      },
+      "12": {
+        "value": "3rem",
+        "name": "scale12",
+        "type": "spacing"
+      },
+      "16": {
+        "value": "4rem",
+        "name": "scale16",
+        "type": "spacing"
+      },
+      "20": {
+        "value": "5rem",
+        "name": "scale20",
+        "type": "spacing"
+      }
+    },
+    "component": {
+      "buttonPaddingX": {
+        "value": "1.5rem",
+        "name": "buttonPaddingX",
+        "type": "spacing"
+      },
+      "buttonPaddingY": {
+        "value": "0.75rem",
+        "name": "buttonPaddingY",
+        "type": "spacing"
+      },
+      "cardPadding": {
+        "value": "1rem",
+        "name": "cardPadding",
+        "type": "spacing"
+      },
+      "modalPadding": {
+        "value": "1.5rem",
+        "name": "modalPadding",
+        "type": "spacing"
+      },
+      "inputPaddingX": {
+        "value": "0.75rem",
+        "name": "inputPaddingX",
+        "type": "spacing"
+      },
+      "inputPaddingY": {
+        "value": "0.5rem",
+        "name": "inputPaddingY",
+        "type": "spacing"
+      }
+    },
+    "layout": {
+      "containerMaxWidth": {
+        "value": "75rem",
+        "name": "containerMaxWidth",
+        "type": "spacing"
+      },
+      "sidebarWidth": {
+        "value": "17.5rem",
+        "name": "sidebarWidth",
+        "type": "spacing"
+      },
+      "headerHeight": {
+        "value": "4rem",
+        "name": "headerHeight",
+        "type": "spacing"
+      }
+    }
+  }
+}
