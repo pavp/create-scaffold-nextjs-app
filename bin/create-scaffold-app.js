@@ -73,32 +73,39 @@ async function downloadTemplate(targetDir, projectData = {}) {
 
     console.log(`${colors.yellow}📡 Downloading template from GitHub...${colors.reset}`);
 
-    // Download zip file
+    // Download zip file (follow all redirects)
     await new Promise((resolve, reject) => {
       const file = fs.createWriteStream(zipPath);
 
-      https
-        .get(GITHUB_DOWNLOAD_URL, (response) => {
-          if (response.statusCode === 302 || response.statusCode === 301) {
-            // Follow redirect
-            https
-              .get(response.headers.location, (redirectResponse) => {
-                redirectResponse.pipe(file);
-                file.on('finish', () => {
-                  file.close();
-                  resolve();
-                });
-              })
-              .on('error', reject);
-          } else {
-            response.pipe(file);
-            file.on('finish', () => {
+      function download(url) {
+        https
+          .get(url, (response) => {
+            if (
+              response.statusCode === 301 ||
+              response.statusCode === 302 ||
+              response.statusCode === 307 ||
+              response.statusCode === 308
+            ) {
+              response.resume();
+              download(response.headers.location);
+            } else if (response.statusCode !== 200) {
               file.close();
-              resolve();
-            });
-          }
-        })
-        .on('error', reject);
+              reject(new Error(`Download failed with status ${response.statusCode}`));
+            } else {
+              response.pipe(file);
+              file.on('finish', () => {
+                file.close();
+                resolve();
+              });
+            }
+          })
+          .on('error', (err) => {
+            file.close();
+            reject(err);
+          });
+      }
+
+      download(GITHUB_DOWNLOAD_URL);
     });
 
     console.log(`${colors.yellow}📦 Extracting template...${colors.reset}`);
