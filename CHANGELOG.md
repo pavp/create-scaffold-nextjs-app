@@ -1,3 +1,9 @@
+## [1.0.3](https://github.com/pavp/create-scaffold-nextjs-app/compare/v1.0.2...v1.0.3) (2026-05-23)
+
+### 🐛 Bug Fixes
+
+* trigger npm publish ([0e47029](https://github.com/pavp/create-scaffold-nextjs-app/commit/0e4702978c7376602a5fa3e21b10c30a59859163))
+
 ## [1.0.2](https://github.com/pavp/create-scaffold-nextjs-app/compare/v1.0.1...v1.0.2) (2026-05-23)
 
 ### 🐛 Bug Fixes
