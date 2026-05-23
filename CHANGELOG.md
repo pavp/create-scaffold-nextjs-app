@@ -1,3 +1,13 @@
+## [1.0.2](https://github.com/pavp/create-scaffold-nextjs-app/compare/v1.0.1...v1.0.2) (2026-05-23)
+
+### 🐛 Bug Fixes
+
+* add npm auth token to publish workflow ([2bf9358](https://github.com/pavp/create-scaffold-nextjs-app/commit/2bf9358f4c6efb40f6dc5d82d46e50900634debc))
+
+### 🔧 Maintenance
+
+* revert unnecessary npm auth changes to publish workflow ([2cd4ec8](https://github.com/pavp/create-scaffold-nextjs-app/commit/2cd4ec8ea2a18d7f1be46b0bb5bb10a8932b8e42))
+
 ## [1.0.1](https://github.com/pavp/create-scaffold-nextjs-app/compare/v1.0.0...v1.0.1) (2026-05-22)
 
 ### 🐛 Bug Fixes
