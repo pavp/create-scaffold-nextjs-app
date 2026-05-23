@@ -1,3 +1,14 @@
+## [1.0.4](https://github.com/pavp/create-scaffold-nextjs-app/compare/v1.0.3...v1.0.4) (2026-05-23)
+
+### 🐛 Bug Fixes
+
+* trigger release after cleanup ([da12777](https://github.com/pavp/create-scaffold-nextjs-app/commit/da12777e036ea59cb7d47f68eef65fe467cb2cb8))
+* trigger release from v1.0.3 baseline ([4b2751c](https://github.com/pavp/create-scaffold-nextjs-app/commit/4b2751c3d1b9ca6d5ea9205faf3cf243228ebf85))
+
+### 🔧 Maintenance
+
+* **release:** 1.0.0 [skip ci] ([5443c9f](https://github.com/pavp/create-scaffold-nextjs-app/commit/5443c9f57f6e1804050f959a666091c66dccb9b2))
+
 ## 1.0.0 (2026-05-23)
 
 ### 🚀 Features
