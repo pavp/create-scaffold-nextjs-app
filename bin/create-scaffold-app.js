@@ -658,8 +658,6 @@ async function main() {
       '{{PACKAGE_NAME}}': packageName,
       '{{PROJECT_NAME}}': packageName,
       '{{PROJECT_DESCRIPTION}}': description,
-      'swat-frontend': packageName,
-      SWAT: projectName.toUpperCase().replace(/-/g, ' '),
       'scaffold-nextjs-app': projectName,
       'scaffold-nextjs-app is the official CLI tool to bootstrap a modern frontend application': description,
       '0\\.1\\.0': '1.0.0',

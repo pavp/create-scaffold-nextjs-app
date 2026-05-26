@@ -85,16 +85,11 @@ gitignore-template      Renamed to .gitignore in generated project (npm strips .
 {{PACKAGE_NAME}}          → user-entered package name
 {{PROJECT_NAME}}          → same as package name
 {{PROJECT_DESCRIPTION}}   → user-entered description
-swat-frontend             → package name      ← TECH DEBT: internal team name hardcoded
-SWAT                      → project name uppercased  ← TECH DEBT
 scaffold-nextjs-app       → project name
 0\.1\.0                   → 1.0.0
 ```
 
 **gitignore workaround:** npm strips `.gitignore` from packages. File is stored as `gitignore-template` and renamed during copy.
-
-**Tech debt:** The CLI has hardcoded strings `swat-frontend` and `SWAT` from an internal project.
-These get replaced but their presence in the source is confusing. Track at `bin/create-scaffold-app.js:658-665`.
 
 ---
 
@@ -326,7 +321,6 @@ happens via the GitHub Actions workflow step directly (not via semantic-release 
 
 | Item                                                      | File                                        | Severity |
 | --------------------------------------------------------- | ------------------------------------------- | -------- |
-| Hardcoded `swat-frontend` / `SWAT` strings                | `bin/create-scaffold-app.js:658-665`        | HIGH     |
 | MUI X Pro license key required — undocumented             | `template/config.ts`, `NEXT_PUBLIC_MUI_PRO` | HIGH     |
 | `src/` and `template/` can drift — no automated check     | —                                           | HIGH     |
 | Auth module (`src/modules/auth/`) is a stub, undocumented | `src/modules/auth/`                         | MEDIUM   |
