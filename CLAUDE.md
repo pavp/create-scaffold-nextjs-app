@@ -25,6 +25,7 @@ yarn test         # Jest
 yarn test:watch   # Jest watch mode
 yarn typecheck    # tsc --noEmit
 yarn test:cli     # Automated CLI smoke test (creates a project and validates it)
+yarn check:drift  # Detect dependency drift between package.json and template/package.json
 yarn build:dictionary  # Compile Style Dictionary tokens → CSS vars / SCSS
 yarn release:dry  # Dry-run semantic release (no git push, no npm publish)
 ```
@@ -77,7 +78,19 @@ gitignore-template      Renamed to .gitignore in generated project (npm strips .
 **Two-pass copy:**
 
 1. Main copy: entire repo (minus `node_modules`, `.git`, `scripts`, `bin`, `template/`, `docs/contributing.md`, `devops`, `.github/workflows`)
-2. Template override: files in `template/` are copied on top (they win). `config.ts` → `src/config.ts`, `.env.template` → `.env.local`
+2. Template override: files in `template/` are copied on top (they win)
+
+**Template overlay mapping** (`template/` file → destination in generated project):
+
+| Source                            | Destination              | Notes                                                                                                           |
+| --------------------------------- | ------------------------ | --------------------------------------------------------------------------------------------------------------- |
+| `template/config.ts`              | `src/config.ts`          | Contains `{{PROJECT_NAME}}` placeholder. Keep in sync with `src/config.ts`.                                     |
+| `template/package.json`           | `package.json`           | Canonical deps for generated projects. Keep in sync with root `package.json`. Run `yarn check:drift` to verify. |
+| `template/README.md`              | `README.md`              | Project docs with placeholders.                                                                                 |
+| `template/CLAUDE.md`              | `CLAUDE.md`              | AI agent guide shipped with every generated project.                                                            |
+| `template/commitlint.config.js`   | `commitlint.config.js`   | Conventional Commits config.                                                                                    |
+| `template/.env.template`          | `.env.local`             | Renamed during copy.                                                                                            |
+| `template/.github/dependabot.yml` | `.github/dependabot.yml` | Dependabot config.                                                                                              |
 
 **Placeholder replacement** (applied to `.ts/.js/.json/.md` files):
 

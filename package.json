@@ -39,6 +39,7 @@
     "build:dictionary": "node ./src/styles/style-dictionary/build.mjs",
     "create:project": "node ./scripts/create-project.js",
     "test:cli": "node ./test-cli-automated.js",
+    "check:drift": "node ./scripts/check-drift.js",
     "test:cli:interactive": "node ./test-interactive.js",
     "commit": "git-cz",
     "release": "semantic-release",

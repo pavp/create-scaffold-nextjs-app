@@ -1,3 +1,4 @@
+// Keep in sync with src/config.ts
 const env = process.env.NODE_ENV || 'development';
 const revalidateTranslationsProd = 1800; //30min
 const revalidateTranslationsDev = 0;
