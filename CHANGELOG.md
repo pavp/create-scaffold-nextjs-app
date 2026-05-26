@@ -1,3 +1,9 @@
+## [1.0.6](https://github.com/pavp/create-scaffold-nextjs-app/compare/v1.0.5...v1.0.6) (2026-05-26)
+
+### 🐛 Bug Fixes
+
+* skip npm publish if version already exists in registry ([84ad9d1](https://github.com/pavp/create-scaffold-nextjs-app/commit/84ad9d1523feb297230819e7a4e41da37f023a45))
+
 ## [1.0.5](https://github.com/pavp/create-scaffold-nextjs-app/compare/v1.0.4...v1.0.5) (2026-05-26)
 
 ### 🐛 Bug Fixes
