@@ -1,3 +1,13 @@
+## [1.0.5](https://github.com/pavp/create-scaffold-nextjs-app/compare/v1.0.4...v1.0.5) (2026-05-26)
+
+### 🐛 Bug Fixes
+
+* exclude template dir from downloadtemplate copy pass ([4c64950](https://github.com/pavp/create-scaffold-nextjs-app/commit/4c64950684415c43663f6542871d2638a6d2a7ab))
+
+### 📚 Documentation
+
+* update install command to use [@latest](https://github.com/latest) tag ([8edaa0b](https://github.com/pavp/create-scaffold-nextjs-app/commit/8edaa0b9fdafd142f4ce953a3608cd0e7c93f4c2))
+
 ## [1.0.4](https://github.com/pavp/create-scaffold-nextjs-app/compare/v1.0.3...v1.0.4) (2026-05-23)
 
 ### 🐛 Bug Fixes
