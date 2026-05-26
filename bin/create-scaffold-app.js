@@ -141,6 +141,7 @@ async function downloadTemplate(targetDir, projectData = {}) {
         'coverage',
         'scripts',
         'bin',
+        'template',
         'devops',
         '.github/workflows',
         'semantic-release.yml',
