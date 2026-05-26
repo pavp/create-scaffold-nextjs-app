@@ -1,3 +1,13 @@
+## [1.0.7](https://github.com/pavp/create-scaffold-nextjs-app/compare/v1.0.6...v1.0.7) (2026-05-26)
+
+### 🐛 Bug Fixes
+
+* **cli:** remove hardcoded internal team strings from replacements ([e10ef58](https://github.com/pavp/create-scaffold-nextjs-app/commit/e10ef58acb9d334100ef826fb3736f53b388e01c))
+
+### 📚 Documentation
+
+* add claude.md for project and generated template ([e7bf529](https://github.com/pavp/create-scaffold-nextjs-app/commit/e7bf5290289dea4a84e90f76b941428d76dea2d0))
+
 ## [1.0.6](https://github.com/pavp/create-scaffold-nextjs-app/compare/v1.0.5...v1.0.6) (2026-05-26)
 
 ### 🐛 Bug Fixes
